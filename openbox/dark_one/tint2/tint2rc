@@ -1,0 +1,359 @@
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Configuration for tint2 panel.
+
+#-------------------------------------
+# Backgrounds
+# Background 1: Panel, Tooltip
+rounded = 0
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #1e2128 100
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+# Background 2: Battery, Button, Default task, Executor, Inactive desktop name, Normal task, Systray
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #292d37 100
+border_color = #000000 0
+background_color_hover = #292d37 100
+border_color_hover = #000000 0
+background_color_pressed = #292d37 100
+border_color_pressed = #000000 0
+
+# Background 3: Active desktop name, Active task
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #5294e2 100
+border_color = #000000 0
+background_color_hover = #5294e2 100
+border_color_hover = #000000 0
+background_color_pressed = #5294e2 100
+border_color_pressed = #000000 0
+
+# Background 4: Iconified task
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #e5c07a 100
+border_color = #000000 0
+background_color_hover = #e5c07a 100
+border_color_hover = #000000 0
+background_color_pressed = #e5c07a 100
+border_color_pressed = #000000 0
+
+# Background 5: Urgent task
+rounded = 10
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #e06b74 100
+border_color = #000000 0
+background_color_hover = #e06b74 100
+border_color_hover = #000000 0
+background_color_pressed = #e06b74 100
+border_color_pressed = #000000 0
+
+#-------------------------------------
+# Panel
+panel_items = PTSEEEEEC
+panel_size = 100% 38
+panel_margin = 0 0
+panel_padding = 6 6 6
+panel_background_id = 1
+wm_menu = 1
+panel_dock = 0
+panel_pivot_struts = 0
+panel_position = top center horizontal
+panel_layer = top
+panel_monitor = all
+panel_shrink = 0
+autohide = 0
+autohide_show_timeout = 0
+autohide_hide_timeout = 0.5
+autohide_height = 2
+strut_policy = follow_size
+panel_window_name = tint2
+disable_transparency = 1
+mouse_effects = 1
+font_shadow = 0
+mouse_hover_icon_asb = 100 0 10
+mouse_pressed_icon_asb = 100 0 0
+scale_relative_to_dpi = 0
+scale_relative_to_screen_height = 0
+
+#-------------------------------------
+# Taskbar
+taskbar_mode = single_desktop
+taskbar_hide_if_empty = 1
+taskbar_padding = 0 0 6
+taskbar_background_id = 0
+taskbar_active_background_id = 0
+taskbar_name = 1
+taskbar_hide_inactive_tasks = 0
+taskbar_hide_different_monitor = 0
+taskbar_hide_different_desktop = 0
+taskbar_always_show_all_desktop_tasks = 0
+taskbar_name_padding = 10 0
+taskbar_name_background_id = 2
+taskbar_name_active_background_id = 3
+taskbar_name_font = JetBrainsMono Nerd Font 10
+taskbar_name_font_color = #ffffff 100
+taskbar_name_active_font_color = #ffffff 100
+taskbar_distribute_size = 1
+taskbar_sort_order = none
+task_align = left
+
+#-------------------------------------
+# Task
+task_text = 1
+task_icon = 1
+task_centered = 0
+urgent_nb_of_blink = 100000
+task_maximum_size = 180 30
+task_padding = 10 5 5
+task_font = JetBrainsMono Nerd Font 9
+task_tooltip = 1
+task_thumbnail = 1
+task_thumbnail_size = 256
+task_font_color = #ffffff 100
+task_normal_font_color = #ffffff 100
+task_active_font_color = #ffffff 100
+task_urgent_font_color = #ffffff 100
+task_iconified_font_color = #1e2128 100
+task_background_id = 2
+task_normal_background_id = 2
+task_active_background_id = 3
+task_urgent_background_id = 5
+task_iconified_background_id = 4
+mouse_left = toggle_iconify
+mouse_middle = shade
+mouse_right = close
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+
+#-------------------------------------
+# System tray (notification area)
+systray_padding = 10 0 8
+systray_background_id = 2
+systray_sort = right2left
+systray_icon_size = 16
+systray_icon_asb = 100 0 0
+systray_monitor = primary
+systray_name_filter = 
+
+#-------------------------------------
+# Launcher
+launcher_padding = 10 0 5
+launcher_background_id = 2
+launcher_icon_background_id = 0
+launcher_icon_size = 20
+launcher_icon_asb = 100 0 0
+launcher_icon_theme_override = 0
+startup_notifications = 1
+launcher_tooltip = 1
+launcher_item_app = /usr/share/applications/Alacritty.desktop
+launcher_item_app = /usr/share/applications/firefox.desktop
+launcher_item_app = /usr/share/applications/thunar.desktop
+launcher_item_app = /usr/share/applications/geany.desktop
+
+#-------------------------------------
+# Clock
+time1_format = %I:%M %p
+time2_format = 
+time1_font = JetBrainsMono Nerd Font Bold 12
+time1_timezone = 
+time2_timezone = 
+clock_font_color = #ffffff 100
+clock_padding = 0 0
+clock_background_id = 0
+clock_tooltip = %A, %d %B %Y
+clock_tooltip_timezone = 
+clock_lclick_command = 
+clock_rclick_command = 
+clock_mclick_command = 
+clock_uwheel_command = 
+clock_dwheel_command = 
+
+#-------------------------------------
+# Battery
+battery_tooltip = 1
+battery_low_status = 20
+battery_low_cmd = dunstify -u low -h string:x-dunst-stack-tag:tint2 'Battery Low!'
+battery_full_cmd = dunstify -u low -h string:x-dunst-stack-tag:tint2 'Battery Charged!'
+bat1_font = JetBrainsMono Nerd Font 10
+battery_font_color = #ffffff 100
+bat1_format = %p
+bat2_format = 
+battery_padding = 10 0
+battery_background_id = 2
+battery_hide = 100
+battery_lclick_command = xfce4-power-manager-settings
+battery_rclick_command = xfce4-power-manager-settings
+battery_mclick_command = 
+battery_uwheel_command = 
+battery_dwheel_command = 
+ac_connected_cmd = dunstify -u low -h string:x-dunst-stack-tag:tint2 'Charger Plugged!'
+ac_disconnected_cmd = dunstify -u low -h string:x-dunst-stack-tag:tint2 'Charger Unplugged!'
+
+#-------------------------------------
+# Executor 1
+execp = new
+execp_command = tint2-volume
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Volume
+execp_lclick_command = tint2-volume --toggle
+execp_rclick_command = tint2-volume --toggle-mic
+execp_mclick_command = pavucontrol
+execp_uwheel_command = tint2-volume --inc
+execp_dwheel_command = tint2-volume --dec
+execp_font = JetBrainsMono Nerd Font 10
+execp_font_color = #ffffff 100
+execp_padding = 10 0
+execp_background_id = 2
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 2
+execp = new
+execp_command = tint2-brightness
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Brightness
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = tint2-brightness --inc
+execp_dwheel_command = tint2-brightness --dec
+execp_font = JetBrainsMono Nerd Font 10
+execp_font_color = #ffffff 100
+execp_padding = 10 0
+execp_background_id = 2
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 3
+execp = new
+execp_command = tint2-bluetooth
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Bluetooth
+execp_lclick_command = rofi-bluetooth
+execp_rclick_command = blueman-manager
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = JetBrainsMono Nerd Font 10
+execp_font_color = #ffffff 100
+execp_padding = 10 0
+execp_background_id = 2
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 4
+execp = new
+execp_command = tint2-network
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Networks
+execp_lclick_command = networkmanager_dmenu
+execp_rclick_command = nm-connection-editor
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = JetBrainsMono Nerd Font 10
+execp_font_color = #ffffff 100
+execp_padding = 10 0
+execp_background_id = 2
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 5
+execp = new
+execp_command = tint2-battery
+execp_interval = 10
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Battery
+execp_lclick_command = xfce4-power-manager-settings
+execp_rclick_command = xfce4-power-manager-settings
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = JetBrainsMono Nerd Font 10
+execp_font_color = #ffffff 100
+execp_padding = 10 0
+execp_background_id = 2
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Button 1
+button = new
+button_icon = /usr/share/archcraft/artworks/icons/distributor-logo-archcraft.svg
+button_text = 
+button_tooltip = Application Launcher
+button_lclick_command = rofi-launcher
+button_rclick_command = rofi-runner
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = JetBrainsMono Nerd Font 10
+button_font_color = #ffffff 100
+button_padding = 5 0
+button_background_id = 2
+button_centered = 0
+button_max_icon_size = 24
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 10 10
+tooltip_background_id = 1
+tooltip_font_color = #ffffff 100
+tooltip_font = JetBrainsMono Nerd Font 10

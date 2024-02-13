@@ -1,0 +1,38 @@
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Font configuration ---------------------------------------
+
+[font]
+## Font size in points.
+size = 10
+
+## When true, Alacritty will use a custom built-in font for box drawing characters and powerline symbols.
+builtin_box_drawing = true
+
+## Normal font family.
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+## Offset is the extra space around each character.
+## 'y' can be thought of as modifying the line spacing, and 'x' as modifying the letter spacing.
+[font.offset]
+x = 0
+y = 0
+
+## Glyph offset determines the locations of the glyphs within their cells with the default being at the bottom.
+## Increasing 'x' moves the glyph to the right, increasing 'y' moves the glyph upward.
+[font.glyph_offset]
+x = 0
+y = 0

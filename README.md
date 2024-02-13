@@ -1,1 +1,0 @@
-# My_Dev_Config-arch-bspwn-nvim-tmux-alacritty-

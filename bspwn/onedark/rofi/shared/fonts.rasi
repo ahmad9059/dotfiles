@@ -1,0 +1,7 @@
+/* Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com> */
+
+/* Text Font */
+
+* {
+    font: "Iosevka 10";
+}
