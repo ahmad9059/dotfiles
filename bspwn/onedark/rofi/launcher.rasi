@@ -51,7 +51,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       750px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -60,7 +60,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               18px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -80,7 +80,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     13px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
