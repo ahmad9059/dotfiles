@@ -17,7 +17,7 @@ These configs have been tailored to my personal preferences and workflow, but th
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/ahmad9059/My_Dev_Configs.git
+git clone https://github.com/ahmad9059/dotfiles.git
 ```
 
 
