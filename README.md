@@ -36,9 +36,6 @@ This repository contains my personal configuration files for various components 
 - **Description:** Configuration for Rofi, a versatile application launcher and window switcher.
 - **Features:** Provides quick access to applications and windows, with customizable appearance and behavior.
 
-### 9. README.md
-- **Description:** This file serves as an overview of the configurations included in this repository.
-- **Features:** Offers usage instructions and insights into the purpose of each configuration.
 
 ## Usage
 
