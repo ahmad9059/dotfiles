@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+# bspwm directory
+DIR="$HOME/.config/bspwm"
+
+# fix padding
+bspc config bottom_padding 0
+bspc config top_padding 0
+
+# launch polybar
+bash "$DIR"/themes/polybar.sh

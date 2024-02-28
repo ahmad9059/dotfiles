@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+# bspwm directory
+DIR="$HOME/.config/bspwm"
+
+# rofi sudo askpass helper
+export SUDO_ASKPASS="$DIR"/scripts/rofi_askpass
+
+# execute the application
+sudo -A $1

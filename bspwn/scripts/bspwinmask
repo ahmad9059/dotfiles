@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+masked=$(bspc query -N -n .hidden -d focused)
+
+if [ -z "$masked" ]; then
+	bspc node focused -g hidden=on
+else
+	bspc node "$masked" -g hidden=off
+fi
