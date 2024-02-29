@@ -2,6 +2,16 @@
 
 This repository contains my personal configuration files for various components of my Arch Linux setup, offering insights into customization options and workflow enhancements.
 
+## Preview
+<div style="display: flex;">
+    <img src="img/1.webp" style="width: 400px; margin-right: 10px;">
+    <img src="img/2.webp" style="width: 400px; margin-right: 10px;">
+    <img src="img/3.webp" style="width: 400px; margin-right: 10px;">
+    <img src="img/4.webp" style="width: 400px; margin-right: 10px;">
+    <img src="img/5.webp" style="width: 400px; margin-right: 10px;">
+    <img src="img/6.webp" style="width: 400px;">
+</div>
+
 ## Included Configurations
 
 ### 1. PicomConfig
