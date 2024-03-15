@@ -34,13 +34,13 @@ super + {b,m,n,r,s,t,w,x}
 
 # Launch Apps
 super + shift + {f,w,e}
-	{thunar,google-chrome-stable,geany}
+	{thunar,thorium-browser,geany}
 
 # Terminal Apps
 # ctrl + alt + {v,n,h}
 #	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e {nvim,ranger,htop}
 super + shift + {n,r,t}
-	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e {nvim,ranger,htop}
+	kitty -e {nvim,ranger,htop}
 
 # Color Picker
 super + p

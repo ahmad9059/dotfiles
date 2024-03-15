@@ -4,7 +4,7 @@
 
 [font]
 ## Font size in points.
-size = 10
+size = 12
 
 ## When true, Alacritty will use a custom built-in font for box drawing characters and powerline symbols.
 builtin_box_drawing = true

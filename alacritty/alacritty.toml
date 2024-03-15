@@ -55,8 +55,8 @@ action = "Togglemaximized"
 
 ## Number of lines/columns (not pixels) in the terminal.
 [window.dimensions]
-columns = 121
-lines = 31
+columns = 110
+lines = 26
 
 ## Blank space added around the window in pixels.
 [window.padding]
