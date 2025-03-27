@@ -220,7 +220,7 @@
     "interval": 1,
     "format": " {:%I:%M %p}", // AM PM format
     //"format": " {:%H:%M:%S}",
-    "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    "format-alt": " {:%I:%M %p   %Y, %d %B, %A}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "year",
@@ -637,9 +637,9 @@
 },
   
 "clock#vertical": {
-	"format": "{:\n%H\n%M\n%S\n\n \n%d\n%m\n%y}",
+	//"format": "{:\n%H\n%M\n%S\n\n \n%d\n%m\n%y}",
 	"interval": 1,
-     //"format": "{:\n%I\n%M\n%p\n\n \n%d\n%m\n%y}",
+     "format": "{:\n%I\n%M\n%p\n\n \n%d\n%m\n%y}",
      "tooltip": true,
      "tooltip-format": "{calendar}",
      "calendar": {

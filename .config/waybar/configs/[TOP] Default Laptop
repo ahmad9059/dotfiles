@@ -17,7 +17,7 @@
 "margin-right": 8,
 
 "modules-left": [
-	"hyprland/workspaces#4",
+	"hyprland/workspaces#1-",
 	"custom/separator#dot-line",
 	"cpu",
 	"custom/separator#dot-line", 

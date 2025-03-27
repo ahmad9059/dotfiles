@@ -1,6 +1,5 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-
 # Not my own work. This was added through Github PR. Credit to original author
 
 #----- Optimized bars animation without much CPU usage increase --------
@@ -19,6 +18,10 @@ done
 config_file="/tmp/bar_cava_config"
 cat >"$config_file" <<EOF
 [general]
+# Older systems show significant CPU use with default framerate
+# Setting maximum framerate to 30  
+# You can increase the value if you wish
+framerate = 30
 bars = 10
 
 [input]

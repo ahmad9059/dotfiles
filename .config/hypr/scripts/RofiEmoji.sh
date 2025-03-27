@@ -1,12 +1,24 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Rofi Emoticons. Not my own. Cant remember the source
 
-sed '1,/^# # DATA # #$/d' $0 | 
-rofi -i -dmenu -config ~/.config/rofi/config-emoji.rasi| 
-cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+# Variables
+rofi_theme="$HOME/.config/rofi/config-emoji.rasi"
+msg='** note ** 👀 Click or Return to choose || Ctrl V to Paste'
+
+# Check if rofi is already running
+if pidof rofi > /dev/null; then
+  pkill rofi
+fi
+
+sed '1,/^# # DATA # #$/d' "$0" | \
+rofi -i -dmenu -mesg "$msg" -config $rofi_theme | \
+awk '{print $1}' | \
+head -n 1 | \
+tr -d '\n' | \
+wl-copy
 
 exit
+
 # # DATA # #
 😀 grinning face face smile happy joy :D grin
 😃 grinning face with big eyes face happy joy haha :D :) smile funny
@@ -1180,8 +1192,8 @@ exit
 🖍️ crayon drawing creativity
 📝 memo write documents stationery pencil paper writing legal exam quiz test study compose
 💼 briefcase business documents work law legal job career
-📁 file folder documents business office
-📂 open file folder documents load
+📁 file directory documents business office
+📂 open file directory documents load
 🗂️ card index dividers organizing business stationery
 📅 calendar calendar schedule
 📆 tear off calendar schedule date planning
@@ -1392,7 +1404,7 @@ exit
 ©️ copyright ip license circle law legal
 ®️ registered alphabet circle
 ™️ trade mark trademark brand law legal
-#️⃣ keycap  symbol blue-square twitter
+ycap  symbol blue-square twitter
 *️⃣ keycap  star keycap
 0️⃣ keycap 0 0 numbers blue-square null
 1️⃣ keycap 1 blue-square numbers 1
@@ -1857,4 +1869,3 @@ exit
 🫧 bubbles soap fun carbonation sparkling
 🪪 identification card document
 🟰 heavy equals sign math
-( ͡° ͜ʖ ͡°) lenny face that face

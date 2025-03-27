@@ -76,7 +76,7 @@ inputbar {
 
 /* ---- Entry input ---- */
 entry {
-    font: "JetBrains Mono 12";
+    font: "JetBrains Mono 13";
     enabled:                     true;
     expand:                      false;
     width:                       100%;
@@ -85,7 +85,7 @@ entry {
     background-color:            #000000;
     text-color:                  #cdd6f4;
     cursor:                      text;
-    placeholder:                 " Search "; // << Search symbol
+    placeholder:                 " 🍑 Search "; // << Search symbol
     placeholder-color:           inherit;
 }
 

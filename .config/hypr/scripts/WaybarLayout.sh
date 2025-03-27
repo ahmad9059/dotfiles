@@ -2,7 +2,6 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Script for waybar layout or configs
 
-set -euo pipefail
 IFS=$'\n\t'
 
 # Define directories
@@ -10,13 +9,14 @@ waybar_layouts="$HOME/.config/waybar/configs"
 waybar_config="$HOME/.config/waybar/config"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 rofi_config="$HOME/.config/rofi/config-waybar-layout.rasi"
+msg=' 🎌 NOTE: Some waybar LAYOUT NOT fully compatible with some STYLES'
 
 # Function to display menu options
 menu() {
     options=()
     while IFS= read -r file; do
         options+=("$(basename "$file")")
-    done < <(find "$waybar_layouts" -maxdepth 1 -type f -exec basename {} \; | sort)
+    done < <(find -L "$waybar_layouts" -maxdepth 1 -type f -exec basename {} \; | sort )
 
     printf '%s\n' "${options[@]}"
 }
@@ -24,21 +24,12 @@ menu() {
 # Apply selected configuration
 apply_config() {
     ln -sf "$waybar_layouts/$1" "$waybar_config"
-    restart_waybar_if_needed
-}
-
-# Restart Waybar
-restart_waybar_if_needed() {
-    if pgrep -x "waybar" >/dev/null; then
-        pkill waybar
-        sleep 0.1  # Delay for Waybar to completely terminate
-    fi
     "${SCRIPTSDIR}/Refresh.sh" &
 }
 
 # Main function
 main() {
-    choice=$(menu | rofi -i -dmenu -config "$rofi_config")
+    choice=$(menu | rofi -i -dmenu -config "$rofi_config" -mesg "$msg")
 
     if [[ -z "$choice" ]]; then
         echo "No option selected. Exiting."
@@ -58,7 +49,7 @@ main() {
 # Kill Rofi if already running before execution
 if pgrep -x "rofi" >/dev/null; then
     pkill rofi
-    exit 0
+    #exit 0
 fi
 
 main
