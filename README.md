@@ -203,7 +203,7 @@ After the installation, you can start using the configured applications. Open yo
 Install of these Packages using `pacman`
 
 ```bash
-sudo pacman -S  foot alacritty lsd bat tmux neovim tldr obs-studio vlc yazi
+sudo pacman -S foot alacritty lsd bat tmux neovim tldr obs-studio vlc yazi luacheck luarocks hyprpicker firefox obsidian github-cli discord spotify-launcher noto-fonts-emoji  ttf-noto-nerd noto-fonts
 ```
 
 #### Packages `yay`(Optional):
@@ -211,7 +211,7 @@ sudo pacman -S  foot alacritty lsd bat tmux neovim tldr obs-studio vlc yazi
 Install of these Packages Using `yay`. Remember they are according to my preference like I have install vscode, telegram etc.
 
 ```bash
-yay -S thorium-browser-bin visual-studio-code-bin 64gram-desktop-bin apple-fonts fum
+yay -S thorium-browser-bin visual-studio-code-bin 64gram-desktop-bin apple-fonts fum foliate whatsapp-for-linux  ttf-sil-scheherazade ttf-kacst ttf-urdufont azuredatastudio-bin stacer-bin localsend-bin wps-office-bin
 ```
 
 
