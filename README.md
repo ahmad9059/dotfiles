@@ -6,7 +6,7 @@
 ## Review of Arch (btw)
 
 ![1](review/0.webp)
-![10](review/01.png)
+![10](review/01.webp)
 
 | ![2](review/2.png) | ![3](review/3.png) |
 |---|---|
