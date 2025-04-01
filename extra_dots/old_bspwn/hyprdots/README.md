@@ -1,2 +1,0 @@
-# hyprdots
-# hyprdots

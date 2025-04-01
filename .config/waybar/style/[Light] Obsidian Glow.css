@@ -8,7 +8,6 @@ min-height: 0;
 /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 font-size: 97%;
 font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-padding: 1px;
 }
 
 window#waybar {
@@ -18,17 +17,6 @@ window#waybar {
 
 window#waybar.hidden {
 	opacity: 0.7;
-}
-
-window#waybar.empty {
-	background-color: transparent;
-}
-
-window#waybar.empty #window {
-	padding: 0px;
-	border: 0px;
-	/*  background-color: rgba(66,66,66,0.5); */ /* transparent */
-	background-color: transparent;
 }
 
 tooltip {
@@ -42,6 +30,7 @@ tooltip label {
 	padding-left: 2px;
 }
 
+#taskbar button,
 #workspaces button {
 	color: #585b70;
     box-shadow: none;
@@ -55,6 +44,7 @@ tooltip label {
 }
 
 #workspaces button.active {
+	background-color: dimgrey;
 	color: #000000;
     border-radius: 15px 15px 15px 15px;
     padding-left: 8px;
@@ -94,6 +84,7 @@ tooltip label {
 #mode,
 #mpris,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #pulseaudio-slider,
 #taskbar,
@@ -103,16 +94,27 @@ tooltip label {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -127,8 +129,8 @@ tooltip label {
 #custom-weather.sunnyDay {
 	color: #000000;
 	border-radius: 8px;
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	padding-right: 6px;
 	padding-left: 6px;
 }
@@ -141,6 +143,12 @@ tooltip label {
 	to {
 		color: #000000;
 	}
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
 }
 
 #taskbar button.active {
@@ -162,12 +170,13 @@ tooltip label {
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -176,38 +185,18 @@ tooltip label {
 	border: none;
 	box-shadow: none;
 }
-	
+
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;  
 	min-height: 5px; 
 	border-radius: 5px;
 	background-color: grey;
 }
-	
+
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px; 
-	border-radius: 5px;
-	background-color: #ba5663;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-	
-#backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: grey;
-}
-	
-#backlight-slider highlight {
-	min-width: 10px; 
 	border-radius: 5px;
 	background-color: #ba5663;
 }

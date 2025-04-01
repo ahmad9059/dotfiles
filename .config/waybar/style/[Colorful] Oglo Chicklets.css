@@ -1,5 +1,8 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Oglo Chicklets */
+
 * {
-    font-family: JetBrainsMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 97%;
     font-weight: bold;
 }
@@ -80,6 +83,7 @@ button.active {
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
 #custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
@@ -88,8 +92,11 @@ button.active {
 #custom-hint,
 #custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
 #custom-settings,
 #custom-spotify,
 #custom-swaync,
@@ -107,6 +114,8 @@ button.active {
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay{
     color: #ffffff;
+    padding-top: 2px;
+    padding-bottom: 2px;
     border-radius: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -181,6 +190,11 @@ button.active {
     background-color: #ee606a;
     color: #2d353b;
     border-bottom: 8px solid #ca4853;
+    animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 label:focus {

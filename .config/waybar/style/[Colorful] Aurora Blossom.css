@@ -2,24 +2,22 @@
 /* Aurora Blossom */
 
 * {
-font-family: "JetBrainsMono Nerd Font";
-font-weight: bold;
-/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-font-size: 97%;
-font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-padding: 1px;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+	font-size: 97%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar {
 	background: transparent;
 }
 
-window#waybar.empty {
-	background-color: transparent;
-}
-
+window#waybar.empty ,
 window#waybar.empty #window {
 	background-color: transparent;
+    padding: 0px;
+    border: 0px;
 }
 
 tooltip {
@@ -32,7 +30,10 @@ tooltip {
 tooltip label{
 	color: black;
 }
+
 /*-----module groups----*/
+.modules-left,
+.modules-center,
 .modules-right {
     background-image: linear-gradient(45deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
 	color: black;
@@ -42,25 +43,10 @@ tooltip label{
 	padding-right: 4px;
 	padding-left: 4px;
 }
-.modules-center {
-    background-image: linear-gradient(0deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
-	color: black;
-	border-radius: 6px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
-.modules-left {
-    background-image: linear-gradient(225deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
-	color: black;
-	border-radius: 6px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
+
 /*-----modules indv----*/
+
+#taskbar button,
 #workspaces button {
 	color: black;
     box-shadow: none;
@@ -72,6 +58,8 @@ tooltip label{
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
+
+#taskbar button:hover,
 #workspaces button:hover {
 	color: grey;
 	background-color: rgba(0,153,153,0.2);
@@ -81,6 +69,7 @@ tooltip label{
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+#taskbar button.active,
 #workspaces button.active {
 	color: grey;
     padding-left: 8px;
@@ -106,6 +95,7 @@ tooltip label{
 #mode,
 #mpris,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #pulseaudio-slider,
 #taskbar button,
@@ -116,15 +106,27 @@ tooltip label{
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -137,18 +139,20 @@ tooltip label{
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 5px;
-	padding-left: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 6px;
+	padding-left: 6px;
 }
 #custom-power {
 	padding: 1px 3px;
 }
 /*-----Indicators----*/
+#custom-hypridle.notactive,
 #idle_inhibitor.activated {
-	color: #2dcc36;
+	color: #39FF14;
 }
+
 #pulseaudio.muted {
 	color: #cc3436;
 }
@@ -165,30 +169,13 @@ tooltip label{
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
-#taskbar button.active {
-	color: black;
-	background-color: #7f849c;
-    padding-left: 6px;
-    padding-right: 6px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button,
-#taskbar button:hover {
-	color:	black;
-    padding-left: 2px;
-    padding-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -198,6 +185,7 @@ tooltip label{
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	background-color: #7f849c;
 	min-width: 80px;
@@ -205,27 +193,7 @@ tooltip label{
 	border-radius: 5px;
 }
 
-#pulseaudio-slider highlight {
-	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	background-color: #7f849c;
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-}
-
+#pulseaudio-slider highlight,
 #backlight-slider highlight {
 	min-width: 10px;
 	border-radius: 5px;

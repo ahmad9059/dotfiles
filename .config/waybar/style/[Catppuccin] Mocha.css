@@ -83,15 +83,10 @@ window#waybar.empty #window {
 	padding-right: 4px;
 	padding-left: 4px;
 	border-radius: 10px;
-
 } 
 
 .modules-left, .modules-right {
   	border: 1px solid @blue;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
 } 
 
 #backlight,
@@ -118,15 +113,27 @@ window#waybar.empty #window {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
-#custom-hint,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -144,9 +151,10 @@ window#waybar.empty #window {
 	padding-right: 6px;
 	padding-left: 6px;
 }
-
-#idle_inhibitor {
-  color: @blue;
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
 }
 
 #bluetooth,
@@ -167,11 +175,11 @@ window#waybar.empty #window {
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @theme_text_color;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
   box-shadow: inset 0 -3px transparent;
 }
 
@@ -266,6 +274,8 @@ window#waybar.empty #window {
   background-color: @surface0;
   color: @text;
 }
+
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -275,33 +285,15 @@ window#waybar.empty #window {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
 	border-radius: 5px;
 }

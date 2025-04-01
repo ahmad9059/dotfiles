@@ -2,7 +2,13 @@
 // ### TOP Simple ## //
 
 {
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top", 
 "position": "top", 
 //"mode": "dock",
@@ -14,7 +20,7 @@
 "margin-top": 2,
 
 "modules-left": [	
-	"idle_inhibitor",
+	"idle_inhibitor", 
 	"group/mobo_drawer",
 	"hyprland/workspaces#rw",
 	"tray",
@@ -23,7 +29,7 @@
     
 "modules-center": [
 	"clock#2",
-	"custom/swaync",
+	"group/notify",
 	],
     
 "modules-right": [

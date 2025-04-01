@@ -140,6 +140,31 @@
 		"default": "",
 	},
 },
+// numbers styles
+"hyprland/workspaces#numbers": {
+	"active-only": false,
+	"all-outputs": true,
+	"format": "{icon}",
+	"show-special": false,
+	"on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 5
+	},
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "10",
+	},
+},
 // NUMBERS and ICONS style with window rewrite 
 "hyprland/workspaces#rw": {
 	"disable-scroll": true,
@@ -150,41 +175,93 @@
 	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"persistent-workspaces": {
+		"*": 5
+	  },
 	"format": "{icon} {windows}",
 	"format-window-separator": " ",
 	"window-rewrite-default": " ",
-	"window-rewrite": {
-		"title<.*youtube.*>": " ",
+	"window-rewrite": {		
 		"title<.*amazon.*>": " ",
 		"title<.*reddit.*>": " ",
-		"title<.*Picture-in-Picture.*>": " ",
-		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser>": " ",
+
+		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
+		"class<zen>": "󰰷 ",
+		"class<waterfox|waterfox-bin>": " ",
+		"class<microsoft-edge>": " ",
+		"class<Chromium|Thorium|[Cc]hrome>": " ",
+		"class<brave-browser>": "🦁 ",
+		"class<tor browser>": " ",
+		"class<firefox-developer-edition>": "🦊 ",
+
 		"class<kitty|konsole>": " ",
 		"class<kitty-dropterm>": " ",
-		"class<Chromium|Thorium>": " ",
-		"class<org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
-		"class<[Ss]potify>": " ",
-		"class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
-		"class<thunar>": "󰝰 ",
+		"class<com.mitchellh.ghostty>": " ",
+		"class<org.wezfurlong.wezterm>": " ",
+
 		"class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
+		"class<eu.betterbird.Betterbird>": " ",
+		"title<.*gmail.*>": "󰊫 ",
+
+		"class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
 		"class<discord|[Ww]ebcord|Vesktop>": " ",
+		"title<.*whatsapp.*>": " ",
+    "title<.*zapzap.*>": " ",
+		"title<.*messenger.*>": " ",
+		"title<.*facebook.*>": " ",
+		"title<.*reddit.*>": " ",
+
+
+		"title<.*ChatGPT.*>": "󰚩 ",
+		"title<.*deepseek.*>": "󰚩 ",
+		"title<.*qwen.*>": "󰚩 ",
 		"class<subl>": "󰅳 ",
+		"class<slack>": " ",
+
 		"class<mpv>": " ",
 		"class<celluloid|Zoom>": " ",
 		"class<Cider>": "󰎆 ",
+		"title<.*Picture-in-Picture.*>": " ",
+		"title<.*youtube.*>": " ",
+		"class<vlc>": "󰕼 ",
+		"title<.*cmus.*>": " ",
+		"class<[Ss]potify>": " ",
+
 		"class<virt-manager>": " ",
+		"class<.virt-manager-wrapped>": " ",
+		"class<virtualbox manager>": "💽 ",
+		"title<virtualbox>": "💽 ",
+		"class<remmina>": "🖥️ ",
+
+		"class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
+    "class<dev.zed.Zed>": "󰵁",
 		"class<codeblocks>": "󰅩 ",
+		"title<.*github.*>": " ",
 		"class<mousepad>": " ",
 		"class<libreoffice-writer>": " ",
 		"class<libreoffice-startcenter>": "󰏆 ",
-		"class<com.obsproject.Studio>": " ",
+		"class<libreoffice-calc>": " ",
+		"title<.*nvim ~.*>": " ",
+		"title<.*vim.*>": " ",
+		"title<.*nvim.*>": " ",
+		"title<.*figma.*>": " ",
+		"title<.*jira.*>": " ",
+		"class<jetbrains-idea>": " ",
+
+		"class<obs|com.obsproject.Studio>": " ",
+
 		"class<polkit-gnome-authentication-agent-1>": "󰒃 ",
 		"class<nwg-look>": " ",
-		"class<zen-alpha>": "󰰷 ", //Zen Browser
-		"class<waterfox|waterfox-bin>": " ",
-		"class<microsoft-edge>": " ",
-		"class<vlc>": "󰕼 "
-		}   
+		"class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫 ",
+		"class<steam>": " ",
+		"class<thunar|nemo>": "󰝰 ",	
+    "class<Gparted>":"",
+		"class<gimp>": " ",
+		"class<emulator>": "📱 ",
+		"class<android-studio>": " ",
+   	"class<org.pipewire.Helvum>": "󰓃",
+    "class<localsend>":"",
+    "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
+		}
 	},
-
 }

@@ -20,16 +20,9 @@ window#waybar {
 	border-color: @color12; 
 }
 
-window#waybar.empty,
-window#waybar.empty #window {
-    background-color: transparent;
-    padding: 0px;
-    border: 0px;
-}
-
 #workspaces {
 	background: transparent;
-	padding: 0px 1px;
+	padding: 2px;
 	border-radius: 15px;
 	border: 0px;
 	font-style: normal;
@@ -97,15 +90,27 @@ tooltip {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
-#custom-hint,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -155,11 +160,11 @@ tooltip {
 #battery.critical:not(.charging) {
     background: #bf616a;
     color: #eceff4;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #cpu {
@@ -205,8 +210,15 @@ tooltip {
 }
 
 #keyboard-state,
+#custom-hypridle,
 #idle_inhibitor {
    color: #ebcb8b;
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
 }
 
 #tray {
@@ -231,13 +243,14 @@ tooltip {
 }
 
 #custom-cava_mviz{
-	color: @color2;
+	color: @color11;
 } 
   
 #custom-weather{
 	color:#d08770;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -247,35 +260,15 @@ tooltip {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
 	border-radius: 5px;
 }
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
-	border-radius: 5px;
-}
-
-

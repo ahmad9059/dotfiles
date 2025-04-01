@@ -3,7 +3,13 @@
 // ### Minimal -SHORT ### //
 
 {
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top",
 "position": "top",
 "width": 1050,
@@ -21,7 +27,7 @@
 "modules-right": [
 	"custom/menu", 
 	"tray",
-	"custom/swaync",
+	"group/notify",
 	"mpris", 
 	"network", 
 	"bluetooth", 

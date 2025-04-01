@@ -1,7 +1,6 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Simple Style */
 
-
 @define-color background #1d2021;
 @define-color foreground #ebdbb2;
 @define-color dim        #928374;
@@ -10,11 +9,13 @@
 @define-color green      #b8bb26;
 
 * {
-  background: @background;
-  border: none;
-  border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 97%;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	min-height: 0;	
+	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+	font-size: 97%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+
 }
 
 window#waybar {
@@ -31,16 +32,16 @@ window#waybar {
 
 #taskbar button.active,
 #workspaces button.active {
-  border-bottom: 1px solid @green;
+  border-bottom: 1px solid green;
 }
 
 #taskbar button.urgent,
 #workspaces button.urgent {
-  border-bottom: 2px solid @red;
+  border-bottom: 2px solid red;
 }
 
 #submap {
-  border-bottom: 1px solid @red;
+  border-bottom: 1px solid red;
 }
 
 #backlight,
@@ -56,6 +57,7 @@ window#waybar {
 #mode,
 #mpris,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #pulseaudio-slider,
 #taskbar button,
@@ -66,15 +68,27 @@ window#waybar {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -87,8 +101,8 @@ window#waybar {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
+  padding: 6px;
   color: @foreground;
-  padding: 3px 6px 3px 6px;
 }
 
 #battery.warning,
@@ -96,7 +110,30 @@ window#waybar {
 #memory.warning,
 #cpu.warning {
   border-top: 3px solid @background;
-  border-bottom: 3px solid @yellow;
+  border-bottom: 3px solid yellow;
+}
+
+@keyframes blink {
+  to {
+    color: @background;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: white;
+  animation-name: blink;
+  animation-duration: 3.0s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 -3px transparent;
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
 }
 
 #battery.critical,
@@ -104,14 +141,19 @@ window#waybar {
 #memory.critical,
 #cpu.critical {
   border-top: 3px solid @background;
-  border-bottom: 3px solid @red;
+  border-bottom: 3px solid red;
+}
+
+#temperature.critical {
+	background-color: red;
 }
 
 #battery.charging {
   border-top: 3px solid @background;
-  border-bottom: 3px solid @green;
+  border-bottom: 3px solid green;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -120,38 +162,18 @@ window#waybar {
 	border: none;
 	box-shadow: none;
 }
-	
+
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;  
 	min-height: 5px; 
 	border-radius: 5px;
 	background-color: @dim;
 }
-	
+
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px; 
-	border-radius: 5px;
-	background-color: @green;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-	
-#backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: @dim;
-}
-	
-#backlight-slider highlight {
-	min-width: 10px; 
 	border-radius: 5px;
 	background-color: @green;
 }

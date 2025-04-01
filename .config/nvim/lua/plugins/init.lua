@@ -1,62 +1,61 @@
 return {
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("configs.treesitter")
-        end,
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    lazy = false, -- force immediate loading
+    -- Still restrict commands if needed by filetype:
+    ft = { "markdown" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      -- You can use either mini.nvim or nvim-web-devicons:
+      "nvim-tree/nvim-web-devicons",
     },
+    config = function()
+      require("render-markdown").setup {
+        file_types = { "markdown" }, -- ensure this matches your buffers
+        log_level = "debug", -- for more detailed logs
+      }
+    end,
+  },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- Mapping tab is already used by NvChad
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_tab_fallback = ""
+      -- The mapping is set to other key, see custom/lua/mappings
+      -- or run <leader>ch to see copilot mapping section
+    end,
+  },
+  {
+    "mattn/emmet-vim",
+    lazy = false, -- Ensures Emmet loads on start
+  },
 
-    {
-        "neovim/nvim-lspconfig",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("nvchad.configs.lspconfig").defaults()
-            require("configs.lspconfig")
-        end,
-    },
+  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
 
-    {
-        "williamboman/mason-lspconfig.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-lspconfig" },
-        config = function()
-            require("configs.mason-lspconfig")
-        end,
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+      },
     },
-
-    {
-        "mfussenegger/nvim-lint",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("configs.lint")
-        end,
-    },
-
-    {
-        "rshkarin/mason-nvim-lint",
-        event = "VeryLazy",
-        dependencies = { "nvim-lint" },
-        config = function()
-            require("configs.mason-lint")
-        end,
-    },
-
-    {
-        "stevearc/conform.nvim",
-        event = "BufWritePre",
-        config = function()
-            require("configs.conform")
-        end,
-    },
-
-    {
-        "zapling/mason-conform.nvim",
-        event = "VeryLazy",
-        dependencies = { "conform.nvim" },
-        config = function()
-            require("configs.mason-conform")
-        end,
-    },
+  },
 }

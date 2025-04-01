@@ -60,11 +60,6 @@ window#waybar.hidden {
   background-color: @bg0;
 }
 
-window#waybar.empty,
-window#waybar.empty #window {
-  background: none;
-}
-
 .modules-left button:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -86,6 +81,8 @@ window#waybar.empty #window {
 #custom-swaync {
   color: @yellow;
 }
+
+#taskbar button,
 #workspaces button {
   padding: 0px 5px;
   background-color: @orange;
@@ -177,8 +174,8 @@ window#waybar.empty #window {
   background-color: @red;
   color: @fg;
   animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-duration: 3.0s;
+  animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -241,48 +238,29 @@ window#waybar.empty #window {
   background-color: @aqua;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-	
-#pulseaudio-slider trough {
-	min-width: 80px;  
-	min-height: 5px; 
-	border-radius: 5px;
-	background-color: #22252a;
-}
-	
-#pulseaudio-slider highlight {
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: #ba5663;
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
 
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 5px;
+    border-radius: 5px;
+    background-color: #22252a;
 }
-	
-#backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: #22252a;
-}
-	
-#backlight-slider highlight {
-	min-width: 10px; 
-	border-radius: 5px;
-	background-color: #ba5663;
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 5px;
+    background-color: #ba5663;
 }
 
 #backlight,
@@ -311,6 +289,7 @@ window#waybar.empty #window {
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
 #custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
@@ -319,8 +298,11 @@ window#waybar.empty #window {
 #custom-hint,
 #custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
 #custom-settings,
 #custom-spotify,
 #custom-swaync,

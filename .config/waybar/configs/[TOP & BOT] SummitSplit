@@ -3,7 +3,13 @@
 // ### DUAL TOP and BOTTOM ### //
 
 [{
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top",
 //"mode": "dock",
 "exclusive": true,
@@ -24,8 +30,8 @@
 	],
   
 "modules-center": [
-	"idle_inhibitor", 
-	"hyprland/workspaces#4", 
+	"idle_inhibitor",
+	"clock",  
 	"custom/light_dark",
 	], 
 
@@ -35,14 +41,20 @@
 	"backlight",
 	"bluetooth",
 	"network",
-	//"custom/updater",
+	"custom/updater",
 	"custom/cycle_wall",
 	"custom/lock", 
 	],
 },
 
 {
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top",
 //"mode": "dock",
 "exclusive": true,
@@ -54,6 +66,7 @@
 "height": 0,
 "margin-left": 8,
 "margin-right": 8,
+//"gtk-layer-shell": true,
 //"margin-bottom": 0,
 
 "modules-left": [
@@ -62,19 +75,18 @@
 	 ],
 
 "modules-center": [
-	"clock", 
+	"hyprland/workspaces#rw", 
 	],
 
 "modules-right": [
 	"hyprland/window",
 	"tray",
-	"custom/swaync",
+	"group/notify",
 	"mpris",
 	"keyboard-state",
 	"pulseaudio",
 	//"wireplumber", 
 	"pulseaudio#microphone",	  
 	"custom/power",
-	],
-
-}]
+	],  
+}],

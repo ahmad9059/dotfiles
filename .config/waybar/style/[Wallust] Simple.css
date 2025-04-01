@@ -25,35 +25,16 @@ window#waybar.empty #window {
 }
 
 tooltip {
-	color: @color15;
-	background: @color0;
-	opacity: 0.8;
+	color: @color13;
+	background: @color10;
+	opacity: 1.0;
 	border-radius: 10px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: @color15;
 }
 
 /*-----module groups----*/
+.modules-left,
+.modules-center,
 .modules-right {
-	background-color: @color0;
-	border: 0.5px solid @color15;
-	border-radius: 10px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
-.modules-center {
-	background-color: @color0;
-	border: 0.5px solid @color15;
-	border-radius: 10px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
-.modules-left {
 	background-color: @color0;
 	border: 0.5px solid @color15;
 	border-radius: 10px;
@@ -64,6 +45,7 @@ tooltip {
 }
 /*-----modules indv----*/
 
+#taskbar button,
 #workspaces button {
     color: @color2;
     box-shadow: none;
@@ -76,6 +58,7 @@ tooltip {
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+#taskbar button.active,
 #workspaces button.active {
     color: @foreground;
     background-color: @color2;
@@ -94,6 +77,7 @@ tooltip {
     border-radius: 10px;
 }
 
+#taskbar button:hover,
 #workspaces button:hover {
     color: @color4;
     padding-left: 2px;
@@ -126,16 +110,27 @@ tooltip {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
-#custom-hint,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -165,9 +160,11 @@ tooltip {
 	padding: 1px 3px;
 }
 /*-----Indicators----*/
+#custom-hypridle.notactive,
 #idle_inhibitor.activated {
-	color: #2dcc36;
+	color: #39FF14;
 }
+
 #pulseaudio.muted {
 	color: #cc3436;
 }
@@ -184,31 +181,16 @@ tooltip {
     }
 }
 
-#taskbar button.active {
-	color: @foreground;
-    background-color: @color2;
-	border-radius: 30px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button:hover {
-    padding-left: 3px;
-    padding-right: 3px;
-	border-radius: 15px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
 #battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	color: #f53c3c;
+	animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -218,33 +200,15 @@ tooltip {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
 	border-radius: 5px;
 }

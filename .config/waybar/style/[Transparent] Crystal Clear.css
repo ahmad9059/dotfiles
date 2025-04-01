@@ -1,17 +1,14 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* ..........................................*/
 /* .......Crystal Clear....................... */
-/* ......................................... */
 /* --- 👍 designed by https://github.com/Krautt  👍 --- */
 
 *{
-	font-family: "JetBrains Mono Nerd Font";
+	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;	
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 	font-size: 97%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-	padding: 1px;
 }
 	
 window#waybar {
@@ -23,38 +20,15 @@ window#waybar {
 window#waybar.hidden {
 	opacity: 0.5;
 }
-window#waybar.empty {
-	background-color: transparent;
-}
-	
+
+window#waybar.empty	
 window#waybar.empty #window {
    padding: 0px;
    border: 0px;
    background-color: transparent;
 }
-	   
-tooltip {
-	background: #1e1e2e;
-	border-radius: 10px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #11111b;
-	color: #cba6f7;
-}
 
-/*-----module groups----*/
-.modules-right {
-	
-}
-
-.modules-center {
-		
-}
-
-.modules-left {
-	   
-}
-
+#taskbar button,	   
 #workspaces button {
 	color: #6E6A86;
    	box-shadow: none;
@@ -106,6 +80,7 @@ tooltip {
 #mode,
 #mpris,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #taskbar,
 #temperature,
@@ -113,16 +88,28 @@ tooltip {
 #window,
 #wireplumber,
 #workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
-#custom-swaync,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
 #custom-spotify,
+#custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -135,8 +122,8 @@ tooltip {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	padding-right: 6px;
 	padding-left: 6px;
 }
@@ -150,6 +137,13 @@ tooltip {
 	color: #000000;
 	   }
 }
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
+}
+
 #taskbar button:hover {
     padding-left: 3px;
     padding-right: 3px;
@@ -168,12 +162,13 @@ tooltip {
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -183,6 +178,7 @@ tooltip {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;  
 	min-height: 10px; 
@@ -190,30 +186,9 @@ tooltip {
 	background-color: black;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px; 
-	border-radius: 5px;
-	background-color: wheat;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px;
-	border-radius: 5px;
-	background-color: black;
-}
-
-#backlight-slider highlight {
-	min-width: 10px; 
 	border-radius: 5px;
 	background-color: wheat;
 }

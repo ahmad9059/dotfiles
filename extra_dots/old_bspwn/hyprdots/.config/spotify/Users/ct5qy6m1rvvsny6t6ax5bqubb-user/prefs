@@ -1,2 +1,0 @@
-connect.dial_devices="[{\"address\":\"192.168.1.10\",\"app_state\":\"MISSING\",\"created_timestamp\":1712048990,\"device_id\":\"00000000-0000-0000-0000-a062fb1f970b\",\"dial_location_url\":\"http://192.168.1.10:56790/dd.xml\",\"display_name\":\"Mediatek_MTXXXX\",\"last_seen\":1712048990,\"manufacturer\":\"MediaTek Inc.\",\"model_name\":\"Mediatek_MT5597\",\"product_cap\":\"\",\"public_ip\":\"\",\"wol\":{\"all_interfaces\":false,\"delay_ms\":50,\"mac\":\"303235f47c96\",\"port\":9,\"retries\":1200}}]"
-audio.play_bitrate_non_metered_migrated=true

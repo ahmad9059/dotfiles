@@ -3,7 +3,13 @@
 // ### TOP and LEFT PANEL ## //
 
 [{
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top",
 //"mode": "dock",
 "width": 1200,
@@ -41,7 +47,14 @@
 },
 
 {
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  "$HOME/.config/waybar/ModulesVertical",
+  ],
 "layer": "top",
 "position": "left",
 "height": 650,
@@ -64,7 +77,7 @@
     
 "modules-right": [
 	"mpris",
-	"custom/swaync",
+	"group/notify",
     "tray",
     "custom/light_dark",
     ],

@@ -3,7 +3,13 @@
 // ### Minimal - Long ### //
 
 {
-"include": "~/.config/waybar/modules",
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
 "layer": "top",
 //"mode": "dock",
 "exclusive": true,
@@ -19,17 +25,18 @@
 "modules-left": [
 	"custom/menu",
 	"custom/separator#blank_2", 
-	"hyprland/workspaces#4",
+	"hyprland/workspaces#pacman",
 	"custom/separator#blank_2",
 	"mpris",
-	"custom/swaync",
+	"group/notify",
 	"tray",
 	],
 "modules-center": [
 	"clock",
+	"idle_inhibitor",
 	],
 "modules-right": [
-	"group/motherboard",
+	"group/mobo_drawer",
 	"custom/separator#blank_2",
 	"group/laptop",
 	"custom/separator#blank_2",
