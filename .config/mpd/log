@@ -1,0 +1,1044 @@
+2025-04-01T13:09:50 event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+2025-04-01T13:09:50 update: spawned thread for update job id 1
+2025-04-01T13:09:50 state_file: Loading state file /home/ahmad/.config/mpd/state
+2025-04-01T13:09:50 update: starting
+2025-04-01T13:09:50 exception: Failed to open "/home/ahmad/.config/mpd/state": No such file or directory
+2025-04-01T13:09:50 update: reading /Run.mp3
+2025-04-01T13:09:50 update: added /Run.mp3
+2025-04-01T13:09:50 update: reading /She Dances.mp3
+2025-04-01T13:09:50 update: added /She Dances.mp3
+2025-04-01T13:09:50 update: reading /Apocalypse.mp3
+2025-04-01T13:09:50 update: added /Apocalypse.mp3
+2025-04-01T13:09:50 update: reading /Lights Are On.mp3
+2025-04-01T13:09:50 update: added /Lights Are On.mp3
+2025-04-01T13:09:50 update: reading /Cry.mp3
+2025-04-01T13:09:50 update: added /Cry.mp3
+2025-04-01T13:09:50 update: reading /Lucky for You.mp3
+2025-04-01T13:09:50 update: added /Lucky for You.mp3
+2025-04-01T13:09:50 update: reading /With You.mp3
+2025-04-01T13:09:50 update: added /With You.mp3
+2025-04-01T13:09:50 update: reading /You Are The Reason.mp3
+2025-04-01T13:09:50 update: added /You Are The Reason.mp3
+2025-04-01T13:09:50 update: reading /Romantic Homicide.mp3
+2025-04-01T13:09:50 update: added /Romantic Homicide.mp3
+2025-04-01T13:09:50 update: reading /Change It All.mp3
+2025-04-01T13:09:50 update: added /Change It All.mp3
+2025-04-01T13:09:50 update: reading /I Make Sparks.mp3
+2025-04-01T13:09:50 update: added /I Make Sparks.mp3
+2025-04-01T13:09:50 update: reading /Euphor.mp3
+2025-04-01T13:09:50 update: added /Euphor.mp3
+2025-04-01T13:09:50 update: reading /Out of the Water.mp3
+2025-04-01T13:09:50 update: added /Out of the Water.mp3
+2025-04-01T13:09:50 update: reading /It's You.mp3
+2025-04-01T13:09:50 update: added /It's You.mp3
+2025-04-01T13:09:50 update: reading /death bed (coffee for your head).mp3
+2025-04-01T13:09:50 update: added /death bed (coffee for your head).mp3
+2025-04-01T13:09:50 update: reading /Be Slow.mp3
+2025-04-01T13:09:50 update: added /Be Slow.mp3
+2025-04-01T13:09:50 update: reading /don't let me fall.mp3
+2025-04-01T13:09:50 update: added /don't let me fall.mp3
+2025-04-01T13:09:50 update: reading /Until I Found You (with Em Beihold) - Em Beihold Version.mp3
+2025-04-01T13:09:50 update: added /Until I Found You (with Em Beihold) - Em Beihold Version.mp3
+2025-04-01T13:09:50 update: reading /Maand.mp3
+2025-04-01T13:09:50 update: added /Maand.mp3
+2025-04-01T13:09:50 update: reading /Rising Again.mp3
+2025-04-01T13:09:50 update: added /Rising Again.mp3
+2025-04-01T13:09:50 update: reading /Sweater Weather.mp3
+2025-04-01T13:09:50 update: added /Sweater Weather.mp3
+2025-04-01T13:09:50 update: reading /Perfect Life.mp3
+2025-04-01T13:09:50 update: added /Perfect Life.mp3
+2025-04-01T13:09:50 update: reading /blue.mp3
+2025-04-01T13:09:50 update: added /blue.mp3
+2025-04-01T13:09:50 update: reading /Everything Reminds Me Of You.mp3
+2025-04-01T13:09:50 update: added /Everything Reminds Me Of You.mp3
+2025-04-01T13:09:50 update: reading /Hugging You - Acoustic.mp3
+2025-04-01T13:09:50 update: added /Hugging You - Acoustic.mp3
+2025-04-01T13:09:50 update: reading /The Night We Met.mp3
+2025-04-01T13:09:50 update: added /The Night We Met.mp3
+2025-04-01T13:09:50 update: reading /Repeat Until Death.mp3
+2025-04-01T13:09:50 update: added /Repeat Until Death.mp3
+2025-04-01T13:09:50 update: reading /Breathe Again - Acoustic.mp3
+2025-04-01T13:09:50 update: added /Breathe Again - Acoustic.mp3
+2025-04-01T13:09:50 update: reading /Shut up My Moms Calling.mp3
+2025-04-01T13:09:50 update: added /Shut up My Moms Calling.mp3
+2025-04-01T13:09:50 update: reading /Sunsetz.mp3
+2025-04-01T13:09:50 update: added /Sunsetz.mp3
+2025-04-01T13:09:50 update: reading /whore.mp3
+2025-04-01T13:09:50 client: [[::1]:59580] client connected
+2025-04-01T13:09:50 client: [[::1]:59580] process command "status"
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "plchanges \"0\""
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "outputs"
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "decoders"
+2025-04-01T13:09:50 update: added /whore.mp3
+2025-04-01T13:09:50 update: reading /Nobody Cares.mp3
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "outputs"
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "outputs"
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "lsinfo \"\""
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:50 client: [[::1]:59580] process command "idle"
+2025-04-01T13:09:50 client: [[::1]:59580] command returned 1
+2025-04-01T13:09:50 update: added /Nobody Cares.mp3
+2025-04-01T13:09:50 update: reading /Music Is Free.mp3
+2025-04-01T13:09:50 update: added /Music Is Free.mp3
+2025-04-01T13:09:50 update: reading /green to blue - slowed + reverbed.mp3
+2025-04-01T13:09:50 update: added /green to blue - slowed + reverbed.mp3
+2025-04-01T13:09:50 update: reading /i am not who i was.mp3
+2025-04-01T13:09:50 update: added /i am not who i was.mp3
+2025-04-01T13:09:50 update: reading /State Lines.mp3
+2025-04-01T13:09:50 update: added /State Lines.mp3
+2025-04-01T13:09:50 update: reading /Until I Found You.mp3
+2025-04-01T13:09:50 update: added /Until I Found You.mp3
+2025-04-01T13:09:50 update: reading /wish u the best.mp3
+2025-04-01T13:09:50 update: added /wish u the best.mp3
+2025-04-01T13:09:50 update: reading /17 (slowed + reverb).mp3
+2025-04-01T13:09:50 update: added /17 (slowed + reverb).mp3
+2025-04-01T13:09:50 update: reading /Have We Met Before?.mp3
+2025-04-01T13:09:50 update: added /Have We Met Before?.mp3
+2025-04-01T13:09:50 update: reading /Sense of Home.mp3
+2025-04-01T13:09:50 update: added /Sense of Home.mp3
+2025-04-01T13:09:50 update: reading /Weather.mp3
+2025-04-01T13:09:50 update: added /Weather.mp3
+2025-04-01T13:09:50 update: reading /Swim.mp3
+2025-04-01T13:09:50 update: added /Swim.mp3
+2025-04-01T13:09:50 update: reading /Jo Tum Mere Ho.mp3
+2025-04-01T13:09:50 update: added /Jo Tum Mere Ho.mp3
+2025-04-01T13:09:50 update: reading /Those Eyes.mp3
+2025-04-01T13:09:50 update: added /Those Eyes.mp3
+2025-04-01T13:09:50 update: reading /Anchor.mp3
+2025-04-01T13:09:50 update: added /Anchor.mp3
+2025-04-01T13:09:50 update: reading /At Home.mp3
+2025-04-01T13:09:50 update: added /At Home.mp3
+2025-04-01T13:09:50 update: reading /I Can't Hate You.mp3
+2025-04-01T13:09:50 update: added /I Can't Hate You.mp3
+2025-04-01T13:09:50 update: reading /She's The One.mp3
+2025-04-01T13:09:50 update: added /She's The One.mp3
+2025-04-01T13:09:50 update: reading /Beanie.mp3
+2025-04-01T13:09:50 update: added /Beanie.mp3
+2025-04-01T13:09:50 update: reading /Sapna.mp3
+2025-04-01T13:09:50 update: added /Sapna.mp3
+2025-04-01T13:09:50 update: reading /Settle Down - Acoustic.mp3
+2025-04-01T13:09:50 update: added /Settle Down - Acoustic.mp3
+2025-04-01T13:09:50 update: reading /Christmas Quiet.mp3
+2025-04-01T13:09:50 update: added /Christmas Quiet.mp3
+2025-04-01T13:09:50 update: reading /Here With Me.mp3
+2025-04-01T13:09:50 update: added /Here With Me.mp3
+2025-04-01T13:09:50 update: reading /Good News.mp3
+2025-04-01T13:09:50 update: added /Good News.mp3
+2025-04-01T13:09:50 update: reading /Ontario.mp3
+2025-04-01T13:09:50 update: added /Ontario.mp3
+2025-04-01T13:09:50 update: reading /perfume.mp3
+2025-04-01T13:09:50 update: added /perfume.mp3
+2025-04-01T13:09:50 update: reading /Big Black Car.mp3
+2025-04-01T13:09:51 update: added /Big Black Car.mp3
+2025-04-01T13:09:51 update: reading /La Lune.mp3
+2025-04-01T13:09:51 update: added /La Lune.mp3
+2025-04-01T13:09:51 simple_db: removing empty directories from DB
+2025-04-01T13:09:51 simple_db: sorting DB
+2025-04-01T13:09:51 simple_db: writing DB
+2025-04-01T13:09:51 update: finished
+2025-04-01T13:09:51 sticker: spawned thread for cleanup job
+2025-04-01T13:09:51 sticker: begin cleanup
+2025-04-01T13:09:51 sticker: end cleanup: 0 stickers deleted
+2025-04-01T13:09:51 client: [[::1]:59580] process command "status"
+2025-04-01T13:09:51 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:51 client: [[::1]:59580] process command "lsinfo \"\""
+2025-04-01T13:09:51 client: [[::1]:59580] command returned 0
+2025-04-01T13:09:51 client: [[::1]:59580] process command "idle"
+2025-04-01T13:09:51 client: [[::1]:59580] command returned 1
+2025-04-01T13:09:57 state_file: Saving state file /home/ahmad/.config/mpd/state
+2025-04-01T13:09:57 fifo_output: Removing FIFO "/tmp/mpd.fifo"
+2025-04-01T13:16:00 player: played "Run.mp3"
+2025-04-01T13:17:59 player: played "Settle Down - Acoustic.mp3"
+2025-04-01T13:20:59 player: played "Romantic Homicide.mp3"
+2025-04-01T13:23:14 player: played "Run.mp3"
+2025-04-01T13:23:14 config: option "path" on line 17 was not recognized
+2025-04-01T13:23:14 output: Failed to play on "MPD PipeWire Output" (pulse): failed to connect the stream: Connection terminated
+2025-04-01T13:23:14 exception: Failed to open audio output
+2025-04-01T13:23:38 config: option "path" on line 17 was not recognized
+2025-04-01T13:24:15 player: played "She's The One.mp3"
+2025-04-01T13:24:31 player: played "Run.mp3"
+2025-04-01T13:24:46 player: played "She's The One.mp3"
+2025-04-01T13:25:04 config: option "path" on line 17 was not recognized
+2025-04-01T13:25:11 player: played "Maand.mp3"
+2025-04-01T13:25:11 player: played "Run.mp3"
+2025-04-01T13:25:34 config: option "path" on line 17 was not recognized
+2025-04-01T13:25:35 config: option "path" on line 17 was not recognized
+2025-04-01T13:46:55 player: played "Nobody Cares.mp3"
+2025-04-01T13:52:12 player: played "The Night We Met.mp3"
+2025-04-01T14:03:51 update: added /Anjaam.mp3
+2025-04-01T14:03:51 update: added /Broken Soul.mp3
+2025-04-01T14:03:51 update: added /Pills On My Mind.mp3
+2025-04-01T14:03:51 update: added /FALLING FOR YOU.mp3
+2025-04-01T14:03:51 update: added /Mehfuz.mp3
+2025-04-01T14:03:51 update: added /Haqeeqat.mp3
+2025-04-01T14:03:51 update: added /Tu Na Mila.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /ALFAAZ _ NIAZI 01.mp3
+2025-04-01T14:03:51 update: added /One & Only.mp3
+2025-04-01T14:03:51 update: added /Aaina.mp3
+2025-04-01T14:03:51 update: added /Love me.mp3
+2025-04-01T14:03:51 update: added /FAASLAY  NIAZI 01 Ft . AHMED (OFFICIAL AUDIO).mp3
+2025-04-01T14:03:51 update: added /Lajawab 2.mp3
+2025-04-01T14:03:51 update: added /Downers At Dusk.mp3
+2025-04-01T14:03:51 update: added /K.Y.U.mp3
+2025-04-01T14:03:51 update: added /Muntazir.mp3
+2025-04-01T14:03:51 update: added /Mera Kasoor.mp3
+2025-04-01T14:03:51 update: added /Ishq Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T14:03:51 update: added /Aram Se Jeele.mp3
+2025-04-01T14:03:51 update: added /DiL Ki Baat (SchooL LOVE Story).mp3
+2025-04-01T14:03:51 update: added /Waqt Ki Baatein.mp3
+2025-04-01T14:03:51 update: added /Heer.mp3
+2025-04-01T14:03:51 update: added /TUM MERE 2.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /Gumaan.mp3
+2025-04-01T14:03:51 update: added /Sitam.mp3
+2025-04-01T14:03:51 update: added /Haal Bura.mp3
+2025-04-01T14:03:51 update: added /Mushq.mp3
+2025-04-01T14:03:51 update: added /Ek Aashiqui.mp3
+2025-04-01T14:03:51 update: added /AWAY FROM ME (feat. Shareh & Izzchughtai).mp3
+2025-04-01T14:03:51 update: added /Namm.mp3
+2025-04-01T14:03:51 update: added /criminal - slowed + reverb.mp3
+2025-04-01T14:03:51 update: added /Pen & Pain.mp3
+2025-04-01T14:03:51 update: added /Tere Bina.mp3
+2025-04-01T14:03:51 update: added /Bewafaa.mp3
+2025-04-01T14:03:51 update: added /Naraaz.mp3
+2025-04-01T14:03:51 update: added /Epiphany.mp3
+2025-04-01T14:03:51 update: added /Chaand.mp3
+2025-04-01T14:03:51 update: added /Husn.mp3
+2025-04-01T14:03:51 update: added /Midnight.mp3
+2025-04-01T14:03:51 update: added /Raat Din.mp3
+2025-04-01T14:03:51 update: added /Tu Dikhe.mp3
+2025-04-01T14:03:51 update: added /Rok Sakta.mp3
+2025-04-01T14:03:51 update: added /Baarishein  Anuv Jain  Lo-Fi Mix  RAHUL NEXT LEVEL.mp3
+2025-04-01T14:03:51 update: added /Mera Ateet.mp3
+2025-04-01T14:03:51 update: added /Tujhko Kya Fikar_.mp3
+2025-04-01T14:03:51 update: added /Aahatein.mp3
+2025-04-01T14:03:51 update: added yt/Ishq Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T14:03:51 update: added yt/Baarishein  Anuv Jain  Lo-Fi Mix  RAHUL NEXT LEVEL.mp3
+2025-04-01T14:03:51 update: added yt/PAIGAAM - ZEUS  URDU STORYTELLING RAP.mp3
+2025-04-01T14:03:51 update: added yt/ZAKHM (feat. ZEUS).mp3
+2025-04-01T14:03:51 update: added yt/Ek Roz - Joshi G X Keman  Sad Motivational Hindi Rap Song 2024  Official Audio.mp3
+2025-04-01T14:03:51 update: added yt/Bachpan sa khafa l ft Yaseen Rapper l ZEUS l UrdustorytellingRap.mp3
+2025-04-01T14:03:51 update: added yt/Bikhra X Afsanay Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T14:03:51 update: added yt/AARZU - LIT NOBY  HINDI RAP SONG.mp3
+2025-04-01T14:03:51 update: added /IZAAFA 2.mp3
+2025-04-01T14:03:51 update: added /WISHES Talha Anjum x Talwiinder.mp3
+2025-04-01T14:03:51 update: added /Mental Therapy.mp3
+2025-04-01T14:03:51 update: added /Last words.mp3
+2025-04-01T14:03:51 update: added /Beete Lamhe.mp3
+2025-04-01T14:03:51 update: added /Jaanu Na.mp3
+2025-04-01T14:03:51 update: added /die in your arms.mp3
+2025-04-01T14:03:51 update: added /PAIGAAM - ZEUS  URDU STORYTELLING RAP.mp3
+2025-04-01T14:03:51 update: added /ZAKHM (feat. ZEUS).mp3
+2025-04-01T14:03:51 update: added /Batein.mp3
+2025-04-01T14:03:51 update: added /Lajawab.mp3
+2025-04-01T14:03:51 update: added /Tum.mp3
+2025-04-01T14:03:51 update: added /Gham.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /Roothe Se.mp3
+2025-04-01T14:03:51 update: added /Khel.mp3
+2025-04-01T14:03:51 update: added /Unkahi.mp3
+2025-04-01T14:03:51 update: added /Dont Go.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /Dooriyan.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /Zindagi.mp3
+2025-04-01T14:03:51 update: added /Kaisa Mai.mp3
+2025-04-01T14:03:51 update: added /Manzil Aur Maut.mp3
+2025-04-01T14:03:51 update: added /Ek Roz - Joshi G X Keman  Sad Motivational Hindi Rap Song 2024  Official Audio.mp3
+2025-04-01T14:03:51 update: added /Bachpan sa khafa l ft Yaseen Rapper l ZEUS l UrdustorytellingRap.mp3
+2025-04-01T14:03:51 update: added /Wo Kehti Thi.mp3
+2025-04-01T14:03:51 update: added /Halaat.mp3
+2025-04-01T14:03:51 update: added /Arz.mp3
+2025-04-01T14:03:51 update: added /Tu Hi Khuda.mp3
+2025-04-01T14:03:51 update: added /Belki.mp3
+2025-04-01T14:03:51 update: added /Intezaar-Tu hai Kahaan(Remix).mp3
+2025-04-01T14:03:51 update: added /Thaari Yaada.mp3
+2025-04-01T14:03:51 update: added /Bikhra X Afsanay Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T14:03:51 update: added /Ab Aaoge Kya.mp3
+2025-04-01T14:03:51 update: added /Mental Therapy 2.mp3
+2025-04-01T14:03:51 update: added /Ruswayi 2.mp3
+2025-04-01T14:03:51 update: added /Tanhaayi.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:03:51 update: added /Ruswayi.mp3
+2025-04-01T14:03:51 update: added /SITAM 2 (The End).mp3
+2025-04-01T14:03:51 update: added /AARZU - LIT NOBY  HINDI RAP SONG.mp3
+2025-04-01T14:03:51 update: added /Heartbreak in 80_s.mp3
+2025-04-01T14:03:51 update: added / Stupefied.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:51 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:51 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:51 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 38864.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 35469.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 79107.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 48475.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 64674.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 202440.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 114599.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 159153.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-04-01T14:03:52 mpg123: mpg123_getformat() failed: Message: I am done with this track.
+2025-04-01T14:03:52 ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+2025-04-01T14:03:52 ffmpeg/mp3: Failed to find two consecutive MPEG audio frames.
+2025-04-01T14:11:28 player: played "DiL Ki Baat (SchooL LOVE Story).mp3"
+2025-04-01T14:14:41 player: played "Dooriyan.mp3"
+2025-04-01T14:18:07 player: played "Ek Aashiqui.mp3"
+2025-04-01T14:23:35 player: played "Mehfuz.mp3"
+2025-04-01T14:26:18 player: played "FALLING FOR YOU.mp3"
+2025-04-01T14:28:55 player: played "die in your arms.mp3"
+2025-04-01T14:32:45 player: played "Gham.mp3"
+2025-04-01T14:35:45 player: played "Thaari Yaada.mp3"
+2025-04-01T14:40:17 player: played "Gumaan.mp3"
+2025-04-01T14:44:23 player: played "Intezaar-Tu hai Kahaan(Remix).mp3"
+2025-04-01T14:50:52 player: played "Husn.mp3"
+2025-04-01T14:53:21 config: option "path" on line 17 was not recognized
+2025-04-01T14:53:34 config: option "path" on line 17 was not recognized
+2025-04-01T14:53:39 player: played "Intezaar-Tu hai Kahaan(Remix).mp3"
+2025-04-01T14:54:08 player: played "Intezaar-Tu hai Kahaan(Remix).mp3"
+2025-04-01T14:56:00 player: played "Intezaar-Tu hai Kahaan(Remix).mp3"
+2025-04-01T14:59:03 player: played "IZAAFA 2.mp3"
+2025-04-01T15:01:29 player: played "Jaanu Na.mp3"
+2025-04-01T15:04:47 player: played " Stupefied.mp3"
+2025-04-01T15:08:08 player: played "K.Y.U.mp3"
+2025-04-01T15:09:03 player: played "DiL Ki Baat (SchooL LOVE Story).mp3"
+2025-04-01T15:11:14 player: played "Khel.mp3"
+2025-04-01T15:12:32 config: option "path" on line 17 was not recognized
+2025-04-01T15:14:29 config: option "path" on line 17 was not recognized
+2025-04-01T15:14:39 player: played "Lajawab.mp3"
+2025-04-01T15:14:45 config: option "path" on line 17 was not recognized
+2025-04-01T15:15:19 config: option "path" on line 17 was not recognized
+2025-04-01T15:15:21 config: option "path" on line 17 was not recognized
+2025-04-01T15:15:22 player: played "Lajawab.mp3"
+2025-04-01T15:15:31 player: played "Lajawab.mp3"
+2025-04-01T15:15:38 player: played "Lajawab 2.mp3"
+2025-04-01T15:15:43 player: played "Lajawab.mp3"
+2025-04-01T15:15:58 player: played "Lajawab.mp3"
+2025-04-01T15:16:33 config: option "path" on line 17 was not recognized
+2025-04-01T15:16:38 config: option "path" on line 17 was not recognized
+2025-04-01T15:16:46 player: played "Lajawab.mp3"
+2025-04-01T15:16:51 player: played "Lajawab.mp3"
+2025-04-01T15:17:18 player: played "Lajawab 2.mp3"
+2025-04-01T15:17:22 player: played "Lajawab 2.mp3"
+2025-04-01T15:18:51 config: option "path" on line 17 was not recognized
+2025-04-01T15:18:59 player: played "Lajawab 2.mp3"
+2025-04-01T15:20:23 config: option "path" on line 17 was not recognized
+2025-04-01T15:20:30 config: option "path" on line 17 was not recognized
+2025-04-01T15:20:45 config: option "path" on line 17 was not recognized
+2025-04-01T15:20:58 player: played "Lajawab 2.mp3"
+2025-04-01T15:21:09 config: option "path" on line 17 was not recognized
+2025-04-01T15:21:13 player: played "Epiphany.mp3"
+2025-04-01T15:21:13 player: played "Lajawab 2.mp3"
+2025-04-01T15:21:13 player: played "Lajawab 2.mp3"
+2025-04-01T15:21:13 player: played "Lajawab 2.mp3"
+2025-04-01T15:21:13 player: played "Lajawab 2.mp3"
+2025-04-01T15:23:16 config: option "path" on line 17 was not recognized
+2025-04-01T15:23:18 config: option "path" on line 17 was not recognized
+2025-04-01T15:23:40 player: played "Halaat.mp3"
+2025-04-01T15:34:09 config: option "path" on line 17 was not recognized
+2025-04-01T15:34:23 player: played "FAASLAY  NIAZI 01 Ft . AHMED (OFFICIAL AUDIO).mp3"
+2025-04-01T15:34:37 player: played "Dooriyan.mp3"
+2025-04-01T15:35:33 config: option "path" on line 17 was not recognized
+2025-04-01T15:36:02 player: played "Dooriyan.mp3"
+2025-04-01T15:36:11 config: option "path" on line 17 was not recognized
+2025-04-01T15:36:23 player: played "Dooriyan.mp3"
+2025-04-01T15:38:56 config: option "path" on line 17 was not recognized
+2025-04-01T15:39:08 config: option "path" on line 17 was not recognized
+2025-04-01T15:39:13 player: played "Khel.mp3"
+2025-04-01T15:39:29 player: played "Dooriyan.mp3"
+2025-04-01T15:39:44 config: option "path" on line 17 was not recognized
+2025-04-01T15:40:08 player: played "Dooriyan.mp3"
+2025-04-01T15:40:16 player: played "Dooriyan.mp3"
+2025-04-01T15:44:11 config: option "path" on line 17 was not recognized
+2025-04-01T15:44:18 config: option "path" on line 17 was not recognized
+2025-04-01T15:44:36 player: played "Lajawab.mp3"
+2025-04-01T15:44:43 player: played "Lajawab.mp3"
+2025-04-01T15:44:57 config: option "path" on line 17 was not recognized
+2025-04-01T15:45:09 player: played "Lajawab.mp3"
+2025-04-01T15:45:46 player: played "Tere Bina.mp3"
+2025-04-01T15:47:27 config: option "path" on line 17 was not recognized
+2025-04-01T15:47:59 player: played "Tere Bina.mp3"
+2025-04-01T15:48:04 player: played "Heartbreak in 80_s.mp3"
+2025-04-01T15:48:50 config: option "path" on line 17 was not recognized
+2025-04-01T15:49:05 player: played "Heartbreak in 80_s.mp3"
+2025-04-01T15:52:02 player: played "Ruswayi.mp3"
+2025-04-01T15:52:57 config: option "path" on line 17 was not recognized
+2025-04-01T15:53:03 player: played "Ruswayi 2.mp3"
+2025-04-01T15:53:47 config: option "path" on line 17 was not recognized
+2025-04-01T15:53:55 player: played "Ruswayi.mp3"
+2025-04-01T15:54:02 player: played "Ruswayi 2.mp3"
+2025-04-01T15:54:06 player: played "Ruswayi.mp3"
+2025-04-01T15:54:19 config: option "path" on line 17 was not recognized
+2025-04-01T15:54:25 player: played "Ruswayi.mp3"
+2025-04-01T15:54:30 config: option "path" on line 17 was not recognized
+2025-04-01T15:54:47 config: option "path" on line 17 was not recognized
+2025-04-01T15:54:56 player: played "Ruswayi.mp3"
+2025-04-01T15:54:59 player: played "Ruswayi.mp3"
+2025-04-01T15:55:13 config: option "path" on line 17 was not recognized
+2025-04-01T15:55:39 player: played "Ruswayi.mp3"
+2025-04-01T15:55:47 config: option "path" on line 17 was not recognized
+2025-04-01T15:56:12 player: played "Ruswayi 2.mp3"
+2025-04-01T15:56:13 player: played "Ruswayi.mp3"
+2025-04-01T15:56:16 player: played "Ruswayi 2.mp3"
+2025-04-01T15:56:33 config: option "path" on line 17 was not recognized
+2025-04-01T15:56:37 player: played "Ruswayi 2.mp3"
+2025-04-01T15:57:06 player: played "Naraaz.mp3"
+2025-04-01T15:57:41 update: removing Ek Roz - Joshi G X Keman  Sad Motivational Hindi Rap Song 2024  Official Audio.mp3
+2025-04-01T15:57:41 update: removing Bikhra X Afsanay Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T15:57:41 update: removing Bachpan sa khafa l ft Yaseen Rapper l ZEUS l UrdustorytellingRap.mp3
+2025-04-01T15:57:41 update: removing Baarishein  Anuv Jain  Lo-Fi Mix  RAHUL NEXT LEVEL.mp3
+2025-04-01T15:57:41 update: removing AARZU - LIT NOBY  HINDI RAP SONG.mp3
+2025-04-01T15:57:41 update: removing yt/ZAKHM (feat. ZEUS).mp3
+2025-04-01T15:57:41 update: removing yt/PAIGAAM - ZEUS  URDU STORYTELLING RAP.mp3
+2025-04-01T15:57:41 update: removing yt/Ishq Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T15:57:41 update: removing yt/Ek Roz - Joshi G X Keman  Sad Motivational Hindi Rap Song 2024  Official Audio.mp3
+2025-04-01T15:57:41 update: removing yt/Bikhra X Afsanay Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T15:57:41 update: removing yt/Bachpan sa khafa l ft Yaseen Rapper l ZEUS l UrdustorytellingRap.mp3
+2025-04-01T15:57:41 update: removing yt/Baarishein  Anuv Jain  Lo-Fi Mix  RAHUL NEXT LEVEL.mp3
+2025-04-01T15:57:41 update: removing yt/AARZU - LIT NOBY  HINDI RAP SONG.mp3
+2025-04-01T15:57:41 update: removing Zindagi.mp3
+2025-04-01T15:57:41 update: removing Anjaam.mp3
+2025-04-01T15:57:41 update: removing Wo Kehti Thi.mp3
+2025-04-01T15:57:41 update: removing WISHES Talha Anjum x Talwiinder.mp3
+2025-04-01T15:57:41 update: removing Waqt Ki Baatein.mp3
+2025-04-01T15:57:41 update: removing Namm.mp3
+2025-04-01T15:57:41 update: removing Unkahi.mp3
+2025-04-01T15:57:41 update: removing TUM MERE 2.mp3
+2025-04-01T15:57:41 update: removing Tum.mp3
+2025-04-01T15:57:41 update: removing Tujhko Kya Fikar_.mp3
+2025-04-01T15:57:41 update: removing Tu Na Mila.mp3
+2025-04-01T15:57:41 update: removing Tu Hi Khuda.mp3
+2025-04-01T15:57:41 update: removing Tu Dikhe.mp3
+2025-04-01T15:57:41 update: removing Heartbreak in 80_s.mp3
+2025-04-01T15:57:41 update: removing Tere Bina.mp3
+2025-04-01T15:57:41 update: removing Tanhaayi.mp3
+2025-04-01T15:57:41 update: removing SITAM 2 (The End).mp3
+2025-04-01T15:57:41 update: removing Sitam.mp3
+2025-04-01T15:57:41 update: removing Last words.mp3
+2025-04-01T15:57:41 update: removing Ruswayi 2.mp3
+2025-04-01T15:57:41 update: removing Ruswayi.mp3
+2025-04-01T15:57:41 update: removing Roothe Se.mp3
+2025-04-01T15:57:41 update: removing Rok Sakta.mp3
+2025-04-01T15:57:41 update: removing AWAY FROM ME (feat. Shareh & Izzchughtai).mp3
+2025-04-01T15:57:41 update: removing Raat Din.mp3
+2025-04-01T15:57:41 update: removing Pills On My Mind.mp3
+2025-04-01T15:57:41 update: removing Pen & Pain.mp3
+2025-04-01T15:57:41 update: removing Downers At Dusk.mp3
+2025-04-01T15:57:41 update: removing One & Only.mp3
+2025-04-01T15:57:41 update: removing Naraaz.mp3
+2025-04-01T15:57:41 update: removing Mushq.mp3
+2025-04-01T15:57:41 update: removing Muntazir.mp3
+2025-04-01T15:57:41 update: removing Midnight.mp3
+2025-04-01T15:57:41 update: removing Mera Kasoor.mp3
+2025-04-01T15:57:41 update: removing Mera Ateet.mp3
+2025-04-01T15:57:41 update: removing Mental Therapy 2.mp3
+2025-04-01T15:57:41 update: removing Mental Therapy.mp3
+2025-04-01T15:57:41 update: removing Heer.mp3
+2025-04-01T15:57:41 update: removing Manzil Aur Maut.mp3
+2025-04-01T15:57:41 update: removing Love me.mp3
+2025-04-01T15:57:41 update: removing Epiphany.mp3
+2025-04-01T15:57:41 update: removing Lajawab 2.mp3
+2025-04-01T15:57:41 update: removing Lajawab.mp3
+2025-04-01T15:57:41 update: removing Khel.mp3
+2025-04-01T15:57:41 update: removing K.Y.U.mp3
+2025-04-01T15:57:41 update: removing  Stupefied.mp3
+2025-04-01T15:57:41 update: removing Jaanu Na.mp3
+2025-04-01T15:57:41 update: removing IZAAFA 2.mp3
+2025-04-01T15:57:41 update: removing Intezaar-Tu hai Kahaan(Remix).mp3
+2025-04-01T15:57:41 update: removing Husn.mp3
+2025-04-01T15:57:41 update: removing Haqeeqat.mp3
+2025-04-01T15:57:41 update: removing Halaat.mp3
+2025-04-01T15:57:41 update: removing Haal Bura.mp3
+2025-04-01T15:57:41 update: removing Gumaan.mp3
+2025-04-01T15:57:41 update: removing Thaari Yaada.mp3
+2025-04-01T15:57:41 update: removing Gham.mp3
+2025-04-01T15:57:41 update: removing die in your arms.mp3
+2025-04-01T15:57:41 update: removing FALLING FOR YOU.mp3
+2025-04-01T15:57:41 update: removing Mehfuz.mp3
+2025-04-01T15:57:41 update: removing Ek Aashiqui.mp3
+2025-04-01T15:57:41 update: removing Dooriyan.mp3
+2025-04-01T15:57:41 update: removing DiL Ki Baat (SchooL LOVE Story).mp3
+2025-04-01T15:57:41 update: removing criminal - slowed + reverb.mp3
+2025-04-01T15:57:41 update: removing Chaand.mp3
+2025-04-01T15:57:41 update: removing Broken Soul.mp3
+2025-04-01T15:57:41 update: removing Bewafaa.mp3
+2025-04-01T15:57:41 update: removing Belki.mp3
+2025-04-01T15:57:41 update: removing Beete Lamhe.mp3
+2025-04-01T15:57:41 update: removing Batein.mp3
+2025-04-01T15:57:41 update: removing ALFAAZ _ NIAZI 01.mp3
+2025-04-01T15:57:41 update: removing Dont Go.mp3
+2025-04-01T15:57:41 update: removing Arz.mp3
+2025-04-01T15:57:41 update: removing Aram Se Jeele.mp3
+2025-04-01T15:57:41 update: removing Kaisa Mai.mp3
+2025-04-01T15:57:41 update: removing Ab Aaoge Kya.mp3
+2025-04-01T15:57:41 update: removing Aaina.mp3
+2025-04-01T15:57:41 update: removing Aahatein.mp3
+2025-04-01T15:57:41 update: removing ZAKHM (feat. ZEUS).mp3
+2025-04-01T15:57:41 update: removing PAIGAAM - ZEUS  URDU STORYTELLING RAP.mp3
+2025-04-01T15:57:41 update: removing Ishq Mashup - Talha Anjum X Talwiinder  Prod.Tanzim Kazi  2K24.mp3
+2025-04-01T15:57:41 update: removing FAASLAY  NIAZI 01 Ft . AHMED (OFFICIAL AUDIO).mp3
+2025-04-01T15:58:34 player: played "17 (slowed + reverb).mp3"
+2025-04-01T16:06:02 player: played "Cry.mp3"
+2025-04-01T16:07:25 config: option "path" on line 17 was not recognized
+2025-04-01T16:07:35 player: played "At Home.mp3"
+2025-04-01T16:08:01 player: played "Cry.mp3"
+2025-04-01T16:09:43 config: option "path" on line 17 was not recognized
+2025-04-01T16:09:48 player: played "Cry.mp3"
+2025-04-01T16:11:55 config: option "path" on line 17 was not recognized
+2025-04-01T16:12:06 config: option "path" on line 17 was not recognized
+2025-04-01T16:12:09 config: option "path" on line 17 was not recognized
+2025-04-01T16:12:27 player: played "Those Eyes.mp3"
+2025-04-01T16:12:30 player: played "Those Eyes.mp3"
+2025-04-01T16:12:34 player: played "Those Eyes.mp3"
+2025-04-01T16:12:36 player: played "Those Eyes.mp3"
+2025-04-01T16:15:35 config: option "path" on line 17 was not recognized
+2025-04-01T16:16:49 config: option "path" on line 17 was not recognized
+2025-04-01T16:16:50 player: played "Those Eyes.mp3"
+2025-04-01T16:17:06 player: played "She's The One.mp3"
+2025-04-01T16:17:14 player: played "Those Eyes.mp3"
+2025-04-01T16:17:21 config: option "path" on line 17 was not recognized
+2025-04-01T16:17:24 player: played "Those Eyes.mp3"

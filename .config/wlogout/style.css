@@ -1,0 +1,81 @@
+/* Importing pywal colors */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+window {
+    font-family: Fira Code Medium;
+    font-size: 16pt;
+    color: #cdd6f4; /* text */
+    background-color: rgba(30, 30, 46, 0.6);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    background-color: rgba(200, 220, 255, 0);
+    border-radius: 50px; /* Increased border radius for a more rounded look */
+}
+
+button:focus {
+    background-size: 25%;
+	border: 0px;
+
+}
+
+button:hover {
+    background-color: rgb(145, 215, 227); 
+    color: #1e1e2e;
+    background-size: 70%;
+    margin: 5px;
+    border-radius: 50px; 
+	
+}
+
+/* Adjust the size of the icon or content inside the button */
+button span {
+    font-size: 1.2em; /* Increase the font size */
+}
+
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+#lock:hover {
+    background-image: image(url("./icons/lock-hover.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+#logout:hover {
+    background-image: image(url("./icons/logout-hover.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"));
+}
+#suspend:hover {
+    background-image: image(url("./icons/sleep-hover.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+}
+#shutdown:hover {
+    background-image: image(url("./icons/power-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+}
+#reboot:hover {
+    background-image: image(url("./icons/restart-hover.png"));
+}
+
+#hibernate {
+    background-image: image(url("./icons/hibernate.png"));
+}
+#hibernate:hover {
+    background-image: image(url("./icons/hibernate-hover.png"));
+}
