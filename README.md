@@ -6,12 +6,12 @@
 ## Review of Arch (btw)
 
 ![1](review/0.webp)
-![10](review/01.webp)
+![10](review/1.webp)
 
-| ![2](review/2.png) | ![3](review/3.png) |
+| ![2](review/2.webp) | ![3](review/3.webp) |
 |---|---|
-| ![4](review/4.png) | ![5](review/5.png) |
-| ![6](review/6.png) | ![7](review/7.png) |
+| ![4](review/4.webp) | ![5](review/5.webp) |
+| ![6](review/6.webp) | ![7](review/7.webp) |
 
 
 ## 1. Install ArchLinux With Minimal Configuration
@@ -69,7 +69,7 @@ $ lsblk
 
 if will show your all partitions and there information
 
-![3](review/1.webp)
+![cfdisk-img](review/cfdisk.webp)
 
 ```bash
 $ cfdisk
@@ -77,7 +77,7 @@ $ cfdisk
 
 it show you all of your information about your drives
 
-![3](review/2.webp)
+![lsblk-img](review/lsblk.webp)
 
 You have to make 3 partitions
 
@@ -117,7 +117,7 @@ $ archinstall
 
 After running the `archinstall` command it will show you something like this.
 
-![3](review/3.webp)
+![archinstall](review/archinstall.webp)
 
 1. **Locales :** In locales select your _keyboard layout_, _locale language_, and _endcoding_
 2. **Mirrors :** In Mirrors select best mirror region according to your location
@@ -139,7 +139,7 @@ After running the `archinstall` command it will show you something like this.
 
 after that just press the `install` and wait for installation to be finished
 
-![3](review/4.webp)
+![installation-completed-img](review/completed.webp)
 
 Congratulations🎉!! You have successfully installed the ArchLinux and now you can say that _I use Arch btw_
 
