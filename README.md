@@ -160,7 +160,7 @@ select the option according the option given in image I have explained each one 
 
 After selecting all the options, I will start installing Hyprland and additional components. During the installation, you may be prompted to enter the password 2-3 times, so stay attentive. Once the installation is successful, it will show a prompt to press 'Y' to reboot the system.
 
-![3](review/installation.png)
+![installation](review/installation.webp)
 
 You have successfully installed Archlinux+Hyprland.
 
