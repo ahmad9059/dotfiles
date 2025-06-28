@@ -55,6 +55,8 @@ alias ls='lsd --group-dirs first'
 alias cat='bat'
 alias gc='g++ -o o'
 alias py='python3'
+alias py='python3'
+alias cp='rsync -avhW --no-compress --progress '
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
