@@ -150,16 +150,21 @@ if command -v grub-install >/dev/null 2>&1 || command -v grub-mkconfig >/dev/nul
   mkdir -p "$GRUB_THEME_DIR"
   tar -xf "$GRUB_THEME_ARCHIVE" -C "$GRUB_THEME_DIR"
 
-  # Find and run the install.sh
+  # Find and run the install.sh from correct path
   if INSTALL_PATH=$(find "$GRUB_THEME_DIR" -type f -name "install.sh" -exec dirname {} \; | head -n1); then
-    echo -e "${GREEN}🚀 Running install.sh...${NC}"
-    bash "$INSTALL_PATH/install.sh"
+    echo -e "${GREEN}🚀 Running install.sh from $INSTALL_PATH...${NC}"
+    
+    # Change into the directory that contains both install.sh and Vimix/
+    pushd "$INSTALL_PATH" > /dev/null
+    sudo bash ./install.sh
+    popd > /dev/null
   else
     echo -e "${YELLOW}⚠️ install.sh not found in extracted Vimix theme. Skipping GRUB theme install.${NC}"
   fi
 else
   echo -e "${YELLOW}⚠️ GRUB not detected on system. Skipping GRUB theme installation.${NC}"
 fi
+
 
 
 # Wallpapers Copy
