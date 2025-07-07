@@ -114,20 +114,25 @@ fi
 
 echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
 
-
 # Grub BootLoader Theme (Vimix)
-echo -e "${GREEN}🧩 Installing GRUB theme (Vimix)...${NC}"
+echo -e "${GREEN}🧩 Checking for GRUB...${NC}"
 
-# Extract the archive
-mkdir -p "$GRUB_THEME_DIR"
-tar -xf "$GRUB_THEME_ARCHIVE" -C "$GRUB_THEME_DIR"
+if command -v grub-install >/dev/null 2>&1 || command -v grub-mkconfig >/dev/null 2>&1; then
+  echo -e "${GREEN}✔️ GRUB detected. Installing GRUB theme (Vimix)...${NC}"
 
-# Find and run the install.sh
-if INSTALL_PATH=$(find "$GRUB_THEME_DIR" -type f -name "install.sh" -exec dirname {} \; | head -n1); then
-  echo -e "${GREEN}🚀 Running install.sh...${NC}"
-  bash "$INSTALL_PATH/install.sh"
+  # Extract the archive
+  mkdir -p "$GRUB_THEME_DIR"
+  tar -xf "$GRUB_THEME_ARCHIVE" -C "$GRUB_THEME_DIR"
+
+  # Find and run the install.sh
+  if INSTALL_PATH=$(find "$GRUB_THEME_DIR" -type f -name "install.sh" -exec dirname {} \; | head -n1); then
+    echo -e "${GREEN}🚀 Running install.sh...${NC}"
+    bash "$INSTALL_PATH/install.sh"
+  else
+    echo -e "${YELLOW}⚠️ install.sh not found in extracted Vimix theme. Skipping GRUB theme install.${NC}"
+  fi
 else
-  echo -e "${YELLOW}⚠️ install.sh not found in extracted Vimix theme. Skipping GRUB theme install.${NC}"
+  echo -e "${YELLOW}⚠️ GRUB not detected on system. Skipping GRUB theme installation.${NC}"
 fi
 
 
