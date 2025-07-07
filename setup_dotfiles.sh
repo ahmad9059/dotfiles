@@ -122,40 +122,24 @@ echo -e "${GREEN}🎨 Updating GTK theme settings...${NC}"
 mkdir -p ~/.config/gtk-3.0
 mkdir -p ~/.config/gtk-4.0
 
-# GTK 3.0 settings
-cat <<EOF > ~/.config/gtk-3.0/settings.ini
-[Settings]
-gtk-theme-name=Andromeda-dark
-gtk-icon-theme-name=dracula-icons-main
-gtk-font-name=Adwaita Sans 11
-gtk-cursor-theme-name=Future-black-cursors
-gtk-cursor-theme-size=24
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle=hintslight
-gtk-xft-rgba=rgb
-gtk-application-prefer-dark-theme=1
-EOF
+echo -e "${GREEN}🎨 Applying GTK theme via gsettings...${NC}"
 
-# GTK 4.0 settings
-cat <<EOF > ~/.config/gtk-4.0/settings.ini
-[Settings]
-gtk-theme-name=Andromeda-dark
-gtk-icon-theme-name=dracula-icons-main
-gtk-font-name=Adwaita Sans 11
-gtk-cursor-theme-name=Future-black-cursors
-gtk-cursor-theme-size=24
-gtk-application-prefer-dark-theme=1
-EOF
+# Set GTK interface preferences via gsettings
+gsettings set org.gnome.desktop.interface gtk-theme 'Andromeda-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'dracula-icons-main'
+gsettings set org.gnome.desktop.interface cursor-theme 'Future-black-cursors'
+gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
 
-echo -e "${GREEN}✅ GTK settings applied successfully!${NC}"
+# Optional: if using X11, also set window manager preference (not needed for Wayland)
+gsettings set org.gnome.desktop.wm.preferences theme 'Andromeda-dark'
 
+# Export the current settings to config files (so other apps or themes can use them)
+if command -v nwg-look >/dev/null 2>&1; then
+  echo -e "${GREEN}💾 Exporting GTK settings to .config/gtk-*.0/settings.ini...${NC}"
+  nwg-look -x
+else
+  echo -e "${YELLOW}⚠️ nwg-look not found. Skipping export step.${NC}"
+fi
 
 # Grub BootLoader Theme (Vimix)
 echo -e "${GREEN}🧩 Checking for GRUB...${NC}"
