@@ -8,7 +8,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # Log file
-LOG_FILE="$HOME/dotfiles_setup.log"
+LOG_FILE="$HOME/dotfiles/dotfiles_setup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 
@@ -40,9 +40,8 @@ PACMAN_PACKAGES=(
 REQUIRED_PACKAGES=(foot lsd bat firefox tmux)
 
 YAY_PACKAGES=(
-  thorium-browser-bin visual-studio-code-bin 64gram-desktop-bin
-  apple-fonts foliate whatsapp-for-linux
-  azuredatastudio-bin stacer-bin localsend-bin wps-office-bin
+  visual-studio-code-bin 64gram-desktop-bin
+  apple-fonts foliate whatsapp-for-linux stacer-bin localsend-bin
 )
 
 # Clone repo
@@ -163,6 +162,35 @@ else
 fi
 
 
+# Wallpapers Copy
+echo -e "${GREEN}🖼️  Copying wallpapers...${NC}"
+
+# Ensure target directory exists
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+mkdir -p "$WALLPAPER_DIR"
+
+# Remove all existing wallpapers
+rm -rf "$WALLPAPER_DIR"/*
+
+# Copy new wallpapers from repo
+cp -r "$REPO_DIR/wallpapers/"* "$WALLPAPER_DIR/"
+
+echo -e "${GREEN}✅ Wallpapers updated in $WALLPAPER_DIR${NC}"
+
+# Set Wallpaper
+echo -e "${GREEN}🖼️  Setting wallpaper (gif0.gif) with swww...${NC}"
+
+# Start swww daemon if not already running
+if ! pgrep -x swww-daemon > /dev/null; then
+  swww-daemon &
+  sleep 1  # Give it a moment to start
+fi
+
+# Set the gif wallpaper
+swww img "$HOME/Pictures/wallpapers/gif0.gif" --transition-type any
+
+
+
 #Required Packages
 echo -e "${GREEN}📥 Installing required packages...${NC}"
 sudo pacman -Syu --needed "${REQUIRED_PACKAGES[@]}"
@@ -170,7 +198,7 @@ sudo pacman -Syu --needed "${REQUIRED_PACKAGES[@]}"
 # Ask to install pacman packages
 echo -e "\n${YELLOW}📦 Do you want to install the following pacman packages?${NC}"
 echo "${PACMAN_PACKAGES[@]}"
-read -rp "Type 'yes' to continue: " ans1
+read -rp "Type 'yes/no' to continue: " ans1
 if [[ "$ans1" == "yes" ]]; then
   sudo pacman -Syu --needed "${PACMAN_PACKAGES[@]}"
 fi
@@ -179,7 +207,7 @@ fi
 if command -v yay >/dev/null 2>&1; then
   echo -e "\n${YELLOW}📦 Do you want to install the following AUR (yay) packages?${NC}"
   echo "${YAY_PACKAGES[@]}"
-  read -rp "Type 'yes' to continue: " ans2
+  read -rp "Type 'yes/no' to continue: " ans2
   if [[ "$ans2" == "yes" ]]; then
     yay -S --needed "${YAY_PACKAGES[@]}"
   fi
