@@ -67,21 +67,11 @@ echo -e "${GREEN}🎨 Installing themes...${NC}"
 mkdir -p ~/.themes
 cp -r "$REPO_DIR/.themes/"* ~/.themes/
 
+# Icons
 echo -e "${GREEN}🎨 Installing icons...${NC}"
-
-ICON_ZIP="$REPO_DIR/.icons/.icons.zip"
-TARGET_ICONS_DIR="$HOME/.icons"
-
-# Make sure ~/.icons exists
-mkdir -p "$TARGET_ICONS_DIR"
-
-# Unzip directly into ~/.icons silently
-unzip -oq "$ICON_ZIP" -d "$TARGET_ICONS_DIR"
-
-# Optionally delete the .zip if it was copied earlier
-rm -f "$HOME/.icons.zip"
-
-echo -e "${GREEN}✅ Icons installed to $TARGET_ICONS_DIR${NC}"
+cp "$REPO_DIR/.icons/.icons.zip" "$HOME/"
+unzip -oq "$HOME/.icons.zip" -d "$HOME/"
+rm "$HOME/.icons.zip"
 
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
