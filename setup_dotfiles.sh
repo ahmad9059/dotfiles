@@ -166,6 +166,18 @@ else
 fi
 
 
+echo -e "${GREEN}🔌 Installing Tmux Plugin Manager (TPM)...${NC}"
+
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+
+# Check if already installed
+if [ -d "$TPM_DIR" ]; then
+  echo -e "${YELLOW}⚠️ TPM already installed at $TPM_DIR. Skipping clone.${NC}"
+else
+  git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+  echo -e "${GREEN}✅ TPM installed to $TPM_DIR${NC}"
+fi
+
 ########################################
 #  Wallpapers: copy + set with swww   #
 ########################################
