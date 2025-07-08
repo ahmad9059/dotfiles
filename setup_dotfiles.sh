@@ -110,8 +110,9 @@ else
   echo -e "\n[Theme]\nCurrent=$SDDM_THEME_NAME" | sudo tee -a "$SDDM_CONF" > /dev/null
 fi
 
-echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
+
 echo -e "enter sudo password: "
+echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
 
 # Gtk theme setup
 echo -e "${GREEN}🎨 Updating GTK theme settings...${NC}"
