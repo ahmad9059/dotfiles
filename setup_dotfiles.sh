@@ -167,33 +167,44 @@ fi
 
 
 
-# Wallpapers Copy
-echo -e "${GREEN}🖼️  Copying wallpapers...${NC}"
+########################################
+#  Wallpapers: copy + set with swww   #
+########################################
 
-# Ensure target directory exists
+echo -e "${GREEN}🖼️  Updating wallpapers...${NC}"
+
+WALLPAPER_SRC="$REPO_DIR/wallpapers"
 WALLPAPER_DIR="$HOME/Pictures/wallpapers"
-mkdir -p "$WALLPAPER_DIR"
 
-# Remove all existing wallpapers
-rm -rf "$WALLPAPER_DIR"/*
-
-# Copy new wallpapers from repo
-cp -r "$REPO_DIR/wallpapers/"* "$WALLPAPER_DIR/"
-
-echo -e "${GREEN}✅ Wallpapers updated in $WALLPAPER_DIR${NC}"
-
-# Set Wallpaper
-echo -e "${GREEN}🖼️  Setting wallpaper (gif0.gif) with swww...${NC}"
-
-# Start swww daemon if not already running
-if ! pgrep -x swww-daemon > /dev/null; then
-  swww-daemon &
-  sleep 1  # Give it a moment to start
+# Make sure source exists
+if [ -d "$WALLPAPER_SRC" ]; then
+  mkdir -p "$WALLPAPER_DIR"
+  rm -rf "$WALLPAPER_DIR"/*          # remove old wallpapers
+  cp -r "$WALLPAPER_SRC/"* "$WALLPAPER_DIR/"
+  echo -e "${GREEN}✅ Wallpapers copied to $WALLPAPER_DIR${NC}"
+else
+  echo -e "${YELLOW}⚠️  No wallpapers folder found at $WALLPAPER_SRC – skipping copy.${NC}"
 fi
 
-# Set the gif wallpaper
-swww img "$HOME/Pictures/wallpapers/gif0.gif" --transition-type any
+########################################
+#  Set wallpaper (Wayland / swww)     #
+########################################
 
+# Only attempt if we’re inside a Wayland session
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  echo -e "${GREEN}🖼️  Setting wallpaper (gif0.gif) with swww...${NC}"
+
+  # Start swww‑daemon if it’s not already running
+  if ! pgrep -x swww-daemon >/dev/null; then
+    swww-daemon &
+    sleep 1   # give the daemon a second to initialise
+  fi
+
+  # Set the GIF wallpaper
+  swww img "$WALLPAPER_DIR/gif0.gif" --transition-type any
+else
+  echo -e "${YELLOW}⚠️  Not in a Wayland session – skipping swww wallpaper setup.${NC}"
+fi
 
 
 #Required Packages
