@@ -1,7 +1,5 @@
 #!/bin/bash
-
 set -e
-
 # Colors
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -10,7 +8,6 @@ NC='\033[0m'
 # Log file
 LOG_FILE="$HOME/dotfiles/dotfiles_setup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
-
 
 # Paths
 REPO_URL="https://github.com/ahmad9059/dotfiles.git"
@@ -70,11 +67,21 @@ echo -e "${GREEN}🎨 Installing themes...${NC}"
 mkdir -p ~/.themes
 cp -r "$REPO_DIR/.themes/"* ~/.themes/
 
-# Icons
 echo -e "${GREEN}🎨 Installing icons...${NC}"
-cp "$REPO_DIR/.icons/.icons.zip" "$HOME/"
-unzip -o "$HOME/.icons.zip" -d "$HOME/"
-rm "$HOME/.icons.zip"
+
+ICON_ZIP="$REPO_DIR/.icons/.icons.zip"
+TARGET_ICONS_DIR="$HOME/.icons"
+
+# Make sure ~/.icons exists
+mkdir -p "$TARGET_ICONS_DIR"
+
+# Unzip directly into ~/.icons silently
+unzip -oq "$ICON_ZIP" -d "$TARGET_ICONS_DIR"
+
+# Optionally delete the .zip if it was copied earlier
+rm -f "$HOME/.icons.zip"
+
+echo -e "${GREEN}✅ Icons installed to $TARGET_ICONS_DIR${NC}"
 
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
@@ -167,7 +174,6 @@ if command -v grub-install >/dev/null 2>&1 || command -v grub-mkconfig >/dev/nul
 else
   echo -e "${YELLOW}⚠️ GRUB not detected on system. Skipping GRUB theme installation.${NC}"
 fi
-
 
 
 ########################################
