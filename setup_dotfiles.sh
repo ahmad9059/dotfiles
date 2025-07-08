@@ -44,6 +44,10 @@ YAY_PACKAGES=(
   apple-fonts foliate whatsapp-for-linux stacer-bin localsend-bin
 )
 
+# Ask for sudo once at the beginning
+echo -e "${GREEN}🔐 Requesting sudo access...${NC}"
+sudo -v || { echo "❌ Sudo failed. Exiting."; exit 1; }
+
 # Clone repo
 echo -e "${GREEN}📦 Cloning dotfiles...${NC}"
 git clone "$REPO_URL" "$REPO_DIR" || echo "⚠️ Repo already exists. Skipping clone."
@@ -111,7 +115,6 @@ else
 fi
 
 
-echo -e "enter sudo password: "
 echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
 
 # Gtk theme setup
