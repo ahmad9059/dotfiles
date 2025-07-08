@@ -85,7 +85,6 @@ fi
 
 # Setting the SDDM themes
 echo -e "${GREEN}🎨 Installing SDDM theme '$SDDM_THEME_NAME'...${NC}"
-echo -e "enter sudo password: "
 # Copy theme folder to /usr/share/sddm/themes/
 if [ -d "$SDDM_THEME_SOURCE" ]; then
   sudo cp -r "$SDDM_THEME_SOURCE" "$SDDM_THEME_DEST"
@@ -112,7 +111,7 @@ else
 fi
 
 echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
-
+echo -e "enter sudo password: "
 
 # Gtk theme setup
 echo -e "${GREEN}🎨 Updating GTK theme settings...${NC}"
