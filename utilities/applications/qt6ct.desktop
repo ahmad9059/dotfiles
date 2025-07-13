@@ -1,0 +1,81 @@
+[Desktop Entry]
+X-Desktop-File-Install-Version=0.11
+Name=Qt6 Settings
+
+Comment=Qt6 Configuration Tool
+
+Comment[ar]= أداة اعداد Qt6
+Name[ar]=إعدادات Qt6 
+
+Comment[bg]=Инструмент за настройка на Qt6
+Name[bg]=Настройки на Qt6
+
+Comment[ca]=Eina de configuració de Qt6
+Name[ca]=Configuració de Qt6
+
+Comment[cs]=Nástroj na nastavení Qt6
+Name[cs]=Nastavení Qt6
+
+Comment[da]=Qt6-konfigurationsværktøj
+Name[da]=Qt6-indstillinger
+
+Comment[de]=Qt6-Konfigurationswerkzeug
+Name[de]=Qt6-Einstellungen
+
+Comment[el]=Εργαλείο διαμόρφωσης της Qt6
+Name[el]=Ρυθμίσεις Qt6
+
+Comment[es]=Herramienta de configuración de Qt6
+Name[es]=Ajustes de Qt6
+
+Comment[es_ES]=Herramienta de configuración de Qt6
+Name[es_ES]=Ajustes Qt6
+
+Name[fi]=Qt6 asetukset
+
+Comment[fr]=Un outil de configuration de Qt6
+Name[fr]=Paramètres de Qt6
+
+Comment[he]=כלי תצורה Qt6
+Name[he]=הגדרות Qt6
+
+Comment[ru]=Программа для настройки Qt6
+Name[ru]=Настройки Qt6
+
+Comment[it_IT]=Strumento di configurazione Qt6
+Name[it_IT]=Impostazioni Qt6
+
+Name[ja]=Qt6 の設定
+Comment[ja]=Qt6 設定ツール
+
+Comment[nl_NL]=Qt6-instellingen
+Name[nl_NL]=Qt6-instellingen
+
+Comment[pl]=Narzędzie konfiguracji Qt6
+Name[pl]=Ustawienia Qt6
+
+Comment[sk]=Qt6 konfiguračný nástroj
+Name[sk]=Qt6 nastavenia
+
+Comment[sr]=Qt6 конфигурациони алат
+Name[sr]=Qt6 поставке
+
+Comment[tr]=Qt6 Yapılandırma Aracı
+Name[tr]=Qt6 Ayarları
+
+Name[uk]=Параметри Qt6
+Comment[uk]=Засіб налаштування Qt6
+
+Comment[zh_CN]=Qt6 配置工具
+Name[zh_CN]=Qt6 设置
+
+Comment[zh_TW]=Qt6 設定工具
+Name[zh_TW]=Qt6 設定
+
+
+Exec=qt6ct
+Icon=preferences-desktop-theme
+Terminal=false
+Type=Application
+Categories=Settings;DesktopSettings;Qt;
+Keywords=settings;desktop;qt;qtsettings;qt6;

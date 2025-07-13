@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=foot
+Icon=foot
+Terminal=false
+Categories=System;TerminalEmulator;
+Keywords=shell;prompt;command;commandline;
+
+Name=Foot
+GenericName=Terminal
+Comment=A wayland native terminal emulator

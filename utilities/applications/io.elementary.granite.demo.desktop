@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Granite Demo
+Comment=A demo of the Granite toolkit
+Exec=granite-demo
+Icon=applications-interfacedesign
+Type=Application
+NoDisplay=true
+StartupWMClass=granite-demo

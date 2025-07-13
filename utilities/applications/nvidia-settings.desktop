@@ -1,0 +1,42 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=NVIDIA X Server Settings
+Comment=Configure NVIDIA X Server Settings
+Exec=/usr/bin/nvidia-settings
+Icon=nvidia-settings
+Categories=Settings;HardwareSettings;
+
+# Translation by Marcin Mikołajczak
+Name[pl]=Ustawienia serwera X NVIDIA
+Comment[pl]=Narzędzie konfiguracyjne dla ustawień serwera X NVIDIA
+
+# Translation by RDL
+Name[ru]=Параметры NVIDIA X Server
+Comment[ru]=Конфигурирование параметров NVIDIA X Server
+
+# Translation by Tractix
+Name[ro]=Setări NVIDIA X Server
+Comment[ro]=Configurează setările NVIDIA X Server
+
+# Translations provided by Sun Microsystems
+Name[de]=NVIDIA X-Server-Einstellungen
+Name[es]=Valores de configuración del servidor NVIDIA X
+Name[fr]=Paramètres du serveur X NVIDIA
+Name[it]=NVIDIA X Server Settings
+Name[ja]=NVIDIA X サーバー設定
+Name[ko]=NVIDIA X 서버 설정
+Name[pt_BR]=Configurações do NVIDIA X Server
+Name[zh_CN]=NVIDIA X 服务器设置
+Name[zh_HK]=NVIDIA X 伺服器設定
+Name[zh_TW]=NVIDIA X 伺服器設定
+Comment[de]=Konfigurieren der NVIDIA X-Server-Einstellungen
+Comment[es]=Establezca los valores de configuración del servidor NVIDIA X
+Comment[fr]=Configurer les paramètres du serveur X NVIDIA
+Comment[it]=Configura NVIDIA X Server Settings
+Comment[ja]=NVIDIA X サーバー設定を構成します
+Comment[ko]=NVIDIA X 서버 설정 구성
+Comment[pt_BR]=Definir &configurações de gerenciamento de usuário...
+Comment[zh_CN]=配置 NVIDIA X 服务器设置
+Comment[zh_HK]=配置 NVIDIA X 伺服器設定
+Comment[zh_TW]=配置 NVIDIA X 伺服器設定

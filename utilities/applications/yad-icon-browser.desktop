@@ -1,0 +1,26 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Icon Browser
+Name[es]=Explorador de Iconos
+Name[fr]=Navigateur d'Icônes
+Name[it]=Navigatore di icone
+Name[ka]=ხატულების ბრაუზერი
+Name[pt_BR]=Navegador de ícones
+Name[sk]=Prehliadač ikon
+Name[uk]=Навігатор піктограм
+Name[zh_TW]=圖示瀏覽器
+Comment=Inspect GTK Icon Theme
+Comment[es]=Inspeccionar tema de íconos GTK
+Comment[fr]=Parcourir les icônes du thème GTK
+Comment[it]=Sfoglia le icone del tema GTK
+Comment[ka]=GTK-ის ხატულების თემის შემოწმება
+Comment[pt_BR]=Inspecionar ícone tema do GTK
+Comment[sk]=Preskúmať tému ikon GTK
+Comment[uk]=Перегляд теми піктограм GTK
+Comment[zh_TW]=檢閱 GTK 圖示布景主題
+Categories=GTK;Development;
+Exec=yad-icon-browser
+Icon=yad
+Terminal=false
+Type=Application
+StartupNotify=true
