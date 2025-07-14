@@ -57,6 +57,9 @@ alias gc='g++ -o o'
 alias py='python3'
 alias py='python3'
 alias cp='rsync -avhW --no-compress --progress '
+alias code='code --ozone-platform=x11'
+alias y='yazi'
+
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
@@ -65,3 +68,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+
+
+export LC_TIME=ur_PK.UTF-8
+export LIBVIRT_DEFAULT_URI='qemu:///system'

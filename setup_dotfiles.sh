@@ -34,7 +34,7 @@ PACMAN_PACKAGES=(
 )
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi)
 
 YAY_PACKAGES=(
   visual-studio-code-bin 64gram-desktop-bin
