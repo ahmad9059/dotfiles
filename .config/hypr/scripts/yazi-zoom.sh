@@ -1,5 +1,4 @@
 #!/bin/bash
 
-# Launch foot terminal and run yazi inside
-foot yazi
-
+# Launch yazi in foot terminal with increased font size
+foot --override='font=JetBrainsMono Nerd Font:size=12' yazi
