@@ -73,7 +73,6 @@ cp "$REPO_DIR/.icons/.icons.tar.xz" "$HOME/"
 tar -xf "$HOME/.icons.tar.xz" -C "$HOME/"
 rm "$HOME/.icons.tar.xz"
 
-
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
 ln -sf "$CUSTOM_WAYBAR_STYLE" "$WAYBAR_STYLE_TARGET"
