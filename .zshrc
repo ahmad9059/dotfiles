@@ -72,3 +72,7 @@ setopt appendhistory
 
 export LC_TIME=ur_PK.UTF-8
 export LIBVIRT_DEFAULT_URI='qemu:///system'
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+export PATH=$PATH:/home/ahmad/.spicetify

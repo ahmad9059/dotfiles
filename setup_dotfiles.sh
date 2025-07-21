@@ -29,7 +29,7 @@ GRUB_THEME_DIR="/tmp/vimix-grub"
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
   obs-studio vlc yazi luacheck luarocks hyprpicker
-  firefox obsidian github-cli discord spotify-launcher
+  firefox obsidian github-cli spotify-launcher
   noto-fonts-emoji ttf-noto-nerd noto-fonts
 )
 
@@ -37,7 +37,7 @@ PACMAN_PACKAGES=(
 REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi)
 
 YAY_PACKAGES=(
-  visual-studio-code-bin 64gram-desktop-bin
+  visual-studio-code-bin 64gram-desktop-bin vesktop
   apple-fonts foliate whatsapp-for-linux stacer-bin localsend-bin
 )
 
@@ -69,9 +69,10 @@ cp -r "$REPO_DIR/.themes/"* ~/.themes/
 
 # Icons
 echo -e "${GREEN}🎨 Installing icons...${NC}"
-cp "$REPO_DIR/.icons/.icons.zip" "$HOME/"
-unzip -oq "$HOME/.icons.zip" -d "$HOME/"
-rm "$HOME/.icons.zip"
+cp "$REPO_DIR/.icons/.icons.tar.xz" "$HOME/"
+tar -xf "$HOME/.icons.tar.xz" -C "$HOME/"
+rm "$HOME/.icons.tar.xz"
+
 
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
@@ -217,6 +218,11 @@ else
   echo -e "${YELLOW}⚠️  Not in a Wayland session – skipping swww wallpaper setup.${NC}"
 fi
 
+# Set Only Time Locale to Pakistan(Urdu)
+echo -e "${GREEN}🕰️ Setting ur_PK.UTF-8 locale for time...${NC}"
+sudo sed -i '/^# *ur_PK.UTF-8 UTF-8/s/^# *//' /etc/locale.gen
+sudo locale-gen
+echo -e "${GREEN}✅ LC_TIME=ur_PK.UTF-8 set successfully.${NC}"
 
 #Required Packages
 echo -e "${GREEN}📥 Installing required packages...${NC}"
