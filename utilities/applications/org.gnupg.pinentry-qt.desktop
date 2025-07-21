@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Pinentry
-Type=Application
-Categories=Qt;Utility;
-Exec=/usr/bin/pinentry-qt
-NoDisplay=true
-Icon=pinentry
-GenericName=Utility for entering GnuPG secrets
-X-KDE-Wayland-Interfaces=org_kde_kwin_keystate
