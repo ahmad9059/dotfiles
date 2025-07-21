@@ -1,3 +1,20 @@
+-- VS Code Config
+if vim.g.vscode then
+  -- Minimal config for VSCode-Neovim
+
+  -- Use system clipboard (so yank/copy in VSCode copies to system)
+  vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+
+  -- Optional key mappings for consistency
+  vim.keymap.set("n", "Y", '"+y', { noremap = true, silent = true })
+  vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
+  vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, silent = true })
+  vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { noremap = true, silent = true })
+
+  return
+end
+
+-- Neovim config
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 

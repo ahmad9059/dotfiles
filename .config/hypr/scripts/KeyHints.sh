@@ -27,17 +27,18 @@ GDK_BACKEND=$BACKEND yad \
 " SHIFT K" "Searchable Keybinds" "(Search all Keybinds via rofi)" \
 " SHIFT E" "KooL Hyprland Settings Menu" "" \
 "" "" "" \
-" enter" "Terminal" "(kitty)" \
+" enter" "Terminal" "(foot)" \
 " SHIFT enter" "DropDown Terminal" " Q to close" \
 " B" "Launch Browser" "(Default browser)" \
 " A" "Desktop Overview" "(AGS - if opted to install)" \
 " D" "Application Launcher" "(rofi-wayland)" \
-" E" "Open File Manager" "(Thunar)" \
+" T" "Open File Manager" "(Thunar)" \
 " S" "Google Search using rofi" "(rofi)" \
 " Q" "close active window" "(not kill)" \
 " Shift Q " "kills an active window" "(kill)" \
 " ALT mouse scroll up/down   " "Desktop Zoom" "Desktop Magnifier" \
-" Alt V" "Clipboard Manager" "(cliphist)" \
+" V" "Clipboard Manager" "(cliphist)" \
+" F" "Yazi CLI File Manager" "(cliphist)" \
 " W" "Choose wallpaper" "(Wallpaper Menu)" \
 " Shift W" "Choose wallpaper effects" "(imagemagick + swww)" \
 "CTRL ALT W" "Random wallpaper" "(via swww)" \
