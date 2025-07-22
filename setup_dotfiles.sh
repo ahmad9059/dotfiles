@@ -5,7 +5,6 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-
 # Paths
 REPO_URL="https://github.com/ahmad9059/dotfiles.git"
 REPO_DIR="$HOME/dotfiles"
@@ -49,6 +48,7 @@ git clone "$REPO_URL" "$REPO_DIR" || echo "⚠️ Repo already exists. Skipping 
 # Log file
 LOG_FILE="$HOME/dotfiles/dotfiles_setup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
+
 
 
 # Backup old configs
@@ -221,31 +221,27 @@ fi
 
 # Set Only Time Locale to Pakistan (Urdu)
 echo -e "${GREEN}🕰️ Setting ur_PK.UTF-8 locale for time...${NC}"
-
-# Uncomment ur_PK.UTF-8 in locale.gen
-sudo sed -i '/^# *ur_PK.UTF-8 UTF-8/s/^# *//' /etc/locale.gen
-
+# Uncomment ur_PK.UTF-8 in locale.gen (handles spacing and variants)
+sudo sed -i 's/^#\s*\(ur_PK.*UTF-8\)/\1/' /etc/locale.gen
 # Generate the locale
 sudo locale-gen
-
 # Set LC_TIME in /etc/locale.conf if not already set
 if ! grep -q "^LC_TIME=ur_PK.UTF-8" /etc/locale.conf 2>/dev/null; then
     echo "LC_TIME=ur_PK.UTF-8" | sudo tee -a /etc/locale.conf > /dev/null
 fi
-
 echo -e "${GREEN}✅ LC_TIME=ur_PK.UTF-8 set successfully.${NC}"
 
 
 #Required Packages
 echo -e "${GREEN}📥 Installing required packages...${NC}"
-sudo pacman -Syu --needed "${REQUIRED_PACKAGES[@]}"
+sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}"
 
 # Ask to install pacman packages
 echo -e "\n${YELLOW}📦 Do you want to install the following pacman packages?${NC}"
 echo "${PACMAN_PACKAGES[@]}"
 read -rp "Type 'yes/no' to continue: " ans1
 if [[ "$ans1" == "yes" ]]; then
-  sudo pacman -Syu --needed "${PACMAN_PACKAGES[@]}"
+  sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}"
 fi
 
 # Ask to install yay packages
