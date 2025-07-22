@@ -5,9 +5,6 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-# Log file
-LOG_FILE="$HOME/dotfiles/dotfiles_setup.log"
-exec > >(tee -a "$LOG_FILE") 2>&1
 
 # Paths
 REPO_URL="https://github.com/ahmad9059/dotfiles.git"
@@ -48,6 +45,11 @@ sudo -v || { echo "❌ Sudo failed. Exiting."; exit 1; }
 # Clone repo
 echo -e "${GREEN}📦 Cloning dotfiles...${NC}"
 git clone "$REPO_URL" "$REPO_DIR" || echo "⚠️ Repo already exists. Skipping clone."
+
+# Log file
+LOG_FILE="$HOME/dotfiles/dotfiles_setup.log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+
 
 # Backup old configs
 echo -e "${GREEN}📁 Backing up existing dotfiles...${NC}"
