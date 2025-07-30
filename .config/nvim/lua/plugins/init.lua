@@ -1,49 +1,91 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    lazy = false, -- force immediate loading
-    -- Still restrict commands if needed by filetype:
-    ft = { "markdown" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      -- You can use either mini.nvim or nvim-web-devicons:
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("render-markdown").setup {
-        file_types = { "markdown" }, -- ensure this matches your buffers
-        log_level = "debug", -- for more detailed logs
-      }
-    end,
-  },
-  {
-    "github/copilot.vim",
-    lazy = false,
-    config = function()
-      -- Mapping tab is already used by NvChad
-      vim.g.copilot_assume_mapped = true
-      vim.g.copilot_tab_fallback = ""
-      -- The mapping is set to other key, see custom/lua/mappings
-      -- or run <leader>ch to see copilot mapping section
-    end,
-  },
-  {
-    "mattn/emmet-vim",
-    lazy = false, -- Ensures Emmet loads on start
-  },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
     end,
   },
+
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
+    end,
+  },
+
+  {
+    "axelvc/template-string.nvim",
+    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "svelte", "python", "cs" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("template-string").setup {
+        filetypes = {
+          "html",
+          "typescript",
+          "javascript",
+          "typescriptreact",
+          "javascriptreact",
+          "vue",
+          "svelte",
+          "python",
+          "cs",
+        },
+        jsx_brackets = true,
+        remove_template_string = false,
+        restore_quotes = {
+          normal = [[']],
+          jsx = [["]],
+        },
+      }
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    lazy = false,
+    config = function()
+      require("telescope").setup {
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {},
+          },
+        },
+      }
+      require("telescope").load_extension "ui-select"
+    end,
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-ts-autotag").setup {
+        opts = {
+          enable_close = true,
+          enable_rename = true,
+          enable_close_on_slash = false,
+        },
+        per_filetype = {
+          -- you can disable or override behaviors for specific filetypes
+          -- e.g. html = { enable_close = false },
+        },
+      }
+    end,
+  },
+
+  { import = "nvchad.blink.lazyspec" },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -57,5 +99,6 @@ return {
         "javascript",
       },
     },
+    auto_install = true,
   },
 }

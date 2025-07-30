@@ -9,8 +9,8 @@ M.base46 = {
   theme = "tokyonight",
   transparency = true,
   hl_override = {
-  	Comment = { italic = true },
-  	["@comment"] = { italic = true },
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
   },
 }
 

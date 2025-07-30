@@ -3,7 +3,7 @@ if vim.g.vscode then
   -- Minimal config for VSCode-Neovim
 
   -- Use system clipboard (so yank/copy in VSCode copies to system)
-  vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+  vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
 
   -- Optional key mappings for consistency
   vim.keymap.set("n", "Y", '"+y', { noremap = true, silent = true })
@@ -14,12 +14,20 @@ if vim.g.vscode then
   return
 end
 
--- Neovim config
+-- Neovim
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- force for global virtual_text
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+}
 
 if not vim.uv.fs_stat(lazypath) then
   local repo = "https://github.com/folke/lazy.nvim.git"
@@ -47,7 +55,7 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
-require "nvchad.autocmds"
+require "autocmds"
 
 vim.schedule(function()
   require "mappings"
