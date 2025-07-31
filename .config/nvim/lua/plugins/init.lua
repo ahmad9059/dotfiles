@@ -1,29 +1,51 @@
 return {
+  -- Formatter plugin (Conform.nvim)
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    opts = require "configs.conform",
+    event = "BufWritePre", -- Trigger before saving buffer (used for format on save)
+    opts = require "configs.conform", -- Load custom formatter options from your config
   },
 
+  -- LSP configuration using lspconfig
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "configs.lspconfig"
+      require "configs.lspconfig" -- Load your LSP config file
     end,
   },
 
+  -- Lazygit integration in Neovim
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit", -- Load plugin only when `:LazyGit` is used
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required dependency for lazygit.nvim
+    },
+  },
+
+  -- GitHub Copilot integration
   {
     "github/copilot.vim",
-    lazy = false,
+    lazy = false, -- Load immediately
     config = function()
-      -- vim.g.copilot_no_tab_map = true
+      -- Use default key mappings
       vim.g.copilot_assume_mapped = true
     end,
   },
 
+  -- VS Code-like template string converter
   {
     "axelvc/template-string.nvim",
-    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "svelte", "python", "cs" },
+    ft = {
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "vue",
+      "svelte",
+      "python",
+      "cs",
+    },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
@@ -40,16 +62,17 @@ return {
           "python",
           "cs",
         },
-        jsx_brackets = true,
-        remove_template_string = false,
+        jsx_brackets = true, -- Add brackets in JSX if needed
+        remove_template_string = false, -- Do not revert backtick to quotes after editing
         restore_quotes = {
-          normal = [[']],
-          jsx = [["]],
+          normal = [[']], -- Use single quotes for normal strings
+          jsx = [["]], -- Use double quotes in JSX
         },
       }
     end,
   },
 
+  -- UI enhancement: Replace vim.ui.select with Telescope dropdown
   {
     "nvim-telescope/telescope-ui-select.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
@@ -58,7 +81,7 @@ return {
       require("telescope").setup {
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {},
+            require("telescope.themes").get_dropdown {}, -- Use dropdown style for select menus
           },
         },
       }
@@ -66,27 +89,29 @@ return {
     end,
   },
 
+  -- Auto-close & rename HTML/JSX tags using Treesitter
   {
     "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" }, -- Load on file read or new file
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-ts-autotag").setup {
         opts = {
-          enable_close = true,
-          enable_rename = true,
-          enable_close_on_slash = false,
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Rename paired tags
+          enable_close_on_slash = false, -- Disable slash-triggered auto-close
         },
         per_filetype = {
-          -- you can disable or override behaviors for specific filetypes
-          -- e.g. html = { enable_close = false },
+          -- Override or disable behavior per filetype if needed
         },
       }
     end,
   },
 
+  -- Import custom spec from NvChad's Blink module
   { import = "nvchad.blink.lazyspec" },
 
+  -- Treesitter syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -99,6 +124,6 @@ return {
         "javascript",
       },
     },
-    auto_install = true,
+    auto_install = true, -- Automatically install missing parsers
   },
 }
