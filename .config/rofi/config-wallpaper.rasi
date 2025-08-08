@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (wallpaper) */
 
 @import "~/.config/rofi/config.rasi"  
@@ -28,12 +27,10 @@ entry {
 
 /* ---- Listview ---- */
 listview {
-  columns: 6;
-  lines: 2;
   spacing: 20px;
   padding: 10px;
   columns: 6;
-  lines: 2;
+  lines: 3;
   flow: horizontal;
   fixed-width: true;
   fixed-height: true;

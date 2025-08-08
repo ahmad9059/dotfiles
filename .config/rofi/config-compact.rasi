@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (compact) */
 
 @import "~/.config/rofi/config.rasi" 
@@ -25,7 +24,7 @@ imagebox {
 /* ---- Entry input ---- */
 entry {
   width: 23%;
-  placeholder: "👀  View / Edit Hyprland Configs";
+  placeholder: " View / Edit Hyprland Configs";
 }
 
 /* ---- Listview ---- */

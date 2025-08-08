@@ -21,17 +21,20 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim", -- Required dependency for lazygit.nvim
     },
+    config = function()
+      vim.g.lazygit_floating_window_scaling_factor = 0.8 -- size scaling
+    end,
   },
 
   -- GitHub Copilot integration
-  {
-    "github/copilot.vim",
-    lazy = false, -- Load immediately
-    config = function()
-      -- Use default key mappings
-      vim.g.copilot_assume_mapped = true
-    end,
-  },
+  -- {
+  --   "github/copilot.vim",
+  --   lazy = true, -- Load plugin lazily
+  --   config = function()
+  --     -- Use default key mappings
+  --     vim.g.copilot_assume_mapped = true
+  --   end,
+  -- },
 
   -- VS Code-like template string converter
   {
@@ -76,7 +79,7 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
-    lazy = false,
+    lazy = true,
     config = function()
       require("telescope").setup {
         extensions = {
@@ -108,6 +111,74 @@ return {
     end,
   },
 
+  --  Markdown rendering and preview
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown" }, -- Load plugin only for markdown files
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "echasnovski/mini.nvim", -- or use 'mini.icons' or 'nvim-web-devicons' instead
+    },
+    config = function()
+      require("render-markdown").setup {
+        -- Optional: add config here if needed
+      }
+    end,
+  },
+
+  -- Noice.nvim Plugin for enhanced command line UI
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy", -- Load on very lazy event
+    dependencies = {
+      "MunifTanjim/nui.nvim", -- Required dependency for noice
+      {
+        "rcarriga/nvim-notify", -- Optional: use nvim-notify for notifications
+        config = function()
+          require("notify").setup {
+            background_colour = "#000000",
+            max_width = 30,
+            max_height = 10,
+            timeout = 3000,
+            stages = "fade_in_slide_out",
+            render = "default",
+          }
+        end,
+      },
+    },
+    config = function()
+      require("noice").setup {
+        lsp = {
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = false,
+          },
+        },
+        presets = {
+          bottom_search = true, -- Enable bottom search bar
+          command_palette = true, -- Enable command palette
+          long_message_to_split = true, -- Split long messages
+        },
+      }
+    end,
+  },
+
+  -- mini.surround for surrounding text edit
+  {
+    "echasnovski/mini.surround",
+    version = "*", -- Use the latest stable version
+    event = "VeryLazy", -- Lazy load for better startup performance
+    config = function()
+      require("mini.surround").setup()
+    end,
+  },
+
+  -- Neovim Tmux Navigation
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+
   -- Import custom spec from NvChad's Blink module
   { import = "nvchad.blink.lazyspec" },
 
@@ -122,6 +193,8 @@ return {
         "html",
         "css",
         "javascript",
+        "typescript",
+        "tsx",
       },
     },
     auto_install = true, -- Automatically install missing parsers

@@ -100,21 +100,6 @@ lspconfig.emmet_ls.setup {
 vim.ui.select = require("telescope.themes").get_dropdown {}
 require("telescope").load_extension "ui-select"
 
--- ESLint configuration
-lspconfig.eslint.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = true -- enable formatting support
-
-    -- Show linting errors inline as virtual text
-    vim.diagnostic.config({
-      virtual_text = true,
-    }, bufnr)
-
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
-
 -- Lua LSP (custom settings to recognize 'vim' as global and disable telemetry)
 lspconfig.lua_ls.setup {
   on_attach = on_attach,

@@ -1,7 +1,5 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
 
 -- Pressing ; in normal mode will act like : and open the command line
@@ -24,6 +22,7 @@ map("n", "<C-a>", "ggVG", { desc = "Select all" })
 map("i", "<C-a>", "<ESC>ggVG", { desc = "Select all in insert mode" })
 map("v", "<C-a>", "<ESC>ggVG", { desc = "Select all in visual mode" })
 
+-- lazyGit integration
 map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- Visual mode block selections
@@ -45,14 +44,14 @@ map("v", "<leader>a'", "va'", { desc = "Select around ''" })
 map("v", "<leader>i`", "vi`", { desc = "Select inside ``" })
 map("v", "<leader>a`", "va`", { desc = "Select around ``" })
 
--- Move between buffers with Alt + number keys
+-- Move between buffers with Ctrl + number keys
 for i = 1, 9 do
-  map("n", "<A-" .. i .. ">", function()
+  map("n", "<leader>" .. i, function()
     local bufs = vim.fn.getbufinfo { buflisted = 1 }
     if bufs[i] then
       vim.api.nvim_set_current_buf(bufs[i].bufnr)
     end
-  end, { desc = "Switch to listed buffer " .. i })
+  end, { desc = "Switch to buffer " .. i })
 end
 
 -- Toggle terminal with Alt + i in normal and terminal modes with custom floating window options
@@ -69,3 +68,10 @@ map({ "n", "t" }, "<A-i>", function()
     },
   }
 end, { desc = "Toggle floating terminal" })
+
+-- Tmux Neovim Naviagator
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
+map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>")

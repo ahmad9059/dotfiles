@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (waybar) */
 
 @import "~/.config/rofi/config.rasi" 
@@ -16,7 +15,7 @@ mainbox {
 
 entry {
   expand: true;
-  placeholder: "🖼️  Choose Waybar Style";
+  placeholder: " Choose Waybar Style";
 }
 
 /* ---- Listview ---- */

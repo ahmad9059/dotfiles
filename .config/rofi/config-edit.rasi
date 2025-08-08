@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* KooL Hyprland Edit Rofi Config */
 
 @import "~/.config/rofi/config.rasi"  
@@ -35,8 +34,7 @@ listview {
 /* ---- Entry input ---- */
 entry {
   expand: true;
-  placeholder: " 💫  Customize KooL Hyprland  💫";
-  horizontal-align: 0.5;
+  placeholder: "Customize KooL Hyprland";
 }
 
 

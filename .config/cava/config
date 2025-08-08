@@ -214,43 +214,16 @@
 
 [color]
 
-# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
-# Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
-# a terminal that can change color definitions such as Gnome-terminal or rxvt.
-# default is to keep current terminal color
-; background = default
-; foreground = default
-
-# SDL and sdl_glsl only support hex code colors, these are the default:
-; background = '#111111'
-; foreground = '#33ffff'
-
-# these are default
-# Gradient mode, only hex defined colors are supported,
-# background must also be defined in hex or remain commented out. 1 = on, 0 = off.
-# You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 0
-; gradient_count = 8
-; gradient_color_1 = '#59cc33'
-; gradient_color_2 = '#80cc33'
-; gradient_color_3 = '#a6cc33'
-; gradient_color_4 = '#cccc33'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
-; gradient_color_7 = '#cc5933'
-; gradient_color_8 = '#cc3333'
-
-# for wallust
 gradient = 1
-gradient_count = 8
-gradient_color_1 = '#393A3B'
-gradient_color_2 = '#555C67'
-gradient_color_3 = '#A8474C'
-gradient_color_4 = '#838993'
-gradient_color_5 = '#D2D6DC'
-gradient_color_6 = '#73C291'
-gradient_color_7 = '#AFB7C4'
-gradient_color_8 = '#D2D6DC'
+
+gradient_color_1 = '#8BE9FD'
+gradient_color_2 = '#9AEDFE'
+gradient_color_3 = '#CAA9FA'
+gradient_color_4 = '#BD93F9'
+gradient_color_5 = '#FF92D0'
+gradient_color_6 = '#FF79C6'
+gradient_color_7 = '#FF6E67'
+gradient_color_8 = '#FF5555'
 
 
 [smoothing]

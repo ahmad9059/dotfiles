@@ -61,6 +61,11 @@ alias code='code --ozone-platform=x11'
 alias y='yazi'
 alias md1='sudo mount /dev/sda6 /mnt'
 alias md2='sudo mount /dev/sda3 /mnt2'
+alias web='tmuxifier load-session web-dev'
+alias lg='lazygit'
+alias nivm='nvim'
+alias pdf='firefox'
+alias cd='z'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
@@ -70,9 +75,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+
+# exports
 export LC_TIME=ur_PK.UTF-8
 export LIBVIRT_DEFAULT_URI='qemu:///system'
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(zoxide init zsh)"
+eval "$(tmuxifier init -)"
 export PATH=$PATH:/home/ahmad/.spicetify

@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Clipboard Config - Clipboard */
 
 @import "~/.config/rofi/config.rasi" 
@@ -6,7 +5,8 @@
 /* ---- Entry ---- */
 entry {
   width: 37%;
-  placeholder: "📋 Search Clipboard **note** 👀 CTRL Del - Cliphist del or Alt Del - cliphist wipe";
+  placeholder: "CTRL Del - Cliphist del or Alt Del - cliphist wipe";
+	font: "JetBrains Mono 12";
 }
 
 /* ---- Listview ---- */

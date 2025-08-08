@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config Calculator */
 /* Submitted by: https://github.com/JosephArmas */
 
@@ -7,7 +6,7 @@
 /* ---- Entry ---- */
 entry {
   width: 27%;
-  placeholder: "🧮 Calculate";
+  placeholder: "Calculate";
 }
 
 /* ---- Window ---- */

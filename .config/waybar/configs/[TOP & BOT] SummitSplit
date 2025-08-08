@@ -1,92 +1,64 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
-// ### DUAL TOP and BOTTOM ### //
+/* ### DUAL TOP and BOTTOM v 2### */
 
-[{
-"include": [
+[
+  {
+  "include": [
   "$HOME/.config/waybar/Modules",
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
   "$HOME/.config/waybar/UserModules",
   ],
-"layer": "top",
-//"mode": "dock",
-"exclusive": true,
-"passthrough": false,
-"position": "top",
-"spacing": 3,
-"fixed-center": true,
-"ipc": true,
-"margin-top": 1,
-"margin-left": 8,
-"margin-right": 8,
+    "name": "topbar",
+    "layer": "top",
+    "position": "top",
+    //"mode": "dock",
+    "exclusive": true,
+    "spacing": 2,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+    "modules-left": [
+      "group/app_drawer",
+      "keyboard-state",
+      "clock",
+      "bluetooth",
+      "network",
+    ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+      "mpris",
+      "battery",
+      "backlight",
+      "pulseaudio",
+      "group/mobo_drawer", 
+      "idle_inhibitor",
+      "group/power"
+    ],
 
-"modules-left": [
-	"cpu", 
-	"temperature", 
-	"memory",
-	"disk", 
-	],
-  
-"modules-center": [
-	"idle_inhibitor",
-	"clock",  
-	"custom/light_dark",
-	], 
-
-"modules-right": [
-	"custom/weather",	  
-	"battery", 
-	"backlight",
-	"bluetooth",
-	"network",
-	"custom/updater",
-	"custom/cycle_wall",
-	"custom/lock", 
-	],
 },
-
-{
-"include": [
+  {
+  "include": [
   "$HOME/.config/waybar/Modules",
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
   "$HOME/.config/waybar/UserModules",
   ],
-"layer": "top",
-//"mode": "dock",
-"exclusive": true,
-"passthrough": false,
-"position": "bottom",
-"spacing": 5,
-"fixed-center": true,
-"ipc": true,
-"height": 0,
-"margin-left": 8,
-"margin-right": 8,
-//"gtk-layer-shell": true,
-//"margin-bottom": 0,
-
-"modules-left": [
-	"custom/menu",  
-	"wlr/taskbar",
-	 ],
-
-"modules-center": [
-	"hyprland/workspaces#rw", 
-	],
-
-"modules-right": [
-	"hyprland/window",
-	"tray",
-	"group/notify",
-	"mpris",
-	"keyboard-state",
-	"pulseaudio",
-	//"wireplumber", 
-	"pulseaudio#microphone",	  
-	"custom/power",
-	],  
-}],
+    "name": "bottombar",
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "mode": "dock",
+    "exclusive": true,
+    "spacing": 2,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+    "modules-left": ["hyprland/workspaces#rw"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["tray", "custom/updater", "group/notify"],
+  }
+]

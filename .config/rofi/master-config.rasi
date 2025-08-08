@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Master Config */
 
 /* ---- Configuration ---- */
@@ -10,12 +9,12 @@ configuration {
     display-run:                "Run";
     display-filebrowser:        "Files";
     display-window:             "Windows";
-	drun-display-format:        "{name}";
-	hover-select:               true;
-	me-select-entry:            "MouseSecondary";
+  	drun-display-format:        "{name}";
+	  hover-select:               true;
+	  me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
-	window-format:              "{w} · {c} · {t}";
-	dpi:						1;
+	  window-format:              "{w} · {c} · {t}";
+	  dpi:						1;
 }
 
 /* ---- Load wallust colors ---- */
@@ -68,7 +67,6 @@ inputbar {
     padding:                     0px 0px 0px 0px;
     margin:                      10px;
     background-color:            transparent;
-    border-radius:               25px;
     orientation:                 horizontal;
     children:                    ["entry", "dummy", "mode-switcher" ];
     
