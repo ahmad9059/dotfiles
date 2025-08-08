@@ -71,7 +71,7 @@ $ lsblk
 
 if will show your all partitions and there information
 
-![|714x386](/review/gc/a1.webp)
+![|714x386](/review/a1.webp)
 
 ```bash
 $ cfdisk
@@ -79,7 +79,7 @@ $ cfdisk
 
 it show you all of your information about your drives
 
-![](/review/gc/a2.webp)
+![](/review/a2.webp)
 
 You have to make 3 partitions
 
@@ -119,7 +119,7 @@ $ archinstall
 
 After running the `archinstall` command it will show you something like this.
 
-![|0x0](/review/gc/a3.webp)
+![|0x0](/review/a3.webp)
 
 1. **Locales :** In locales select your _keyboard layout_, _locale language_, and _endcoding_
 2. **Mirrors :** In Mirrors select best mirror region according to your location
@@ -141,7 +141,7 @@ After running the `archinstall` command it will show you something like this.
 
 after that just press the `install` and wait for installation to be finished
 
-![|846x273](/review/gc/a4.webp)
+![|846x273](/review/a4.webp)
 
 Congratulations🎉!! You have successfully installed the ArchLinux and now you can say that _I use Arch btw_
 
