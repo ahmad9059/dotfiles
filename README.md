@@ -2,17 +2,19 @@
 
 **Dotfiles** is a collection of configuration files aimed at setting up a personalized and efficient Linux environment. This repository includes configurations for various tools and applications, enhancing productivity and aesthetics.
 
-
 ## Review of Arch (btw)
 
 ![1](review/0.webp)
 ![10](review/1.webp)
 
 | ![2](review/2.webp) | ![3](review/3.webp) |
-|---|---|
+| ------------------- | ------------------- |
 | ![4](review/4.webp) | ![5](review/5.webp) |
 | ![6](review/6.webp) | ![7](review/7.webp) |
 
+![|678x381](posts/assets/archlinux.png)
+
+I recently uploaded a video showcasing my Arch Linux (btw) setup just for fun, and to my surprise, it went viral within the Linux community! Since then, I’ve received numerous messages asking about the installation process. Although I wanted to make a detailed video tutorial, my laptop's older specs make it difficult to handle both recording and installation simultaneously. So, I’ve decided to write this article to guide you through the installation process using my dotfiles and the installation script from Ja.Kool.It. Below, you’ll find a step-by-step guide to get started.
 
 ## 1. Install ArchLinux With Minimal Configuration
 
@@ -69,7 +71,7 @@ $ lsblk
 
 if will show your all partitions and there information
 
-![cfdisk-img](review/cfdisk.webp)
+![|714x386](/review/gc/a1.webp)
 
 ```bash
 $ cfdisk
@@ -77,7 +79,7 @@ $ cfdisk
 
 it show you all of your information about your drives
 
-![lsblk-img](review/lsblk.webp)
+![](/review/gc/a2.webp)
 
 You have to make 3 partitions
 
@@ -117,7 +119,7 @@ $ archinstall
 
 After running the `archinstall` command it will show you something like this.
 
-![archinstall](review/archinstall.webp)
+![|0x0](/review/gc/a3.webp)
 
 1. **Locales :** In locales select your _keyboard layout_, _locale language_, and _endcoding_
 2. **Mirrors :** In Mirrors select best mirror region according to your location
@@ -139,7 +141,7 @@ After running the `archinstall` command it will show you something like this.
 
 after that just press the `install` and wait for installation to be finished
 
-![installation-completed-img](review/completed.webp)
+![|846x273](/review/gc/a4.webp)
 
 Congratulations🎉!! You have successfully installed the ArchLinux and now you can say that _I use Arch btw_
 
@@ -156,11 +158,17 @@ chmod +x install.sh
 
 select the option according the option given in image I have explained each one of them and those without comment means go with that are in image.
 
-![3](review/arch-hyprland.webp)
+![|840x516](posts/assets/img-2.png)
 
-After selecting all the options, I will start installing Hyprland and additional components. During the installation, you may be prompted to enter the password 2-3 times, so stay attentive. Once the installation is successful, it will show a prompt to press 'Y' to reboot the system.
+Select you prefered AUR Helper yay or paru
 
-![installation](review/installation.webp)
+![|744x476](posts/assets/img-3.png)
+
+Select the Selected options must and others if you want.
+
+After selecting all the options, It will start installing Hyprland and additional components. During the installation, you may be prompted to enter the password 2-3 times, so stay attentive. Once the installation is successful, it will show a prompt to press 'Y' to reboot the system.
+
+![|782x317](posts/assets/img-5.png)
 
 You have successfully installed Archlinux+Hyprland.
 
@@ -175,44 +183,16 @@ git clone https://github.com/ahmad9059/dotfiles.git
 cd dotfiles
 ```
 
-2. **Backup Existing Dotfiles**: Before copying new configurations, it's wise to back up your current dotfiles:
+2. **Run the Install Script**
 
 ```bash
-mkdir -p ~/dotfiles_backup
-cp ~/.config ~/dotfiles_backup -r
-cp ~/.tmux.conf ~/dotfiles_backup
-cp ~/.zshrc ~/dotfiles_backup
+./setup_dotfiles.sh
 ```
 
-3. **Copy New Configurations**:
-Remember you must in `dotfiles` folder to run following commands
+![](posts/assets/img.png)
 
-```bash
-cp -r .config ~/
-cp .zshrc ~/
-cp -r .themes ~/.themes
-cd .icons
-cp .icons.zip ~/
-cd ~/
-unzip .icons.zip
-rm .icons.zip
-```
+Follow the instruction on script as it prompt
 
-After the installation, you can start using the configured applications. Open your `GTK settings` and set the widget theme to `Andromeda-dark`, the icon theme to `Dracula`, and the mouse cursor to `Future-black Cursors`.
-#### Packages `pacman`:
-Install of these Packages using `pacman`
+![](posts/assets/img-1.png)
 
-```bash
-sudo pacman -S foot alacritty lsd bat tmux neovim tldr obs-studio vlc yazi luacheck luarocks hyprpicker firefox obsidian github-cli discord spotify-launcher noto-fonts-emoji  ttf-noto-nerd noto-fonts
-```
-
-#### Packages `yay`(Optional):
-
-Install of these Packages Using `yay`. Remember they are according to my preference like I have install vscode, telegram etc.
-
-```bash
-yay -S thorium-browser-bin visual-studio-code-bin 64gram-desktop-bin apple-fonts fum foliate whatsapp-for-linux  ttf-sil-scheherazade ttf-kacst ttf-urdufont azuredatastudio-bin stacer-bin localsend-bin wps-office-bin
-```
-
-
-Congratulations! You have successfully completed the installation.
+Congratulations!🎉 You have successfully completed the installation.
