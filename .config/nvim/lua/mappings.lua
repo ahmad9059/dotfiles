@@ -46,12 +46,12 @@ map("v", "<leader>a`", "va`", { desc = "Select around ``" })
 
 -- Move between buffers with Ctrl + number keys
 for i = 1, 9 do
-  map("n", "<leader>" .. i, function()
+  map("n", "<<leader>-" .. i .. ">", function()
     local bufs = vim.fn.getbufinfo { buflisted = 1 }
     if bufs[i] then
       vim.api.nvim_set_current_buf(bufs[i].bufnr)
     end
-  end, { desc = "Switch to buffer " .. i })
+  end, { desc = "Switch to listed buffer " .. i })
 end
 
 -- Toggle terminal with Alt + i in normal and terminal modes with custom floating window options

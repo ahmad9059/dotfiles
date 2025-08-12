@@ -58,9 +58,10 @@ alias py='python3'
 alias py='python3'
 alias cp='rsync -avhW --no-compress --progress '
 alias code='code --ozone-platform=x11'
+alias kiro='kiro --ozone-platform=x11'
 alias y='yazi'
-alias md1='sudo mount /dev/sda6 /mnt'
-alias md2='sudo mount /dev/sda3 /mnt2'
+alias md1='sudo mount /dev/sda5 /mnt/vmachines'
+alias md2='sudo mount /dev/sda4 /mnt/windows-drive'
 alias web='tmuxifier load-session web-dev'
 alias lg='lazygit'
 alias nivm='nvim'
@@ -78,8 +79,9 @@ setopt appendhistory
 
 # exports
 export LC_TIME=ur_PK.UTF-8
-export LIBVIRT_DEFAULT_URI='qemu:///system'
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+export LIBVIRT_DEFAULT_URI='qemu:///system'
 eval "$(zoxide init zsh)"
 eval "$(tmuxifier init -)"
 export PATH=$PATH:/home/ahmad/.spicetify
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
