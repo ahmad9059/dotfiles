@@ -147,7 +147,7 @@ mkdir -p ~/.config/gtk-4.0
 
 echo -e "${GREEN}🎨 Applying GTK theme via gsettings...${NC}"
 gsettings set org.gnome.desktop.interface gtk-theme 'Material-DeepOcean-BL'
-gsettings set org.gnome.desktop.interface icon-theme 'Dracula'
+gsettings set org.gnome.desktop.interface icon-theme 'dracula-icons-main'
 gsettings set org.gnome.desktop.interface cursor-theme 'Future-Black-Cursors'
 gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
 gsettings set org.gnome.desktop.wm.preferences theme 'Material-DeepOcean-BL'
