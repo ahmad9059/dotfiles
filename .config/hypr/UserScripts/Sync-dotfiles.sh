@@ -3,13 +3,11 @@
 set -e
 
 REPO_DIR="$HOME/dotfiles"
-ICON_PATH="$HOME/.config/swaync/images/ja.png"
-
 GREEN='\033[0;32m'
 NC='\033[0m'
 
 notify() {
-    swaync-client --send-notification "Dotfiles Sync" "$1" --icon "$ICON_PATH"
+    swaync-client --send-notification "Dotfiles Sync" "$1"
 }
 
 notify "Starting dotfiles sync..."
