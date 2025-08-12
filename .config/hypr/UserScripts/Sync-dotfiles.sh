@@ -2,13 +2,12 @@
 
 set -e
 
-REPO_DIR="$HOME/dotfiles"
-NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
-
-
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+# Paths
+REPO_DIR="$HOME/dotfiles"
+NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
 
 # Send notification
 notify() {
@@ -18,19 +17,18 @@ notify() {
     notify-send -i "$NOTIF_ICON" -u "$urgency" "$title" "$message"
 }
 
+
 # Error handler
 on_error() {
     local exit_code=$?
     notify "❌ Dotfiles Sync Failed" "Script exited with code $exit_code" critical
     exit $exit_code
 }
-
 trap on_error ERR
 
 
-echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
-
 # Sync .config items that exist in repo
+echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
     name=$(basename "$item")
     if [ -d "$HOME/.config/$name" ]; then
