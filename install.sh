@@ -81,7 +81,6 @@ echo -e "${GREEN}📄 Copying new dotfiles...${NC}"
 cp -r "$REPO_DIR/.config/"* ~/.config/
 cp "$REPO_DIR/.zshrc" ~/
 cp "$REPO_DIR/.tmux.conf" ~/
-cp "$REPO_DIR/.tmuxifier" ~/
 
 
 # Install neovim from GitHub
@@ -104,14 +103,6 @@ cp "$REPO_DIR/.icons/.icons.tar.xz" "$HOME/"
 tar -xf "$HOME/.icons.tar.xz" -C "$HOME/"
 rm "$HOME/.icons.tar.xz"
 
-# Install tmuxifier
-echo -e "${GREEN}🔌 Installing tmuxifier...${NC}"
-if [ ! -d "$HOME/.tmuxifier" ]; then
-    git clone "$TMUXIFIER_REPO" "$HOME/.tmuxifier"
-    echo -e "${GREEN}✅ Tmuxifier installed to $HOME/.tmuxifier${NC}"
-else
-    echo -e "${YELLOW}⚠️ Tmuxifier already installed at $HOME/.tmuxifier. Skipping.${NC}"
-fi
 
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
@@ -156,10 +147,9 @@ mkdir -p ~/.config/gtk-4.0
 
 echo -e "${GREEN}🎨 Applying GTK theme via gsettings...${NC}"
 gsettings set org.gnome.desktop.interface gtk-theme 'Material-DeepOcean-BL'
-gsettings set org.gnome.desktop.interface icon-theme 'DeepOcean'
-gsettings set org.gnome.desktop.interface cursor-theme 'Future-black-cursors'
+gsettings set org.gnome.desktop.interface icon-theme 'Dracula'
+gsettings set org.gnome.desktop.interface cursor-theme 'Future-Black-Cursors'
 gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
-
 gsettings set org.gnome.desktop.wm.preferences theme 'Material-DeepOcean-BL'
 
 if command -v nwg-look >/dev/null 2>&1; then
@@ -194,10 +184,24 @@ else
   echo -e "${YELLOW}⚠️ GRUB not detected on system. Skipping GRUB theme installation.${NC}"
 fi
 
-
+# Install Tmux and Tmuxifier
 echo -e "${GREEN}🔌 Installing Tmux Plugin Manager (TPM)...${NC}"
-
 TPM_DIR="$HOME/.tmux/plugins/tpm"
+echo -e "${GREEN}🔌 Installing tmuxifier...${NC}"
+
+if [ -d "$HOME/.tmuxifier" ]; then
+    echo -e "${YELLOW}⚠️ Existing ~/.tmuxifier found, removing it for a fresh install...${NC}"
+    rm -rf "$HOME/.tmuxifier"
+fi
+
+git clone "$TMUXIFIER_REPO" "$HOME/.tmuxifier"
+echo -e "${GREEN}✅ Official tmuxifier cloned to $HOME/.tmuxifier${NC}"
+
+echo -e "${GREEN}🔄 Copying custom tmuxifier layouts...${NC}"
+mkdir -p "$HOME/.tmuxifier/layouts"
+cp -r "$REPO_DIR/.tmuxifier/layouts/." "$HOME/.tmuxifier/layouts/"
+echo -e "${GREEN}✅ Custom tmuxifier layouts copied to $HOME/.tmuxifier/layouts${NC}"
+
 
 # Check if already installed
 if [ -d "$TPM_DIR" ]; then
