@@ -1,13 +1,18 @@
 #!/bin/bash
+
 set -e
+
 # Colors
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-# Paths
+# REPOs
 REPO_URL="https://github.com/ahmad9059/dotfiles.git"
 REPO_URL_NVIM="https://github.com/ahmad9059/nvim"
+TMUXIFIER_REPO="https://github.com/jimeh/tmuxifier.git"
+
+# Paths
 REPO_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/dotfiles_backup"
 WAYBAR_STYLE_TARGET="$HOME/.config/waybar/style.css"
@@ -32,7 +37,7 @@ PACMAN_PACKAGES=(
 )
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi qt6-5compat)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat)
 
 YAY_PACKAGES=(
   visual-studio-code-bin 64gram-desktop-bin vesktop
@@ -60,28 +65,14 @@ mkdir -p "$BACKUP_DIR"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$BACKUP_DIR/"
 [ -f ~/.tmux.conf ] && cp ~/.tmux.conf "$BACKUP_DIR/"
 
-# Copy new dotfiles
-CONFIG_FOLDERS=(
-  cava
-  fastfetch
-  foot
-  ghostty
-  hypr
-  kitty
-  nvim
-  rofi
-  swaync
-  waybar
-  wlogout
-  yazi
-)
 
 # Remove old config folders before copying
-echo -e "${GREEN}🧹 Removing old config folders...${NC}"
-for folder in "${CONFIG_FOLDERS[@]}"; do
-  if [ -d "$HOME/.config/$folder" ]; then
-    rm -rf "$HOME/.config/$folder"
-    echo "  Removed $folder"
+echo -e "${GREEN}🧹 Removing old config folders (only those in repo)...${NC}"
+for folder in "$REPO_DIR/.config/"*; do
+  folder_name=$(basename "$folder")
+  if [ -d "$HOME/.config/$folder_name" ]; then
+    rm -rf "$HOME/.config/$folder_name"
+    echo "  Removed $folder_name"
   fi
 done
 
@@ -90,9 +81,10 @@ echo -e "${GREEN}📄 Copying new dotfiles...${NC}"
 cp -r "$REPO_DIR/.config/"* ~/.config/
 cp "$REPO_DIR/.zshrc" ~/
 cp "$REPO_DIR/.tmux.conf" ~/
+cp "$REPO_DIR/.tmuxifier" ~/
+
 
 # Install neovim from GitHub
-
 if [ -d "$CONFIG_DIR" ]; then
     echo "Removing old Neovim config..."
     rm -rf "$CONFIG_DIR"
@@ -112,6 +104,15 @@ cp "$REPO_DIR/.icons/.icons.tar.xz" "$HOME/"
 tar -xf "$HOME/.icons.tar.xz" -C "$HOME/"
 rm "$HOME/.icons.tar.xz"
 
+# Install tmuxifier
+echo -e "${GREEN}🔌 Installing tmuxifier...${NC}"
+if [ ! -d "$HOME/.tmuxifier" ]; then
+    git clone "$TMUXIFIER_REPO" "$HOME/.tmuxifier"
+    echo -e "${GREEN}✅ Tmuxifier installed to $HOME/.tmuxifier${NC}"
+else
+    echo -e "${YELLOW}⚠️ Tmuxifier already installed at $HOME/.tmuxifier. Skipping.${NC}"
+fi
+
 # Waybar style
 echo -e "${GREEN}🔗 Linking custom Waybar style...${NC}"
 ln -sf "$CUSTOM_WAYBAR_STYLE" "$WAYBAR_STYLE_TARGET"
@@ -125,53 +126,42 @@ fi
 
 # Setting the SDDM themes
 echo -e "${GREEN}🎨 Installing SDDM theme '$SDDM_THEME_NAME'...${NC}"
-# Copy theme folder to /usr/share/sddm/themes/
 if [ -d "$SDDM_THEME_SOURCE" ]; then
   sudo cp -r "$SDDM_THEME_SOURCE" "$SDDM_THEME_DEST"
 else
   echo -e "${YELLOW}⚠️ Theme folder '$SDDM_THEME_SOURCE' not found. Skipping SDDM theme copy.${NC}"
 fi
 
-# Ensure sddm.conf exists
 if [ ! -f "$SDDM_CONF" ]; then
   echo -e "${YELLOW}ℹ️ /etc/sddm.conf not found. Creating it...${NC}"
   echo "[Theme]" | sudo tee "$SDDM_CONF" > /dev/null
 fi
 
-# Set the theme in /etc/sddm.conf
 if grep -q "^\[Theme\]" "$SDDM_CONF"; then
-  # Update existing 'Current=' line or add if missing
   sudo sed -i "/^\[Theme\]/,/^\[/ s/^Current=.*/Current=$SDDM_THEME_NAME/" "$SDDM_CONF"
   if ! grep -q "^Current=" "$SDDM_CONF"; then
     sudo sed -i "/^\[Theme\]/a Current=$SDDM_THEME_NAME" "$SDDM_CONF"
   fi
 else
-  # Append section if [Theme] doesn't exist
   echo -e "\n[Theme]\nCurrent=$SDDM_THEME_NAME" | sudo tee -a "$SDDM_CONF" > /dev/null
 fi
-
-
 echo -e "${GREEN}✅ SDDM theme set to '$SDDM_THEME_NAME'.${NC}"
+
 
 # Gtk theme setup
 echo -e "${GREEN}🎨 Updating GTK theme settings...${NC}"
 
-# Create config directories if not exist
 mkdir -p ~/.config/gtk-3.0
 mkdir -p ~/.config/gtk-4.0
 
 echo -e "${GREEN}🎨 Applying GTK theme via gsettings...${NC}"
-
-# Set GTK interface preferences via gsettings
 gsettings set org.gnome.desktop.interface gtk-theme 'Material-DeepOcean-BL'
 gsettings set org.gnome.desktop.interface icon-theme 'DeepOcean'
 gsettings set org.gnome.desktop.interface cursor-theme 'Future-black-cursors'
 gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
 
-# Optional: if using X11, also set window manager preference (not needed for Wayland)
 gsettings set org.gnome.desktop.wm.preferences theme 'Material-DeepOcean-BL'
 
-# Export the current settings to config files (so other apps or themes can use them)
 if command -v nwg-look >/dev/null 2>&1; then
   echo -e "${GREEN}💾 Exporting GTK settings to .config/gtk-*.0/settings.ini...${NC}"
   nwg-look -x
