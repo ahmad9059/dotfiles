@@ -46,7 +46,7 @@ map("v", "<leader>a`", "va`", { desc = "Select around ``" })
 
 -- Move between buffers with Ctrl + number keys
 for i = 1, 9 do
-  map("n", "<C-" .. i .. ">", function()
+  map({ "n", "v" }, "<leader>" .. i, function()
     local bufs = vim.fn.getbufinfo { buflisted = 1 }
     if bufs[i] then
       vim.api.nvim_set_current_buf(bufs[i].bufnr)
