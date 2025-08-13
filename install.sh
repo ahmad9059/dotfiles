@@ -238,8 +238,8 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
     sleep 1   # give the daemon a second to initialise
   fi
 
-  # Set the GIF wallpaper
-  swww img "$WALLPAPER_DIR/gif0.gif" --transition-type any
+  # Set the wallpaper
+  swww img "$WALLPAPER_DIR/wallpaper-1.jpg" --transition-type any
 else
   echo -e "${YELLOW}⚠️  Not in a Wayland session – skipping swww wallpaper setup.${NC}"
 fi
