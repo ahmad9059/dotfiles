@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script for selecting wallpapers (SUPER W)
+# This script for selecting wallpapers (SUPER+ SHIFT + W)
 
 # WALLPAPERS PATH
 terminal=kitty
@@ -173,8 +173,8 @@ apply_image_wallpaper() {
   # Run additional scripts
   "$SCRIPTSDIR/WallustSwww.sh"
   sleep 2
-  "$SCRIPTSDIR/Refresh.sh"
-  sleep 1
+  # "$SCRIPTSDIR/Refresh.sh"
+  # sleep 1
 
   set_sddm_wallpaper
 }
