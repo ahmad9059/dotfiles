@@ -379,9 +379,10 @@ echo -e "${OK} LC_TIME=ur_PK.UTF-8 set successfully.${RESET}" | tee -a "$LOG_FIL
 
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
 # Print a green package list
-echo -e "\n\033[1;32mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
+# Print package list with header in blue and packages in default color
+echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
-  echo -e "  \033[1;32m• $pkg\033[0m" | tee -a "$LOG_FILE"
+  echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
 # Install packages
