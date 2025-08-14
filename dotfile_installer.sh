@@ -265,7 +265,7 @@ echo -e "${ACTION} Updating GTK theme settings...${RESET}" | tee -a "$LOG_FILE"
   mkdir -p ~/.config/gtk-3.0 ~/.config/gtk-4.0
 
   gsettings set org.gnome.desktop.interface gtk-theme 'Material-DeepOcean-BL'
-  gsettings set org.gnome.desktop.interface icon-theme 'dracula-icons-main'
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
   gsettings set org.gnome.desktop.interface cursor-theme 'Future-Black-Cursors'
   gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
   gsettings set org.gnome.desktop.wm.preferences theme 'Material-DeepOcean-BL'
