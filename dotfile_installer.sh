@@ -30,7 +30,7 @@ start_spinner() {
     while true; do
       printf "\r[ %s ] %s" "${spinner[i % ${#spinner[@]}]}" "$message"
       i=$((i + 1))
-      sleep 0.1
+      sleep 0.05
     done
   ) &
   LOADING_PID=$!
@@ -418,8 +418,8 @@ echo | tee -a "$LOG_FILE"
 # Install packages
 start_spinner "${BLUE}Installing The Packages...${RESET}"
 if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-  stop_spinner ""
   echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+  stop_spinner "Installed"
 else
   echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
   exit 1
