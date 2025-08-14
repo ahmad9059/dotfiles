@@ -11,39 +11,6 @@ OK="$(tput setaf 2)[OK]$(tput sgr0)"
 NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
 ACTION="$(tput setaf 4)[ACTION]$(tput sgr0)"
 RESET="$(tput sgr0)"
-CYAN="$(tput setaf 6)"
-RED="$(tput setaf 1)"
-GREEN="$(tput setaf 2)"
-BLUE="$(tput setaf 4)"
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-
-# ==================
-# Loading Animation
-# ==================
-LOADING_PID=0 # Global PID for the background animation
-start_spinner() {
-  local message="${1:-}"          # Optional message outside brackets
-  local spinner=('—' '\' '|' '/') # Spinner frames
-  (
-    i=0
-    while true; do
-      printf "\r[ %s ] %s" "${spinner[i % ${#spinner[@]}]}" "$message"
-      i=$((i + 1))
-      sleep 0.05
-    done
-  ) &
-  LOADING_PID=$!
-}
-stop_spinner() {
-  local message="${1:-Done!}"
-  if [ $LOADING_PID -ne 0 ]; then
-    kill $LOADING_PID 2>/dev/null
-    wait $LOADING_PID 2>/dev/null
-    LOADING_PID=0
-    printf "\r[✔] %s        \n" "$message"
-  fi
-}
 
 # =========================
 # REPOs
@@ -416,10 +383,8 @@ for pkg in "${REQUIRED_PACKAGES[@]}"; do
 done
 echo | tee -a "$LOG_FILE"
 # Install packages
-start_spinner "${BLUE}Installing The Packages...${RESET}"
 if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
   echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-  stop_spinner "Installed"
 else
   echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
   exit 1
