@@ -86,10 +86,10 @@ else
   fi
 fi
 
-# ============================
-# Log file
-# ============================
-LOG_FILE="$HOME/install_dotfiles.log"
+# ===========================
+# Log Details
+# ===========================
+LOG_FILE="$HOME/installer_log/install_dotfiles.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # ===========================
@@ -378,11 +378,17 @@ echo -e "${OK} LC_TIME=ur_PK.UTF-8 set successfully.${RESET}" | tee -a "$LOG_FIL
 # =================
 
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-echo "\n${REQUIRED_PACKAGES[@]}\n"
+# Print a green package list
+echo -e "\n\033[1;32mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
+for pkg in "${REQUIRED_PACKAGES[@]}"; do
+  echo -e "  \033[1;32m• $pkg\033[0m" | tee -a "$LOG_FILE"
+done
+echo | tee -a "$LOG_FILE"
+# Install packages
 if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
   echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
 else
-  echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}"
+  echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
   exit 1
 fi
 
