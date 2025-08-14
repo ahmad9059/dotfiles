@@ -374,13 +374,13 @@ echo -e "${OK} LC_TIME=ur_PK.UTF-8 set successfully.${RESET}" | tee -a "$LOG_FIL
 # =================
 
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-# Print a green package list
 # Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
+echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
 # Install packages
 if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
   echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
@@ -394,12 +394,17 @@ fi
 # ==============================
 
 echo -e "\n${ACTION} Do you want to install the following pacman packages?${RESET}"
-echo "${PACMAN_PACKAGES[@]}"
+# Print package list with header in blue and packages in default color
+echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
+for pkg in "${PACMAN_PACKAGES[@]}"; do
+  echo -e "  • $pkg" | tee -a "$LOG_FILE"
+done
+echo | tee -a "$LOG_FILE"
 read -rp "Type 'yes/no' to continue: " ans1
 
 if [[ "$ans1" == "yes" ]]; then
   echo -e "${ACTION} Installing pacman packages...${RESET}" | tee -a "$LOG_FILE"
-
+  echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
   if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
     echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
   else
@@ -416,11 +421,17 @@ fi
 
 if command -v yay >/dev/null 2>&1; then
   echo -e "\n${ACTION} Do you want to install the following AUR (yay) packages?${RESET}"
-  echo "${YAY_PACKAGES[@]}"
+  # Print package list with header in blue and packages in default color
+  echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
+  for pkg in "${YAY_PACKAGES[@]}"; do
+    echo -e "  • $pkg" | tee -a "$LOG_FILE"
+  done
+  echo | tee -a "$LOG_FILE"
   read -rp "Type 'yes/no' to continue: " ans2
 
   if [[ "$ans2" == "yes" ]]; then
     echo -e "${ACTION} Installing AUR packages...${RESET}" | tee -a "$LOG_FILE"
+    echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
     if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
       echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
     else
