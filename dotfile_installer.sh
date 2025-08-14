@@ -93,7 +93,11 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # Backup old configs
 # ===========================
 echo -e "${ACTION} Backing up existing dotfiles to ${BACKUP_DIR}...${RESET}"
-
+# Remove existing backup if it exists
+if [ -d "$BACKUP_DIR" ]; then
+  echo -e "${ACTION} Existing backup found. Removing old backup...${RESET}"
+  rm -rf "$BACKUP_DIR" &>>"$LOG_FILE"
+fi
 if mkdir -p "$BACKUP_DIR" &>>"$LOG_FILE"; then
   # Copy only if files/folders exist
   [ -d "$HOME/.config" ] && cp -r "$HOME/.config" "$BACKUP_DIR/" &>>"$LOG_FILE"
@@ -422,7 +426,7 @@ fi
 if command -v yay >/dev/null 2>&1; then
   echo -e "\n${ACTION} Do you want to install the following AUR (yay) packages?${RESET}"
   # Print package list with header in blue and packages in default color
-  echo -e "\n\033[1;34mPacman Packages:\033[0m\n" | tee -a "$LOG_FILE"
+  echo -e "\n\033[1;34mYay Packages:\033[0m\n" | tee -a "$LOG_FILE"
   for pkg in "${YAY_PACKAGES[@]}"; do
     echo -e "  • $pkg" | tee -a "$LOG_FILE"
   done
