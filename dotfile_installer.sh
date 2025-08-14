@@ -399,7 +399,7 @@ fi
 
 echo -e "\n${ACTION} Do you want to install the following pacman packages?${RESET}"
 # Print package list with header in blue and packages in default color
-echo -e "\n\033[1;34mPacman Packages:\033[0m\n" | tee -a "$LOG_FILE"
+echo -e "\n\033[1;34mPacman Packages(Optional):\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${PACMAN_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
