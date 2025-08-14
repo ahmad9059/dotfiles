@@ -180,21 +180,31 @@ fi
 # ==============================
 # Icons
 # ==============================
-echo -e "${ACTION} 🎨 Installing icons...${RESET}"
-
-ICON_ARCHIVE="$REPO_DIR/.icons/.icons.tar.xz"
-
-if [ -f "$ICON_ARCHIVE" ]; then
-  cp "$ICON_ARCHIVE" "$HOME/" &>>"$LOG_FILE"
-  if tar -xf "$HOME/.icons.tar.xz" -C "$HOME/" &>>"$LOG_FILE"; then
-    rm "$HOME/.icons.tar.xz" &>>"$LOG_FILE"
-    echo -e "${OK} 🎨 Icons installed successfully in $HOME/.icons.${RESET}"
+# echo -e "${ACTION} 🎨 Installing icons...${RESET}"
+#
+# ICON_ARCHIVE="$REPO_DIR/.icons/.icons.tar.xz"
+#
+# if [ -f "$ICON_ARCHIVE" ]; then
+#   cp "$ICON_ARCHIVE" "$HOME/" &>>"$LOG_FILE"
+#   if tar -xf "$HOME/.icons.tar.xz" -C "$HOME/" &>>"$LOG_FILE"; then
+#     rm "$HOME/.icons.tar.xz" &>>"$LOG_FILE"
+#     echo -e "${OK} 🎨 Icons installed successfully in $HOME/.icons.${RESET}"
+#   else
+#     echo -e "${ERROR} Failed to extract icons archive.${RESET}"
+#     rm -f "$HOME/.icons.tar.xz" &>>"$LOG_FILE"
+#   fi
+# else
+#   echo -e "${WARN} Icons archive not found at ${ICON_ARCHIVE}, skipping installation.${RESET}"
+# fi
+if command -v yay >/dev/null 2>&1; then
+  echo -e "${ACTION} Installing 'papirus-icon-theme' via yay...${RESET}"
+  if yay -S --needed --noconfirm papirus-icon-theme >>"$LOG_FILE" 2>&1; then
+    echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
   else
-    echo -e "${ERROR} Failed to extract icons archive.${RESET}"
-    rm -f "$HOME/.icons.tar.xz" &>>"$LOG_FILE"
+    echo -e "${ERROR} Failed to install 'papirus-icon-theme'. Check $LOG_FILE for details.${RESET}"
   fi
 else
-  echo -e "${WARN} Icons archive not found at ${ICON_ARCHIVE}, skipping installation.${RESET}"
+  echo -e "${WARN} yay not found. Skipping 'papirus-icon-theme' installation.${RESET}"
 fi
 
 # =============================
