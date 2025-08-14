@@ -110,7 +110,6 @@ fi
 # Remove old config folders before copying
 # ========================================
 echo -e "${ACTION} Removing old config folders from ~/.config that are in ${REPO_DIR}...${RESET}"
-
 if [ -d "$REPO_DIR/.config" ]; then
   for folder in "$REPO_DIR/.config/"*; do
     folder_name=$(basename "$folder")
