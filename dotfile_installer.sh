@@ -378,7 +378,7 @@ echo -e "${OK} LC_TIME=ur_PK.UTF-8 set successfully.${RESET}" | tee -a "$LOG_FIL
 # =================
 
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-
+echo "\n${REQUIRED_PACKAGES[@]}\n"
 if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
   echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
 else
