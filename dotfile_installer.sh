@@ -43,7 +43,7 @@ GRUB_THEME_DIR="/tmp/vimix-grub"
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat npm)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
