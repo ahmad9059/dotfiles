@@ -31,9 +31,6 @@
   border-radius: 10px;
   border: 2px solid #000000;
 }
-.notification-content {
-  background: transparent;
-}
 
 /* Optional: remove background from grouped notifications */
 .notification-group {
