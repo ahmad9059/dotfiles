@@ -27,7 +27,6 @@
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
-  "script-fail-notify": true,
   "widgets": ["dnd", "buttons-grid", "mpris", "title", "notifications"],
   "widget-config": {
     "title": {
