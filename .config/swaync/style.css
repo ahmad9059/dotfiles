@@ -27,7 +27,7 @@
 .notification {
   /*color: #ffffff;*/
   background: #000000;
-  padding: 3px 10px 3px 6px;
+  /* padding: 3px 10px 3px 6px; */
   border-radius: 10px;
   border: 2px solid #000000;
 }
@@ -36,11 +36,12 @@
   background-color: transparent;
 }
 .image {
-  padding-right: 10px; /* Adds space to the right of the image */
+  margin-right: 20px; /* Adds space to the right of the image */
 }
-.notification-content {
-  margin-left: 10px; /* Adds space to the left of the content */
-}
+/* .notification-content { */
+/*   margin-right: 100px; /* Adds space to the left of the content */
+*/
+/* } */
 .notification-default-action {
   margin: 0;
   padding: 0;
