@@ -24,7 +24,7 @@
 .notification {
   /*color: #ffffff;*/
   background: #000000;
-  /* padding: 3px 10px 3px 6px; */
+  padding: 7px 7px 7px 0px;
   border-radius: 10px;
   /* border: 1px solid #000000; */
 }
@@ -334,17 +334,5 @@
   border-radius: 10px;
   font-size: x-large;
   color: #ffffff;
-}
-
-/* Target ONLY the volume bar inside notifications */
-.notification .widget-volume scale trough {
-  min-height: 4px; /* reduce height */
-  min-width: 80px; /* reduce width */
-  background-color: #444444; /* track color */
-  border-radius: 4px; /* smooth corners */
-}
-
-.notification .widget-volume slider {
-  background-color: #88c0d0; /* thumb/filled color */
 }
 

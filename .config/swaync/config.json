@@ -20,8 +20,8 @@
   "timeout-low": 3,
   "timeout-critical": 0,
   "fit-to-screen": false,
-  "control-center-width": 380,
-  "control-center-height": 1000,
+  "control-center-width": 330,
+  "control-center-height": 900,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -73,10 +73,6 @@
         {
           "label": "󰝟",
           "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
         }
       ]
     }
