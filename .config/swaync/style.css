@@ -26,12 +26,13 @@
   background: #000000;
   /* padding: 3px 10px 3px 6px; */
   border-radius: 10px;
-  /* border: 1px solid #000000; */
+  border: 1px solid #000000;
 }
 
 .notification-group {
   background-color: transparent;
   border-radius: 10px;
+  background: #ffffff;
 }
 .image {
   margin-right: 10px;
