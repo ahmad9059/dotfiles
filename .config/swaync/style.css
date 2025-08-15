@@ -23,7 +23,7 @@
 }
 
 .notification {
-  /*color: #ffffff;*/
+  /*color: #cdd6f4;*/
   background: #000000;
   padding: 7px 7px 7px 0px;
   border-radius: 10px;
@@ -33,19 +33,13 @@
 .notification-group {
   background-color: transparent;
   border-radius: 10px;
-  border: 1px solid #ffffff99;
+  border: 1px solid #cdd6f499;
 }
 .image {
-  margin-right: 10px;
-}
-/* .notification-content { */
-/*   font-size: 1px; */
-/*   margin-right: 0px; */
-/* } */
-.notification-default-action {
-  margin: 0;
+  margin-right: 12px;
+  margin-left: 15px;
+  border-radius: 12px;
   padding: 0;
-  border-radius: 10px;
 }
 
 .close-button {
@@ -66,20 +60,34 @@
 }
 
 .notification-action {
-  border: 1px solid #000000;
   border-top: none;
   border-radius: 10px;
+  background: #000000;
+  color: #89dceb;
+  padding: 0px; /* Reduce container padding */
+  min-height: 0px; /* Remove GTK min height */
+  min-width: 0px; /* Remove GTK min width */
 }
 
-.notification-default-action:hover,
-.notification-action:hover {
-  color: #ffffff;
-  background: #000000;
+.notification-action label {
+  padding: 0px;
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: #89dceb;
 }
 
 .notification-default-action {
+  margin: 0;
+  padding: 0;
+  font-size: 0.1rem;
   border-radius: 10px;
-  margin: 5px;
+  background: #000000;
+}
+.notification-default-action:hover,
+.notification-action:hover {
+  color: #cdd6f4;
+  background: #000000;
 }
 
 .notification-default-action:not(:only-child) {
@@ -103,8 +111,8 @@
 
 .inline-reply-entry {
   background: #000000;
-  color: #ffffff;
-  caret-color: #ffffff;
+  color: #cdd6f4;
+  caret-color: #cdd6f4;
   border: 1px solid #000000;
   border-radius: 10px;
 }
@@ -115,12 +123,12 @@
   background: #000000;
   border: 1px solid #000000;
   border-radius: 10px;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
 .inline-reply-button:disabled {
   background: initial;
-  color: #ffffff;
+  color: #cdd6f4;
   border: 1px solid transparent;
 }
 
@@ -130,7 +138,7 @@
 
 .body-image {
   margin-top: 6px;
-  color: #ffffff;
+  color: #cdd6f4;
   border-radius: 10px;
 }
 
@@ -138,7 +146,7 @@
   font-size: 0.9rem;
   /* font-weight: bold; */
   background: transparent;
-  color: #ffffff;
+  color: #cdd6f4;
   text-shadow: none;
 }
 
@@ -146,7 +154,7 @@
   font-size: 0.8rem;
   /* font-weight: bold; */
   background: transparent;
-  color: #ffffff;
+  color: #cdd6f4;
   text-shadow: none;
   margin-right: 18px;
 }
@@ -155,14 +163,14 @@
   font-size: 0.8rem;
   /* font-weight: bold; */
   background: transparent;
-  color: #ffffff;
+  color: #cdd6f4;
   text-shadow: none;
 }
 
 .control-center {
   background: #000000;
   border: 1px solid #000000;
-  color: #ffffff;
+  color: #cdd6f4;
   border-radius: 10px;
 }
 
@@ -183,7 +191,7 @@
 }
 
 .widget-title {
-  color: #ffffff;
+  color: #cdd6f4;
   background: #000000;
   padding: 3px 6px;
   margin: 5px;
@@ -193,7 +201,7 @@
 
 .widget-title > button {
   font-size: 0.75rem;
-  color: #ffffff;
+  color: #cdd6f4;
   border-radius: 10px;
   background: transparent;
   border: 0.5px solid #000000;
@@ -201,7 +209,7 @@
 
 /* clear button */
 .widget-title > button:hover {
-  background: #ffffff;
+  background: #cdd6f4;
   color: red;
 }
 
@@ -217,7 +225,7 @@
 .widget-dnd > switch {
   border-radius: 12px;
   /* border: 1px solid #00ffff; */
-  background: #ffffff;
+  background: #cdd6f4;
 }
 
 .widget-dnd > switch:checked {
@@ -240,11 +248,11 @@
 
 .widget-label > label {
   font-size: 1rem;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
 .widget-mpris {
-  color: #ffffff;
+  color: #cdd6f4;
   background: #000000;
   padding: 3px 6px;
   margin: 5px;
@@ -281,12 +289,12 @@
   margin: 1px;
   background: #000000;
   border-radius: 10px;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
 /* individual buttons */
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: #ffffff;
+  background: #cdd6f4;
   color: #000000;
 }
 
@@ -306,34 +314,12 @@
   border-radius: 12.6px;
 }
 
-.widget-volume {
-  background: #000000;
-  padding: 2px;
-  margin: 10px 10px 5px 10px;
-  border-radius: 10px;
-  font-size: x-large;
-  color: #ffffff;
-}
-
-.widget-volume > box > button {
-  background: #000000;
-  border: none;
-}
-
-.per-app-volume {
-  background-color: #000000;
-  padding: 4px 8px 8px;
-  margin: 0 8px 8px;
-  border-radius: 10px;
-  color: #ffffff;
-}
-
 .widget-backlight {
   background: #000000;
   padding: 5px;
   margin: 10px 10px 5px 10px;
   border-radius: 10px;
   font-size: x-large;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
