@@ -10,8 +10,13 @@ button {
   background-position: center;
   background-size: 20%;
   background-color: rgba(200, 220, 255, 0);
-  border-radius: 50px; /* Increased border radius for a more rounded look */
+  border-radius: 80px; /* Increased border radius for a more rounded look */
   margin: 10px;
+  animation: gradient_f 10s ease-in infinite;
+  transition:
+    all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 button:focus {
@@ -24,7 +29,7 @@ button:hover {
   color: #1e1e2e;
   background-size: 70%;
   margin: 5px;
-  border-radius: 50px;
+  border-radius: 80px;
 }
 
 /* Adjust the size of the icon or content inside the button */
