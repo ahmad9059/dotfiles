@@ -27,7 +27,7 @@
 }
 
 .notification {
-  /*color: @text-color;*/
+  /*color: #ffffff;*/
   background: #000000;
   padding: 3px 10px 3px 6px;
   border-radius: 10px;
@@ -65,7 +65,7 @@
 
 .notification-default-action:hover,
 .notification-action:hover {
-  color: @text-color;
+  color: #ffffff;
   background: #000000;
 }
 
@@ -95,8 +95,8 @@
 
 .inline-reply-entry {
   background: #000000;
-  color: @text-color;
-  caret-color: @text-color;
+  color: #ffffff;
+  caret-color: #ffffff;
   border: 1px solid #000000;
   border-radius: 10px;
 }
@@ -107,12 +107,12 @@
   background: #000000;
   border: 1px solid #000000;
   border-radius: 10px;
-  color: @text-color;
+  color: #ffffff;
 }
 
 .inline-reply-button:disabled {
   background: initial;
-  color: @text-color;
+  color: #ffffff;
   border: 1px solid transparent;
 }
 
@@ -122,7 +122,7 @@
 
 .body-image {
   margin-top: 6px;
-  color: @text-color;
+  color: #ffffff;
   border-radius: 10px;
 }
 
@@ -130,7 +130,7 @@
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #ffffff;
   text-shadow: none;
 }
 
@@ -138,7 +138,7 @@
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #ffffff;
   text-shadow: none;
   margin-right: 18px;
 }
@@ -147,14 +147,14 @@
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #ffffff;
   text-shadow: none;
 }
 
 .control-center {
   background: #000000;
   border: 1px solid #000000;
-  color: @text-color;
+  color: #ffffff;
   border-radius: 10px;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .widget-title {
-  color: @text-color;
+  color: #ffffff;
   background: #000000;
   padding: 3px 6px;
   margin: 5px;
@@ -185,7 +185,7 @@
 
 .widget-title > button {
   font-size: 0.75rem;
-  color: @text-color;
+  color: #ffffff;
   border-radius: 10px;
   background: transparent;
   border: 0.5px solid #000000;
@@ -193,7 +193,7 @@
 
 /* clear button */
 .widget-title > button:hover {
-  background: @text-color;
+  background: #ffffff;
   color: red;
 }
 
@@ -233,11 +233,11 @@
 
 .widget-label > label {
   font-size: 1rem;
-  color: @text-color;
+  color: #ffffff;
 }
 
 .widget-mpris {
-  color: @text-color;
+  color: #ffffff;
   background: #000000;
   padding: 3px 6px;
   margin: 5px;
@@ -275,12 +275,12 @@
   margin: 1px;
   background: #000000;
   border-radius: 10px;
-  color: @text-color;
+  color: #ffffff;
 }
 
 /* individual buttons */
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: @text-color;
+  background: #ffffff;
   color: #000000-hover;
 }
 
@@ -300,7 +300,7 @@
   margin: 10px 10px 5px 10px;
   border-radius: 10px;
   font-size: x-large;
-  color: @text-color;
+  color: #ffffff;
 }
 
 .widget-volume > box > button {
@@ -313,7 +313,7 @@
   padding: 4px 8px 8px;
   margin: 0 8px 8px;
   border-radius: 10px;
-  color: @text-color;
+  color: #ffffff;
 }
 
 .widget-backlight {
@@ -322,24 +322,6 @@
   margin: 10px 10px 5px 10px;
   border-radius: 10px;
   font-size: x-large;
-  color: @text-color;
-}
-
-/* Changes the background of each notification */
-.notification {
-  background-color: #1e1e2e; /* Replace with your desired color */
-  color: #ffffff; /* Text color */
-  border-radius: 10px; /* Optional: rounded corners */
-}
-
-/* Optional: Change background for urgency levels */
-.notification.low {
-  background-color: #2e7d32;
-}
-.notification.normal {
-  background-color: #1976d2;
-}
-.notification.critical {
-  background-color: #d32f2f;
+  color: #ffffff;
 }
 
