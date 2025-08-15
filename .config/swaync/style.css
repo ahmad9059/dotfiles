@@ -10,6 +10,7 @@
   font-family: "JetBrains Mono Nerd Font";
   font-weight: 600;
   font-size: 13px;
+  margin: 5px;
 }
 
 .control-center .notification-row:focus,
