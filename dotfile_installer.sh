@@ -151,18 +151,21 @@ fi
 # ==========================
 # Install Neovim from GitHub
 # ==========================
-echo -e "${ACTION} Installing Neovim config from ${REPO_URL_NVIM}...${RESET}"
-
-# Remove old config if exists
-[ -d "$CONFIG_DIR" ] && rm -rf "$CONFIG_DIR" &>>"$LOG_FILE"
-
+echo -e "${ACTION} Installing Neovim config from ${REPO_URL_NVIM}...${RESET}" >>"$LOG_FILE" 2>&1
+# Remove old config if it exists
+[ -d "$CONFIG_DIR" ] && rm -rf "$CONFIG_DIR" >>"$LOG_FILE" 2>&1
 # Clone new config
-if git clone "$REPO_URL_NVIM" "$CONFIG_DIR" &>>"$LOG_FILE"; then
-  echo -e "${OK} Neovim config installed in ${CONFIG_DIR}.${RESET}"
+if git clone "$REPO_URL_NVIM" "$CONFIG_DIR" >>"$LOG_FILE" 2>&1; then
+  echo -e "${OK} Neovim config installed in ${CONFIG_DIR}.${RESET}" >>"$LOG_FILE" 2>&1
 else
-  echo -e "${ERROR} Failed to clone Neovim config from ${REPO_URL_NVIM}.${RESET}"
+  echo -e "${ERROR} Failed to clone Neovim config from ${REPO_URL_NVIM}.${RESET}" >>"$LOG_FILE" 2>&1
   exit 1
 fi
+echo -e "${ACTION} Installing and Setting Up Neovim Lazy, Mason Packages" >>"$LOG_FILE" 2>&1
+rm -rf "$CONFIG_DIR/.git" >>"$LOG_FILE" 2>&1
+nvim --headless -c 'qa' >>"$LOG_FILE" 2>&1
+nvim --headless -c 'Lazy sync' -c 'qa' >>"$LOG_FILE" 2>&1
+echo -e "${OK} NvChad, plugins, and Mason packages installed successfully!${RESET}" >>"$LOG_FILE" 2>&1
 
 # =========================
 # Themes
