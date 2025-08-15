@@ -13,6 +13,10 @@
   font-size: 1rem;
 }
 
+.script-fail-notify {
+  background: #000000;
+  background-color: #000000;
+}
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
