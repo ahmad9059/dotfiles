@@ -47,9 +47,9 @@
 
 .close-button {
   background: #f7768e;
+  font-size: 2px;
   color: #000000;
   text-shadow: none;
-  padding: -20px;
   border-radius: 10px;
   margin-top: 5px;
   margin-right: 5px;
