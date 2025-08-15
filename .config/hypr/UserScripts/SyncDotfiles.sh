@@ -11,31 +11,29 @@ NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
 
 # Send notification
 notify() {
-    local title="$1"
-    local message="$2"
-    local urgency="$3" # low, normal, critical
-    notify-send -i "$NOTIF_ICON" -u "$urgency" "$title" "$message"
+  local title="$1"
+  local message="$2"
+  local urgency="$3" # low, normal, critical
+  notify-send -i "$NOTIF_ICON" -u "$urgency" "$title" "$message"
 }
-
 
 # Error handler
 on_error() {
-    local exit_code=$?
-    notify "❌ Dotfiles Sync Failed" "Script exited with code $exit_code" critical
-    exit $exit_code
+  local exit_code=$?
+  notify "Dotfiles Sync Failed" "Script exited with code $exit_code" critical
+  exit $exit_code
 }
 trap on_error ERR
-
 
 # Sync .config items that exist in repo
 echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
-    name=$(basename "$item")
-    if [ -d "$HOME/.config/$name" ]; then
-        rsync -av --delete "$HOME/.config/$name/" "$REPO_DIR/.config/$name/"
-    elif [ -f "$HOME/.config/$name" ]; then
-        cp "$HOME/.config/$name" "$REPO_DIR/.config/$name"
-    fi
+  name=$(basename "$item")
+  if [ -d "$HOME/.config/$name" ]; then
+    rsync -av --delete "$HOME/.config/$name/" "$REPO_DIR/.config/$name/"
+  elif [ -f "$HOME/.config/$name" ]; then
+    cp "$HOME/.config/$name" "$REPO_DIR/.config/$name"
+  fi
 done
 
 # Sync top-level items (excluding .icons)
@@ -49,15 +47,15 @@ rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/"
 [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
 [ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
 
-echo -e "${GREEN}✅ Local changes synced to repo.${NC}"
+echo -e "${GREEN}Local changes synced to repo.${NC}"
 
 # Commit and push changes
-echo -e "${GREEN}⬆️ Committing and pushing changes...${NC}"
+echo -e "${GREEN}Committing and pushing changes...${NC}"
 cd "$REPO_DIR"
 git add .
 if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
-    git push
-    notify "✅ Dotfiles Sync Completed" "Changes committed and pushed successfully" normal
+  git push
+  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully" normal
 else
-    notify "ℹ️ Dotfiles Sync" "No changes to commit" low
+  notify "Dotfiles Sync" "No changes to commit" low
 fi
