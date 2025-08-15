@@ -51,8 +51,8 @@
   text-shadow: none;
   padding: 0;
   border-radius: 10px;
-  margin-top: 0px;
-  margin-right: 0px;
+  margin-top: 10px;
+  margin-right: 5px;
 }
 
 .close-button:hover {
