@@ -1,15 +1,18 @@
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
 /* swaync colors - wallust from waybar.css */
 
-@define-color noti-border-color #000000;
-@define-color noti-bg #000000;
-@define-color noti-bg-alt #000000;
+@import "../../.config/waybar/wallust/colors-waybar.css";
+
+@define-color noti-border-color @color12;
+@define-color noti-bg rgba(0, 0, 0, 0.8);
+@define-color noti-bg-alt @background-alt;
 @define-color noti-bg-hover @background;
-@define-color text-color #FFFFFF;
+@define-color text-color @foreground;
 
 * {
   font-family: "JetBrains Mono Nerd Font";
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .control-center .notification-row:focus,
@@ -28,6 +31,7 @@
   background: @noti-bg;
   padding: 3px 10px 3px 6px;
   border-radius: 10px;
+  border: 2px solid @noti-border-color;
 }
 
 .notification-default-action {
@@ -54,6 +58,7 @@
 }
 
 .notification-action {
+  border: 1px solid @noti-border-color;
   border-top: none;
   border-radius: 10px;
 }
@@ -92,6 +97,7 @@
   background: @noti-bg;
   color: @text-color;
   caret-color: @text-color;
+  border: 1px solid @noti-border-color;
   border-radius: 10px;
 }
 
@@ -99,6 +105,7 @@
   font-size: 0.5rem;
   margin-left: 4px;
   background: @noti-bg;
+  border: 1px solid @noti-border-color;
   border-radius: 10px;
   color: @text-color;
 }
@@ -115,14 +122,13 @@
 
 .body-image {
   margin-top: 6px;
-  margin-left: 20px;
-  margin-right: 20px;
   color: @text-color;
   border-radius: 10px;
 }
 
 .summary {
   font-size: 1rem;
+  font-weight: bold;
   background: transparent;
   color: @text-color;
   text-shadow: none;
@@ -130,6 +136,7 @@
 
 .time {
   font-size: 1rem;
+  font-weight: bold;
   background: transparent;
   color: @text-color;
   text-shadow: none;
@@ -138,6 +145,7 @@
 
 .body {
   font-size: 1rem;
+  font-weight: bold;
   background: transparent;
   color: @text-color;
   text-shadow: none;
@@ -145,6 +153,7 @@
 
 .control-center {
   background: @noti-bg;
+  border: 1px solid @noti-border-color;
   color: @text-color;
   border-radius: 10px;
 }
@@ -179,6 +188,7 @@
   color: @text-color;
   border-radius: 10px;
   background: transparent;
+  border: 0.5px solid @noti-border-color;
 }
 
 /* clear button */
@@ -188,18 +198,18 @@
 }
 
 .widget-dnd {
-  background: @noti-bg;
+  background: @noti-bg-alt;
   padding: 3px 6px;
   margin: 5px;
   border-radius: 10px;
   font-size: 0.5rem;
-  color: #ffffff;
+  color: @noti-border-color;
 }
 
 .widget-dnd > switch {
   border-radius: 10px;
-  background: @noti-bg;
-  border: 1px solid #ffffff99;
+  border: 1px solid #7aa2f7;
+  background: @noti-border-color;
 }
 
 .widget-dnd > switch:checked {
@@ -208,7 +218,7 @@
 }
 
 .widget-dnd > switch slider {
-  background: #ffffff;
+  background: @noti-bg;
   border-radius: 10px;
 }
 
@@ -239,12 +249,12 @@
 }
 
 .widget-mpris-player {
-  /* padding: 3px 6px; */
+  padding: 3px 6px;
   margin: 5px;
 }
 
 .widget-mpris-title {
-  font-weight: 400;
+  font-weight: 100;
   font-size: 1rem;
 }
 
@@ -254,6 +264,7 @@
 
 .widget-buttons-grid {
   font-size: large;
+  color: @noti-border-color;
   padding: 2px;
   margin: 5px;
   border-radius: 10px;
@@ -283,11 +294,28 @@
   background: transparent;
 }
 
-.notification.low progress,
-.notification.normal progress {
-  background-color: #00ffff;
-  border-radius: 12.6px;
+.widget-volume {
+  background: @noti-bg-alt;
+  padding: 2px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 10px;
+  font-size: x-large;
+  color: @text-color;
 }
+
+.widget-volume > box > button {
+  background: @noti-border-color;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: @noti-bg;
+  padding: 4px 8px 8px;
+  margin: 0 8px 8px;
+  border-radius: 10px;
+  color: @text-color;
+}
+
 .widget-backlight {
   background: @noti-bg-alt;
   padding: 5px;
