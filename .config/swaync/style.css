@@ -327,3 +327,31 @@
   color: #ffffff;
 }
 
+@define-color bg rgb(30, 30, 30); /* new darker background; change as desired */
+
+/* Overrides the main notification card background */
+.notification {
+  background: @bg;
+  color: #ffffff; /* text color, adjust if needed */
+  border-radius: 8px; /* optional */
+  margin: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensures inner content doesn't override outer styling */
+.notification-content {
+  background: transparent;
+}
+
+/* Optional: remove background from grouped notifications */
+.notification-group {
+  background-color: transparent;
+  outline: none;
+}
+
+/* Optional: hover styles */
+.notification-row:hover,
+.notification-row:focus {
+  background: rgba(50, 50, 50, 0.5); /* slight highlight when focused/hovered */
+}
+
