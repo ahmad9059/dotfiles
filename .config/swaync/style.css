@@ -35,12 +35,13 @@
 .notification-group {
   background-color: transparent;
 }
-.notification .image {
-  margin-right: 20px; /* Adds space to the right of the image */
+.image {
+  margin-right: 10px;
 }
-.notification-content {
-  margin-right: 100px;
-}
+/* .notification-content { */
+/*   font-size: 1px; */
+/*   margin-right: 0px; */
+/* } */
 .notification-default-action {
   margin: 0;
   padding: 0;
@@ -134,16 +135,16 @@
 }
 
 .summary {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  /* font-weight: bold; */
   background: transparent;
   color: #ffffff;
   text-shadow: none;
 }
 
 .time {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.8rem;
+  /* font-weight: bold; */
   background: transparent;
   color: #ffffff;
   text-shadow: none;
@@ -151,8 +152,8 @@
 }
 
 .body {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.8rem;
+  /* font-weight: bold; */
   background: transparent;
   color: #ffffff;
   text-shadow: none;
