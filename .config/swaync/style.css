@@ -336,3 +336,15 @@
   color: #ffffff;
 }
 
+/* Target ONLY the volume bar inside notifications */
+.notification .widget-volume scale trough {
+  min-height: 4px; /* reduce height */
+  min-width: 80px; /* reduce width */
+  background-color: #444444; /* track color */
+  border-radius: 4px; /* smooth corners */
+}
+
+.notification .widget-volume slider {
+  background-color: #88c0d0; /* thumb/filled color */
+}
+
