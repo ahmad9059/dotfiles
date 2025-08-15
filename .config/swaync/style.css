@@ -29,7 +29,7 @@
   background: #000000;
   /* padding: 3px 10px 3px 6px; */
   border-radius: 10px;
-  /* border: 2px solid #000000; */
+  border: 1px solid #000000;
 }
 
 .notification-group {
@@ -129,13 +129,13 @@
 }
 
 .body-image {
-  margin-top: 6px;
+  margin-top: 600px;
   color: #ffffff;
   border-radius: 10px;
 }
 
 .summary {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   /* font-weight: bold; */
   background: transparent;
   color: #ffffff;
