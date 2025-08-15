@@ -30,18 +30,19 @@
   padding: 3px 10px 3px 6px;
   border-radius: 10px;
   border: 2px solid #000000;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .notification-group {
   background-color: transparent;
 }
 
-.notification-content {
-  font-size: 1px; /* Adjust the font size as needed */
+.notification {
+  padding: 8px 12px; /* top/bottom 8px, left/right 12px */
+  border-radius: 10px; /* optional rounded corners */
 }
-.notification-icon {
-  margin-right: 10px; /* adjusts gap between icon and text */
-}
+
 .notification-default-action {
   margin: 0;
   padding: 0;
