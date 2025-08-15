@@ -32,7 +32,7 @@
 .notification-group {
   background-color: transparent;
   border-radius: 10px;
-  background: #ffffff;
+  border: 1px solid #000000aa;
 }
 .image {
   margin-right: 10px;
