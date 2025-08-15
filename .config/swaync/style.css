@@ -1,12 +1,10 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
 /* swaync colors - wallust from waybar.css */
 
-@import "../../.config/waybar/wallust/colors-waybar.css";
-
 @define-color noti-border-color @color12;
-@define-color noti-bg rgba(0, 0, 0, 0.8);
-@define-color noti-bg-alt @background-alt;
-@define-color noti-bg-hover @background;
+@define-color noti-bg #000000;
+@define-color noti-bg-alt #000000;
+@define-color noti-bg-hover #000000;
 @define-color text-color @foreground;
 
 * {
@@ -117,7 +115,7 @@
 }
 
 .inline-reply-button:hover {
-  background: #000000-hover;
+  background: #000000;
 }
 
 .body-image {
@@ -201,30 +199,29 @@
   background: #000000;
   padding: 3px 6px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 0.5rem;
   color: #000000;
 }
 
 .widget-dnd > switch {
-  border-radius: 10px;
-  border: 1px solid #7aa2f7;
-  background: #000000;
+  border-radius: 12px;
+  /* border: 1px solid #00ffff; */
+  background: #ffffff;
 }
 
 .widget-dnd > switch:checked {
   background: #f7768e;
-  border: 1px solid #f7768e;
 }
 
 .widget-dnd > switch slider {
   background: #000000;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .widget-dnd > switch:checked slider {
   background: #000000;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .widget-label {
@@ -249,12 +246,11 @@
 }
 
 .widget-mpris-player {
-  padding: 3px 6px;
   margin: 5px;
 }
 
 .widget-mpris-title {
-  font-weight: 100;
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -281,7 +277,7 @@
 /* individual buttons */
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
   background: #ffffff;
-  color: #000000-hover;
+  color: #000000;
 }
 
 .widget-menubar > box > .menu-button-bar > button {
@@ -292,6 +288,12 @@
 .topbar-buttons > button {
   border: none;
   background: transparent;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: #00ffff;
+  border-radius: 12.6px;
 }
 
 .widget-volume {
