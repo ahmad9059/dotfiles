@@ -35,7 +35,8 @@
 /* Optional: remove background from grouped notifications */
 .notification-group {
   background-color: transparent;
-  /* outline: none; */
+  outline: 1px solid rgba(255, 255, 255, 0.2); /* light white, 20% opacity */
+  border-radius: 8px; /* optional: rounded corners */
 }
 .notification-default-action {
   margin: 0;
