@@ -31,6 +31,7 @@
 
 .notification-group {
   background-color: transparent;
+  border-radius: 10px;
 }
 .image {
   margin-right: 10px;
