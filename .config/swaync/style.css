@@ -325,3 +325,21 @@
   color: @text-color;
 }
 
+/* Changes the background of each notification */
+.notification {
+  background-color: #1e1e2e; /* Replace with your desired color */
+  color: #ffffff; /* Text color */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Optional: Change background for urgency levels */
+.notification.low {
+  background-color: #2e7d32;
+}
+.notification.normal {
+  background-color: #1976d2;
+}
+.notification.critical {
+  background-color: #d32f2f;
+}
+
