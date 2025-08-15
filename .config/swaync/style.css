@@ -29,19 +29,18 @@
   background: #000000;
   /* padding: 3px 10px 3px 6px; */
   border-radius: 10px;
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
 }
 
 .notification-group {
   background-color: transparent;
 }
-.image {
+.notification .image {
   margin-right: 20px; /* Adds space to the right of the image */
 }
-/* .notification-content { */
-/*   margin-right: 100px; /* Adds space to the left of the content */
-*/
-/* } */
+.notification-content {
+  margin-right: 100px;
+}
 .notification-default-action {
   margin: 0;
   padding: 0;
