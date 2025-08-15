@@ -31,9 +31,9 @@
   "widgets": ["dnd", "buttons-grid", "mpris", "title", "notifications"],
   "widget-config": {
     "title": {
-      "text": "Notifications",
+      "text": " Notifications",
       "clear-all-button": true,
-      "button-text": "Clear"
+      "button-text": " Clear"
     },
     "dnd": {
       "text": "Do Not Disturb"

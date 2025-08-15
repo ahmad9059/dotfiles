@@ -32,11 +32,15 @@
   border: 2px solid #000000;
 }
 
-/* Optional: remove background from grouped notifications */
 .notification-group {
   background-color: transparent;
-  outline: 1px solid rgba(255, 255, 255, 0.2); /* light white, 20% opacity */
-  border-radius: 8px; /* optional: rounded corners */
+}
+
+.notification-content {
+  font-size: 1px; /* Adjust the font size as needed */
+}
+.notification-icon {
+  margin-right: 10px; /* adjusts gap between icon and text */
 }
 .notification-default-action {
   margin: 0;
