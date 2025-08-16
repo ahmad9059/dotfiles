@@ -91,7 +91,7 @@
     "tooltip": true
   },
   "custom/wallchange": {
-    "format": "{}",
+    "format": " {}",
     "rotate": 0,
     "exec": "echo ; echo 󰆊 switch wallpaper",
     "on-click": "swwwallpaper.sh -n",
@@ -134,8 +134,8 @@
     "format": "{icon}",
     "rotate": 0,
     "format-icons": {
-      "activated": "󰥔",
-      "deactivated": ""
+      "activated": "󰥔 ",
+      "deactivated": " "
     }
   },
   "clock": {
@@ -197,15 +197,15 @@
     "rotate": 0,
     "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -250,8 +250,8 @@
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "rotate": 0,
-    "format-source": "",
-    "format-source-muted": "",
+    "format-source": "",
+    "format-source-muted": " ",
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "volumecontrol.sh -i m",
     "on-scroll-up": "volumecontrol.sh -i i",
@@ -274,7 +274,7 @@
       "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
       "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
       "notification": "<span foreground='white'><sup></sup></span>",
-      "none": ""
+      "none": " "
     },
     "return-type": "json",
     "exec-if": "which dunstctl",
