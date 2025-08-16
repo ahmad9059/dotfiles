@@ -210,7 +210,7 @@
 /* clear button */
 .widget-title > button:hover {
   background: #cdd6f4;
-  color: red;
+  color: #f38ba8;
 }
 
 .widget-dnd {
