@@ -57,5 +57,5 @@ if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
   git push
   notify "Dotfiles Sync Completed" "Changes committed and pushed successfully" normal
 else
-  notify "Dotfiles Sync" "No changes to commit" low
+  notify -a "Dotfiles Sync" -i dialog-information "Already synced to Newest Change" low
 fi
