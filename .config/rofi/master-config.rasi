@@ -48,7 +48,7 @@ window {
 
     // Style Values
     width:                      44%;
-    background-color:           #000000;
+    background-color:           #0E0E16;
 }
 
 /* ----- Main Box ----- */
@@ -57,7 +57,7 @@ mainbox {
     enabled:                     true;
     orientation:                 vertical;
     children:                    [ "inputbar", "listbox" ];
-    background-color:            #000000;
+    background-color:            #0E0E16;
 }
 
 
@@ -74,16 +74,16 @@ inputbar {
 
 /* ---- Entry input ---- */
 entry {
-    font: "JetBrains Mono 13";
+    font: "JetBrainsMono Nerd Font 13";
     enabled:                     true;
     expand:                      false;
     width:                       100%;
     padding:                     0px;
     border-radius:               1px;
-    background-color:            #000000;
+    background-color:            #0E0E16;
     text-color:                  #cdd6f4;
     cursor:                      text;
-    placeholder:                 " 🍑 Search "; // << Search symbol
+    placeholder:                 "  Search "; // << Search symbol
     placeholder-color:           inherit;
 }
 

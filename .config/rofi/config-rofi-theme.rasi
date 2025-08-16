@@ -17,7 +17,7 @@ mainbox {
 /* ---- Entry input ---- */
 entry {
   expand: true;
-  placeholder: " ⬇️  Select Which Rofi Theme wanted to apply";
+  placeholder: "   Select Which Rofi Theme wanted to apply";
 }
 
 /* ---- Listview ---- */

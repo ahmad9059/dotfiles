@@ -20,7 +20,7 @@ mainbox {
 
 entry {
   expand: true;
-  placeholder: "Choose Wallpaper";
+  placeholder: " 󰸉 Choose Wallpaper";
   horizontal-align: 0.01;
   horizontal-align: 0.01;
 }

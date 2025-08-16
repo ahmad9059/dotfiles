@@ -3,11 +3,11 @@
 
 /*****-- Fonts Size and Font Size -----*****/
 configuration {
-font: "JetBrainsMono Nerd Font SemiBold 13";
+font: "JetBrainsMono Nerd Font 13";
 }
 
 
 /*****-- Elements Font Size -----*****/
 element-text {
-font: "JetBrainsMono Nerd Font SemiBold 11";
+font: "JetBrainsMono Nerd Font 11";
 }

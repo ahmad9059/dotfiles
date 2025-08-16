@@ -34,7 +34,7 @@ listview {
 /* ---- Entry input ---- */
 entry {
   expand: true;
-  placeholder: "Customize KooL Hyprland";
+  placeholder: "  Customize KooL Hyprland";
 }
 
 

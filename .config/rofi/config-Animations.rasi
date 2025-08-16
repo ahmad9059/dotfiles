@@ -1,4 +1,4 @@
-/* Animations Menu */
+* Animations Menu */
 
 @import "~/.config/rofi/config.rasi" 
 
@@ -17,7 +17,7 @@ window {
 /* ---- Entry ---- */ 
 entry {
   width: 43%;
-  placeholder: " Search / Choose which Animations to load";
+  placeholder: " 󰗘 Choose which Animations to load";
 }
 
 /* ---- Listview ---- */

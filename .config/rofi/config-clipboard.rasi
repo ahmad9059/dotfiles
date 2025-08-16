@@ -5,7 +5,7 @@
 /* ---- Entry ---- */
 entry {
   width: 37%;
-  placeholder: "CTRL Del - Cliphist del or Alt Del - cliphist wipe";
+  placeholder: "   Clipboard Manager";
 	font: "JetBrains Mono 12";
 }
 

@@ -5,7 +5,7 @@
 /* ---- Entry ---- */
 entry {
   width: 80%;
-  placeholder: "Search Keybinds";
+  placeholder: "   Search Keybinds";
 }
 
 /* ---- Listview ---- */

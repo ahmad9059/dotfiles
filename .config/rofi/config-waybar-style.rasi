@@ -15,7 +15,7 @@ mainbox {
 
 entry {
   expand: true;
-  placeholder: " Choose Waybar Style";
+  placeholder: "  Choose Waybar Style";
 }
 
 /* ---- Listview ---- */
