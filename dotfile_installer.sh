@@ -57,6 +57,12 @@ YAY_PACKAGES=(
   apple-fonts foliate whatsapp-for-linux stacer-bin localsend-bin
 )
 
+# ===========================
+# Log Details
+# ===========================
+LOG_FILE="$HOME/installer_log/install_dotfiles.log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+
 # ==================================
 # Ask for sudo once at the beginning
 # ==================================
@@ -83,12 +89,25 @@ else
   fi
 fi
 
-# ===========================
-# Log Details
-# ===========================
-LOG_FILE="$HOME/installer_log/install_dotfiles.log"
-exec > >(tee -a "$LOG_FILE") 2>&1
+# =================
+# Required Packages
+# =================
 
+echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
+# Print package list with header in blue and packages in default color
+echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
+for pkg in "${REQUIRED_PACKAGES[@]}"; do
+  echo -e "  • $pkg" | tee -a "$LOG_FILE"
+done
+echo | tee -a "$LOG_FILE"
+echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
+# Install packages
+if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+  echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+else
+  echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
+  exit 1
+fi
 # ===========================
 # Backup old configs
 # ===========================
@@ -171,12 +190,12 @@ echo -e "${OK} NvChad, plugins, and Mason packages installed successfully!${RESE
 # =========================
 # Themes
 # =========================
-echo -e "${ACTION} 🎨 Installing themes from ${REPO_DIR}/.themes...${RESET}"
+echo -e "${ACTION} Installing themes from ${REPO_DIR}/.themes...${RESET}"
 
 if [ -d "$REPO_DIR/.themes" ]; then
   mkdir -p "$HOME/.themes" &>>"$LOG_FILE"
   cp -r "$REPO_DIR/.themes/"* "$HOME/.themes/" &>>"$LOG_FILE"
-  echo -e "${OK} 🎨 Themes installed successfully in ~/.themes.${RESET}"
+  echo -e "${OK} Themes installed successfully in ~/.themes.${RESET}"
 else
   echo -e "${WARN} No .themes directory found in ${REPO_DIR}, skipping theme installation.${RESET}"
 fi
@@ -370,26 +389,6 @@ echo -e "${ACTION} Setting ur_PK.UTF-8 locale for time...${RESET}" | tee -a "$LO
 }
 
 echo -e "${OK} LC_TIME=ur_PK.UTF-8 set successfully.${RESET}" | tee -a "$LOG_FILE"
-
-# =================
-# Required Packages
-# =================
-
-echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-# Print package list with header in blue and packages in default color
-echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
-for pkg in "${REQUIRED_PACKAGES[@]}"; do
-  echo -e "  • $pkg" | tee -a "$LOG_FILE"
-done
-echo | tee -a "$LOG_FILE"
-echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
-# Install packages
-if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-  echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-else
-  echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
-  exit 1
-fi
 
 # ==============================
 # Ask to install pacman packages
