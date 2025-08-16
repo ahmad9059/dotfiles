@@ -59,5 +59,5 @@ if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
   git push origin personal
   notify "Dotfiles Sync Completed" "Changes committed and pushed successfully to personal branch" normal
 else
-  notify -a "Dotfiles Sync" "Already synced to newest change (no new commits)" low
+  notify "Dotfiles Sync" "Already synced to newest change (no new commits)" low
 fi
