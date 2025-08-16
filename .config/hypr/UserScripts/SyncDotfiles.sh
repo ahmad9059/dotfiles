@@ -26,6 +26,7 @@ on_error() {
 trap on_error ERR
 
 # Sync .config items that exist in repo
+notify-send -a "Dotfiles Sync" -i dialog-information "GitHub Sync" "Sync started..."
 echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
   name=$(basename "$item")
