@@ -28,6 +28,7 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/magnet=freedownloadmanager_magnet_up.desktop
 application/x-bittorrent=freedownloadmanager_torrent.desktop
+inode/symlink=org.xfce.mousepad.desktop
 
 [Added Associations]
 text/markdown=org.xfce.mousepad.desktop;
@@ -56,3 +57,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 text/x-csrc=org.xfce.mousepad.desktop;
+inode/symlink=org.xfce.mousepad.desktop;

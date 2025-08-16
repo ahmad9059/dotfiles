@@ -13,26 +13,17 @@
   "modules-left": [
     "custom/padd",
     "custom/l_end",
-    "custom/power",
-    "custom/cliphist",
-    "custom/wbar",
-    "custom/theme",
-    "custom/wallchange",
-    "custom/r_end",
-    "custom/l_end",
-    "wlr/taskbar",
-    "custom/spotify",
-    "custom/r_end",
-    "",
-    "custom/padd"
-  ],
-  "modules-center": [
-    "custom/padd",
-    "custom/l_end",
+    "hyprland/workspaces",
     "idle_inhibitor",
     "clock",
     "custom/r_end",
     "custom/padd"
+  ],
+  "modules-center": [
+    "custom/l_end",
+    "wlr/taskbar",
+    "custom/spotify",
+    "custom/r_end"
   ],
   "modules-right": [
     "custom/padd",
@@ -43,25 +34,27 @@
     "custom/l_end",
     "backlight",
     "network",
+    "custom/wallchange",
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/notifications",
     "custom/keybindhint",
+    "custom/power",
     "custom/r_end",
     "custom/padd"
   ],
   // sourced from modules based on config.ctl //
   "custom/power": {
-    "format": "{}",
+    "format": "",
     "rotate": 0,
     "exec": "echo ; echo  logout",
-    "on-click": "logoutlaunch.sh 2",
-    "on-click-right": "logoutlaunch.sh 1",
+    "on-click": "$HOME/.config/hypr/scripts/Wlogout.sh",
+    "on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
     "interval": 86400, // once every day
     "tooltip": true
   },
   "custom/cliphist": {
-    "format": "{}",
+    "format": " {}",
     "rotate": 0,
     "exec": "echo ; echo 󰅇 clipboard history",
     "on-click": "sleep 0.1 && cliphist.sh c",
@@ -71,7 +64,7 @@
     "tooltip": true
   },
   "custom/wbar": {
-    "format": "{}", //    //
+    "format": " {}", //    //
     "rotate": 0,
     "exec": "echo ; echo  switch bar //  dock",
     "on-click": "wbarconfgen.sh n",
@@ -81,7 +74,7 @@
     "tooltip": true
   },
   "custom/theme": {
-    "format": "{}",
+    "format": " {}",
     "rotate": 0,
     "exec": "echo ; echo 󰟡 switch theme",
     "on-click": "themeswitch.sh -n",
@@ -91,11 +84,11 @@
     "tooltip": true
   },
   "custom/wallchange": {
-    "format": " {}",
+    "format": " ",
     "rotate": 0,
     "exec": "echo ; echo 󰆊 switch wallpaper",
-    "on-click": "swwwallpaper.sh -n",
-    "on-click-right": "swwwallpaper.sh -p",
+    "on-click": "$HOME/.config/hypr/UserScripts/WallpaperRandom.sh",
+    "on-click-right": "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh",
     "on-click-middle": "sleep 0.1 && swwwallselect.sh",
     "interval": 86400, // once every day
     "tooltip": true
@@ -134,8 +127,8 @@
     "format": "{icon}",
     "rotate": 0,
     "format-icons": {
-      "activated": "󰥔 ",
-      "deactivated": " "
+      "activated": "  󰥔 ",
+      "deactivated": "   "
     }
   },
   "clock": {
