@@ -93,7 +93,7 @@ listbox {
     padding:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "message", "listview" ];
+    children:                    ["listview" ];
 }
 
 /* ---- Listview ---- */
@@ -219,8 +219,8 @@ message {
     border:                      0px;
 }
 textbox {
-    padding:                     12px;
-    border-radius:               10px;
+    padding:                     4px;
+    border-radius:               12px;
     background-color:            @background-alt;
     text-color:                  @background;
     vertical-align:              0.5;

@@ -1,11 +1,11 @@
-* Animations Menu */
+/* Animations Menu */
 
 @import "~/.config/rofi/config.rasi" 
 
 /* ---- Mainbox ---- */
 mainbox {
   children:
-    [ "inputbar", "message", "listview"];
+    [ "inputbar",  "listview"];
 }
 
 /* ---- Window ---- */
