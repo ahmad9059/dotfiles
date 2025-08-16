@@ -1,5 +1,3 @@
-KooL's Hyprland-Dots
-
 1.) Suggest not to rename any files in this directory. As this is connected and being sourced from hyprland.conf in ~/.config/hypr
 
 2.) This directory, along with UserScripts directory will NOT be touch when running upgrade.sh
