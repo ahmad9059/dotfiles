@@ -53,10 +53,11 @@ echo -e "${GREEN}Local changes synced to repo.${NC}"
 # Commit and push changes
 echo -e "${GREEN}Committing and pushing changes...${NC}"
 cd "$REPO_DIR"
+git checkout personal
 git add .
 if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
-  git push
-  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully" normal
+  git push origin personal
+  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully to personal branch" normal
 else
-  notify -a "Dotfiles Sync" "Already synced to Newest Change" low
+  notify -a "Dotfiles Sync" "Already synced to newest change (no new commits)" low
 fi
