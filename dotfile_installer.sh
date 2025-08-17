@@ -430,30 +430,37 @@ done
 
 if command -v yay >/dev/null 2>&1; then
   echo -e "\n${ACTION} Do you want to install the following AUR (yay) packages?${RESET}"
-
-  # Print package list with header in blue and packages in default color
   echo -e "\n\033[1;34mYay Packages:\033[0m\n" | tee -a "$LOG_FILE"
   for pkg in "${YAY_PACKAGES[@]}"; do
     echo -e "  • $pkg" | tee -a "$LOG_FILE"
   done
   echo | tee -a "$LOG_FILE"
-
-  # Keep asking until valid input
   while true; do
     read -rp "Type 'yes' or 'no' to continue: " ans2
-    case "$ans2" in
-    yes)
+    case "${ans2,,}" in # convert input to lowercase
+    yes | y)
       echo -e "${ACTION} Installing AUR packages...${RESET}" | tee -a "$LOG_FILE"
       echo -e "${NOTE} Installing packages in progress...${RESET}" | tee -a "$LOG_FILE"
-      if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-        echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-      else
-        echo -e "${ERROR} Failed to install AUR packages. See $LOG_FILE for details.${RESET}"
+      MAX_RETRIES=5
+      RETRY_DELAY=5
+      count=0
+      while [ $count -lt $MAX_RETRIES ]; do
+        if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+          echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+          break
+        else
+          count=$((count + 1))
+          echo -e "${WARN} Installation failed. Retry $count of $MAX_RETRIES in $RETRY_DELAY seconds...${RESET}" | tee -a "$LOG_FILE"
+          sleep $RETRY_DELAY
+        fi
+      done
+      if [ $count -eq $MAX_RETRIES ]; then
+        echo -e "${ERROR} Failed to install AUR packages after $MAX_RETRIES attempts. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
         exit 1
       fi
       break
       ;;
-    no)
+    no | n)
       echo -e "${NOTE} Skipped installing AUR packages.${RESET}" | tee -a "$LOG_FILE"
       break
       ;;
