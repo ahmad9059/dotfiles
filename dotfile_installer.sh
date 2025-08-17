@@ -104,6 +104,7 @@ for pkg in "${REQUIRED_PACKAGES[@]}"; do
 done
 echo | tee -a "$LOG_FILE"
 
+echo -e "${ACTION} Packages Installing in Progress...${RESET}" | tee -a "$LOG_FILE"
 # Keep retrying until success
 until sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; do
   echo -e "${ERROR} Failed to install required packages. Retrying...${RESET}" | tee -a "$LOG_FILE"
