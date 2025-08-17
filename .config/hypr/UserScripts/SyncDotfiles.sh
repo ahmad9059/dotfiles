@@ -34,13 +34,24 @@ trap on_error ERR
 
 # 1. Modify kb_options line
 if [ -f "$USER_SETTINGS" ]; then
-  sed -i 's/^kb_options = ctrl:nocaps$/kb_options = /' "$USER_SETTINGS"
+  sed -i 's/kb_options = ctrl:nocaps/kb_options = /' "$USER_SETTINGS"
 fi
 
 # 2. Replace label block
 if [ -f "$USER_SETTINGS" ]; then
-  sed -i '/label {/,/}/c\
-label {\n     monitor =\n    text = cmd[update:1000] echo -e "$(LC_TIME=en_US.UTF-8 date +"%A, %B %d")"\n    color = rgba(216, 222, 233, 0.90)\n    font_size = 25\n    font_family = SF Pro Display Semibold\n    position = 0, 350\n    halign = center\n    valign = center\n}' "$USER_SETTINGS"
+  sed -i '/label {/,/}/{d}' "$USER_SETTINGS"
+  cat <<'EOF' >>"$USER_SETTINGS"
+label {
+     monitor =
+    text = cmd[update:1000] echo -e "$(LC_TIME=en_US.UTF-8 date +"%A, %B %d")"
+    color = rgba(216, 222, 233, 0.90)
+    font_size = 25
+    font_family = SF Pro Display Semibold
+    position = 0, 350
+    halign = center
+    valign = center
+}
+EOF
 fi
 
 # 3. Break symlinks for waybar
