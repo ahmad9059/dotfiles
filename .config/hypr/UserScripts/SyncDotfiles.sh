@@ -54,7 +54,7 @@ echo -e "${GREEN}Local changes synced to repo.${NC}"
 # 1. Modify kb_options in UserSettings.conf
 USERS_CONF="$REPO_DIR/.config/hypr/UserConfigs/UserSettings.conf"
 if [ -f "$USERS_CONF" ]; then
-  sed -i 's/kb_options = ctrl:nocaps/kb_options = /' "$USERS_CONF"
+  sed -i 's/kb_options = ctrl:nocaps/kb_options =/' "$USERS_CONF"
 fi
 
 # 2. Update hyprland.conf label block (LC_TIME and font_family)

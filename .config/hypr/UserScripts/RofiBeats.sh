@@ -10,8 +10,9 @@ rofi_theme_1="$HOME/.config/rofi/config-rofi-Beats-menu.rasi"
 
 # Online Stations. Edit as required
 declare -A online_music=(
+  ["YT - Lofi Girl"]="https://youtu.be/HwL9ZNz0Sus"
   ["FM - Easy Rock 96.3 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
-  ["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio" 
+  ["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio"
   ["FM - Love Radio 90.7 📻🎶"]="https://radio-stations-philippines.com/love"
   ["FM - WRock - CEBU 96.3 📻🎶"]="https://onlineradio.ph/126-96-3-wrock.html"
   ["FM - Fresh Philippines 📻🎶"]="https://onlineradio.ph/553-fresh-fm.html"
@@ -56,14 +57,14 @@ play_local_music() {
   fi
 
   # Find the corresponding file path based on user's choice and set that to play the song then continue on the list
-  for (( i=0; i<"${#filenames[@]}"; ++i )); do
+  for ((i = 0; i < "${#filenames[@]}"; ++i)); do
     if [ "${filenames[$i]}" = "$choice" ]; then
 
       if music_playing; then
         stop_music
       fi
-	    notification "$choice"
-      mpv --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"
+      notification "$choice"
+      mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
 
       break
     fi
@@ -84,8 +85,8 @@ shuffle_local_music() {
 # Main function for playing online music
 play_online_music() {
   choice=$(for online in "${!online_music[@]}"; do
-      echo "$online"
-    done | sort | rofi -i -dmenu -config "$rofi_theme")
+    echo "$online"
+  done | sort | rofi -i -dmenu -config "$rofi_theme")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -97,14 +98,14 @@ play_online_music() {
     stop_music
   fi
   notification "$choice"
-  
+
   # Play the selected online music using mpv
   mpv --shuffle --vid=no "$link"
 }
 
 # Function to check if music is already playing
 music_playing() {
-  pgrep -x "mpv" > /dev/null
+  pgrep -x "mpv" >/dev/null
 }
 
 # Function to stop music and kill mpv processes
@@ -117,7 +118,7 @@ stop_music() {
 
     for pid in $mpv_pids; do
       if ! echo "$mpvpaper_pid" | grep -q "$pid"; then
-        kill -9 $pid || true 
+        kill -9 $pid || true
       fi
     done
     notify-send -u low -i "$iDIR/music.png" "Music stopped" || true
@@ -128,26 +129,25 @@ user_choice=$(printf "%s\n" \
   "Play from Online Stations" \
   "Play from Music directory" \
   "Shuffle Play from Music directory" \
-  "Stop RofiBeats" \
-  | rofi -dmenu -config $rofi_theme_1)
+  "Stop RofiBeats" |
+  rofi -dmenu -config $rofi_theme_1)
 
 echo "User choice: $user_choice"
 
 case "$user_choice" in
-  "Play from Online Stations")
-    play_online_music
-    ;;
-  "Play from Music directory")
-    play_local_music
-    ;;
-  "Shuffle Play from Music directory")
-    shuffle_local_music
-    ;;
-  "Stop RofiBeats")
-    if music_playing; then
-      stop_music
-    fi
-    ;;
-  *)
-    ;;
+"Play from Online Stations")
+  play_online_music
+  ;;
+"Play from Music directory")
+  play_local_music
+  ;;
+"Shuffle Play from Music directory")
+  shuffle_local_music
+  ;;
+"Stop RofiBeats")
+  if music_playing; then
+    stop_music
+  fi
+  ;;
+*) ;;
 esac
