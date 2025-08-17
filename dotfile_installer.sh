@@ -392,6 +392,7 @@ fi
 # Ask to install pacman packages
 # ==============================
 echo -e "\n${ACTION} Do you want to install the following pacman packages?${RESET}"
+
 # Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mPacman Packages (Optional):\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${PACMAN_PACKAGES[@]}"; do
@@ -402,19 +403,34 @@ echo | tee -a "$LOG_FILE"
 # Keep asking until valid input
 while true; do
   read -rp "Type 'yes' or 'no' to continue: " ans1
-  case "$ans1" in
-  yes)
+  case "${ans1,,}" in # convert input to lowercase
+  yes | y)
     echo -e "${ACTION} Installing pacman packages...${RESET}" | tee -a "$LOG_FILE"
     echo -e "${NOTE} Installing packages in progress...${RESET}" | tee -a "$LOG_FILE"
-    if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-      echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-    else
-      echo -e "${ERROR} Failed to install pacman packages. See $LOG_FILE for details.${RESET}"
+
+    # Retry logic
+    MAX_RETRIES=3
+    RETRY_DELAY=5
+    count=0
+    while [ $count -lt $MAX_RETRIES ]; do
+      if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+        echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+        break
+      else
+        count=$((count + 1))
+        echo -e "${WARN} Installation failed. Retry $count of $MAX_RETRIES in $RETRY_DELAY seconds...${RESET}" | tee -a "$LOG_FILE"
+        sleep $RETRY_DELAY
+      fi
+    done
+
+    if [ $count -eq $MAX_RETRIES ]; then
+      echo -e "${ERROR} Failed to install pacman packages after $MAX_RETRIES attempts. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
       exit 1
     fi
+
     break
     ;;
-  no)
+  no | n)
     echo -e "${NOTE} Skipped installing pacman packages.${RESET}" | tee -a "$LOG_FILE"
     break
     ;;
