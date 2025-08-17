@@ -58,7 +58,7 @@ if [ -f "$USERS_CONF" ]; then
 fi
 
 # 2. Update hyprland.conf label block (LC_TIME and font_family)
-HYPR_CONF="$REPO_DIR/.config/hypr/hyprland.conf"
+HYPR_CONF="$REPO_DIR/.config/hypr/hyprlock.conf"
 if [ -f "$HYPR_CONF" ]; then
   sed -i 's/LC_TIME=ur_PK.UTF-8/LC_TIME=en_US.UTF-8/' "$HYPR_CONF"
   sed -i 's/Noto Nastaliq Urdu/SF Pro Display Semibold/' "$HYPR_CONF"
