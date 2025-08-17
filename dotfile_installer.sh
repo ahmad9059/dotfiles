@@ -50,13 +50,15 @@ REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat npm)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
   obs-studio vlc yazi luacheck luarocks hyprpicker
-  firefox obsidian github-cli spotify-launcher
-  noto-fonts-emoji ttf-noto-nerd noto-fonts
+  obsidian github-cli noto-fonts-emoji
+  ttf-noto-nerd noto-fonts
 )
 # Yay Packages (Optional)
 YAY_PACKAGES=(
   visual-studio-code-bin 64gram-desktop-bin vesktop
-  apple-fonts foliate whatsapp-for-linux stacer-bin localsend-bin
+  foliate whatsapp-for-linux stacer-bin localsend-bin
+  kiro-bin
+
 )
 
 # ===========================
