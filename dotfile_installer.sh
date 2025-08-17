@@ -461,7 +461,7 @@ if command -v yay >/dev/null 2>&1; then
       RETRY_DELAY=5
       count=0
       while [ $count -lt $MAX_RETRIES ]; do
-        if yay -S --needed --noconfirm --nocleanmenu --mflags "--skippgpcheck" "${YAY_PACKAGES[@]}" | tee -a "$LOG_FILE"; then
+        if yay -S --needed --noconfirm --mflags "--skippgpcheck" "${YAY_PACKAGES[@]}" | tee -a "$LOG_FILE"; then
           echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
           break
         else
