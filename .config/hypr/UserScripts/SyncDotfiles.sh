@@ -55,8 +55,8 @@ EOF
 fi
 
 # 3. Break symlinks for waybar
-[ -L "$WAYBAR_CONFIG" ] && rm "$WAYBAR_CONFIG"
-[ -L "$WAYBAR_STYLE" ] && rm "$WAYBAR_STYLE"
+[ -L "$WAYBAR_CONFIG" ] && rm -rf "$WAYBAR_CONFIG"
+[ -L "$WAYBAR_STYLE" ] && rm -rf "$WAYBAR_STYLE"
 
 ### --- SYNC SECTION --- ###
 
