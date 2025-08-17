@@ -96,20 +96,22 @@ fi
 # =================
 
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
+
 # Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
-echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
-# Install packages
-if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-  echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-else
-  echo -e "${ERROR} Failed to install required packages. See $LOG_FILE for details.${RESET}" | tee -a "$LOG_FILE"
-  exit 1
-fi
+
+# Keep retrying until success
+until sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; do
+  echo -e "${ERROR} Failed to install required packages. Retrying...${RESET}" | tee -a "$LOG_FILE"
+  sleep 2
+done
+
+echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+
 # ===========================
 # Backup old configs
 # ===========================
