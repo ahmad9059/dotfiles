@@ -172,7 +172,6 @@ fi
 # ==========================
 # Install Neovim from GitHub
 # ==========================
-
 echo -e "${ACTION} Installing Neovim config from ${REPO_URL_NVIM}...${RESET}" | tee -a "$LOG_FILE"
 if [ -d "$CONFIG_DIR" ]; then
   rm -rf "$CONFIG_DIR" >>"$LOG_FILE" 2>&1
@@ -348,7 +347,6 @@ fi
 # =================
 # Wallpapers Setup
 # =================
-
 echo -e "${ACTION} Updating wallpapers and Setup...${RESET}"
 WALLPAPER_SRC="$REPO_DIR/wallpapers"
 WALLPAPER_DIR="$HOME/Pictures/wallpapers"
@@ -377,28 +375,38 @@ fi
 # ==============================
 # Ask to install pacman packages
 # ==============================
-
 echo -e "\n${ACTION} Do you want to install the following pacman packages?${RESET}"
 # Print package list with header in blue and packages in default color
-echo -e "\n\033[1;34mPacman Packages(Optional):\033[0m\n" | tee -a "$LOG_FILE"
+echo -e "\n\033[1;34mPacman Packages (Optional):\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${PACMAN_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
-read -rp "Type 'yes/no' to continue: " ans1
 
-if [[ "$ans1" == "yes" ]]; then
-  echo -e "${ACTION} Installing pacman packages...${RESET}" | tee -a "$LOG_FILE"
-  echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
-  if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-    echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-  else
-    echo -e "${ERROR} Failed to install pacman packages. See $LOG_FILE for details.${RESET}"
-    exit 1
-  fi
-else
-  echo -e "${NOTE} Skipped installing pacman packages.${RESET}"
-fi
+# Keep asking until valid input
+while true; do
+  read -rp "Type 'yes' or 'no' to continue: " ans1
+  case "$ans1" in
+  yes)
+    echo -e "${ACTION} Installing pacman packages...${RESET}" | tee -a "$LOG_FILE"
+    echo -e "${NOTE} Installing packages in progress...${RESET}" | tee -a "$LOG_FILE"
+    if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+      echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+    else
+      echo -e "${ERROR} Failed to install pacman packages. See $LOG_FILE for details.${RESET}"
+      exit 1
+    fi
+    break
+    ;;
+  no)
+    echo -e "${NOTE} Skipped installing pacman packages.${RESET}" | tee -a "$LOG_FILE"
+    break
+    ;;
+  *)
+    echo -e "${ERROR} Invalid input. Please type 'yes' or 'no'.${RESET}"
+    ;;
+  esac
+done
 
 # ============================
 # Ask to install yay packages
@@ -406,27 +414,40 @@ fi
 
 if command -v yay >/dev/null 2>&1; then
   echo -e "\n${ACTION} Do you want to install the following AUR (yay) packages?${RESET}"
+
   # Print package list with header in blue and packages in default color
   echo -e "\n\033[1;34mYay Packages:\033[0m\n" | tee -a "$LOG_FILE"
   for pkg in "${YAY_PACKAGES[@]}"; do
     echo -e "  • $pkg" | tee -a "$LOG_FILE"
   done
   echo | tee -a "$LOG_FILE"
-  read -rp "Type 'yes/no' to continue: " ans2
 
-  if [[ "$ans2" == "yes" ]]; then
-    echo -e "${ACTION} Installing AUR packages...${RESET}" | tee -a "$LOG_FILE"
-    echo -e "${NOTE} Installing packages in Progress...${RESET}" | tee -a "$LOG_FILE"
-    if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
-      echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
-    else
-      echo -e "${ERROR} Failed to install AUR packages. See $LOG_FILE for details.${RESET}"
-    fi
-  else
-    echo -e "${NOTE} Skipped installing AUR packages.${RESET}"
-  fi
+  # Keep asking until valid input
+  while true; do
+    read -rp "Type 'yes' or 'no' to continue: " ans2
+    case "$ans2" in
+    yes)
+      echo -e "${ACTION} Installing AUR packages...${RESET}" | tee -a "$LOG_FILE"
+      echo -e "${NOTE} Installing packages in progress...${RESET}" | tee -a "$LOG_FILE"
+      if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+        echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+      else
+        echo -e "${ERROR} Failed to install AUR packages. See $LOG_FILE for details.${RESET}"
+        exit 1
+      fi
+      break
+      ;;
+    no)
+      echo -e "${NOTE} Skipped installing AUR packages.${RESET}" | tee -a "$LOG_FILE"
+      break
+      ;;
+    *)
+      echo -e "${ERROR} Invalid input. Please type 'yes' or 'no'.${RESET}"
+      ;;
+    esac
+  done
 else
-  echo -e "${WARN} yay is not installed. Skipping AUR packages.${RESET}"
+  echo -e "${WARN} yay is not installed. Skipping AUR packages.${RESET}" | tee -a "$LOG_FILE"
 fi
 
 echo -e "\n\n${OK} !!======= Dotfiles setup complete! =========!!${RESET}\n\n"
