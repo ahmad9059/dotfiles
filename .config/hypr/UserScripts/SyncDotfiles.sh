@@ -25,6 +25,31 @@ on_error() {
 }
 trap on_error ERR
 
+# Notify start
+notify "Dotfiles Sync" "Sync has been started..." normal
+echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
+
+# Sync .config items that exist in repo
+for item in "$REPO_DIR/.config"/*; do
+  name=$(basename "$item")
+  if [ -d "$HOME/.config/$name" ]; then
+    rsync -av --delete "$HOME/.config/$name/" "$REPO_DIR/.config/$name/"
+  elif [ -f "$HOME/.config/$name" ]; then
+    cp "$HOME/.config/$name" "$REPO_DIR/.config/$name"
+  fi
+done
+
+# Sync top-level items (excluding .icons)
+rsync -av --delete "$HOME/.themes/" "$REPO_DIR/.themes/" || true
+
+# Only sync tmuxifier layouts folder
+mkdir -p "$REPO_DIR/.tmuxifier/layouts"
+rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/" || true
+
+# Other top-level configs
+[ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
+[ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
+
 # ---- Custom modifications before syncing ----
 
 # 1) kb_options change in Hypr UserSettings.conf
@@ -115,31 +140,6 @@ echo -e "${GREEN}Waybar links updated:
 (If targets were missing, empty files were created.)${NC}"
 
 # ---- End custom modifications ----
-
-# Notify start
-notify "Dotfiles Sync" "Sync has been started..." normal
-echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
-
-# Sync .config items that exist in repo
-for item in "$REPO_DIR/.config"/*; do
-  name=$(basename "$item")
-  if [ -d "$HOME/.config/$name" ]; then
-    rsync -av --delete "$HOME/.config/$name/" "$REPO_DIR/.config/$name/"
-  elif [ -f "$HOME/.config/$name" ]; then
-    cp "$HOME/.config/$name" "$REPO_DIR/.config/$name"
-  fi
-done
-
-# Sync top-level items (excluding .icons)
-rsync -av --delete "$HOME/.themes/" "$REPO_DIR/.themes/" || true
-
-# Only sync tmuxifier layouts folder
-mkdir -p "$REPO_DIR/.tmuxifier/layouts"
-rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/" || true
-
-# Other top-level configs
-[ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
-[ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
 
 echo -e "${GREEN}Local changes synced to repo.${NC}"
 
