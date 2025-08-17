@@ -9,11 +9,6 @@ NC='\033[0m'
 REPO_DIR="$HOME/dotfiles"
 NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
 
-# Files
-USER_SETTINGS="$REPO_DIR/.config/hypr/UserConfigs/UserSettings.conf"
-WAYBAR_CONFIG="$REPO_DIR/.config/waybar/config"
-WAYBAR_STYLE="$REPO_DIR/.config/waybar/style.css"
-
 # Send notification
 notify() {
   local title="$1"
@@ -30,36 +25,7 @@ on_error() {
 }
 trap on_error ERR
 
-### --- PRE-SYNC MODIFICATIONS --- ###
-
-# 1. Modify kb_options line
-if [ -f "$USER_SETTINGS" ]; then
-  sed -i 's/kb_options = ctrl:nocaps/kb_options = /' "$USER_SETTINGS"
-fi
-
-# 2. Replace label block
-if [ -f "$USER_SETTINGS" ]; then
-  sed -i '/label {/,/}/{d}' "$USER_SETTINGS"
-  cat <<'EOF' >>"$USER_SETTINGS"
-label {
-     monitor =
-    text = cmd[update:1000] echo -e "$(LC_TIME=en_US.UTF-8 date +"%A, %B %d")"
-    color = rgba(216, 222, 233, 0.90)
-    font_size = 25
-    font_family = SF Pro Display Semibold
-    position = 0, 350
-    halign = center
-    valign = center
-}
-EOF
-fi
-
-# 3. Break symlinks for waybar
-[ -L "$WAYBAR_CONFIG" ] && rm -rf "$WAYBAR_CONFIG"
-[ -L "$WAYBAR_STYLE" ] && rm -rf "$WAYBAR_STYLE"
-
-### --- SYNC SECTION --- ###
-
+# Sync .config items that exist in repo
 notify-send -a "Dotfiles Sync" -i dialog-information "Dotfiles Sync" "Sync has been started..."
 echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
@@ -81,6 +47,23 @@ rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/"
 # Other top-level configs
 [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
 [ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
+
+### --- PRE-SYNC MODIFICATIONS --- ###
+
+# 1. Modify kb_options line
+if [ -f "$USER_SETTINGS" ]; then
+  sed -i 's/^kb_options = ctrl:nocaps$/kb_options = /' "$USER_SETTINGS"
+fi
+
+# 2. Replace label block
+if [ -f "$USER_SETTINGS" ]; then
+  sed -i '/label {/,/}/c\
+label {\n     monitor =\n    text = cmd[update:1000] echo -e "$(LC_TIME=en_US.UTF-8 date +"%A, %B %d")"\n    color = rgba(216, 222, 233, 0.90)\n    font_size = 25\n    font_family = SF Pro Display Semibold\n    position = 0, 350\n    halign = center\n    valign = center\n}' "$USER_SETTINGS"
+fi
+
+# 3. Break symlinks for waybar
+[ -L "$WAYBAR_CONFIG" ] && rm "$WAYBAR_CONFIG"
+[ -L "$WAYBAR_STYLE" ] && rm "$WAYBAR_STYLE"
 
 echo -e "${GREEN}Local changes synced to repo.${NC}"
 
