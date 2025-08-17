@@ -106,7 +106,7 @@ echo | tee -a "$LOG_FILE"
 
 echo -e "${ACTION} Packages Installing in Progress...${RESET}" | tee -a "$LOG_FILE"
 # Keep retrying until success
-until sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; do
+until sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" | tee -a "$LOG_FILE"; do
   echo -e "${ERROR} Failed to install required packages. Retrying...${RESET}" | tee -a "$LOG_FILE"
   sleep 2
 done
@@ -413,7 +413,7 @@ while true; do
     RETRY_DELAY=5
     count=0
     while [ $count -lt $MAX_RETRIES ]; do
-      if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+      if sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}" | tee -a "$LOG_FILE"; then
         echo -e "${OK} Pacman packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
         break
       else
@@ -461,7 +461,7 @@ if command -v yay >/dev/null 2>&1; then
       RETRY_DELAY=5
       count=0
       while [ $count -lt $MAX_RETRIES ]; do
-        if yay -S --needed "${YAY_PACKAGES[@]}" >>"$LOG_FILE" 2>&1; then
+        if yay -S --needed "${YAY_PACKAGES[@]}" | tee -a "$LOG_FILE"; then
           echo -e "${OK} AUR packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
           break
         else
