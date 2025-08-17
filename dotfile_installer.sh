@@ -81,7 +81,7 @@ echo -e "${ACTION} Cloning dotfiles into ${REPO_DIR}...${RESET}"
 
 # If repo folder already exists
 if [ -d "$REPO_DIR" ]; then
-  echo -e "${WARN} Folder ${REPO_DIR} already exists. Skipping clone.${RESET}"
+  echo -e "${NOTE} Folder ${REPO_DIR} already exists. Skipping clone.${RESET}"
 else
   if git clone "$REPO_URL" "$REPO_DIR" &>>"$LOG_FILE"; then
     echo -e "${OK} Dotfiles cloned successfully to ${REPO_DIR}.${RESET}"
