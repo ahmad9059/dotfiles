@@ -26,7 +26,9 @@ REPO_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/dotfiles_backup"
 # Waybar Paths
 WAYBAR_STYLE_TARGET="$HOME/.config/waybar/style.css"
+WAYBAR_LAYOUT_TARGET="$HOME/.config/waybar/config"
 CUSTOM_WAYBAR_STYLE="$HOME/.config/waybar/style/Catppuccin Mocha Custom.css"
+CUSTOM_WAYBAR_LAYOUT="$HOME/.config/waybar/configs/[TOP] Default Laptop"
 # Neovim Paths
 CONFIG_DIR="$HOME/.config/nvim"
 # SDDM Theme Paths
@@ -220,6 +222,7 @@ fi
 echo -e "${ACTION} Linking custom Waybar style...${RESET}"
 
 if [ -f "$CUSTOM_WAYBAR_STYLE" ]; then
+  ln -sf "$CUSTOM_WAYBAR_LAYOUT" "$WAYBAR_LAYOUT_TARGET" &>>"$LOG_FILE"
   ln -sf "$CUSTOM_WAYBAR_STYLE" "$WAYBAR_STYLE_TARGET" &>>"$LOG_FILE"
 
   if pgrep -x "waybar" &>/dev/null; then
