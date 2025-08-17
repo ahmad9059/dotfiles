@@ -62,8 +62,8 @@ label {\n     monitor =\n    text = cmd[update:1000] echo -e "$(LC_TIME=en_US.UT
 fi
 
 # 3. Break symlinks for waybar
-[ -L "$WAYBAR_CONFIG" ] && rm "$WAYBAR_CONFIG"
-[ -L "$WAYBAR_STYLE" ] && rm "$WAYBAR_STYLE"
+rm -rf "$WAYBAR_CONFIG"
+rm -rf "$WAYBAR_STYLE"
 
 echo -e "${GREEN}Local changes synced to repo.${NC}"
 
