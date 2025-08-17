@@ -12,15 +12,15 @@ SPECIAL_WS="special:scratchpad"
 ADDR_FILE="/tmp/dropdown_terminal_addr"
 
 # Dropdown size and position configuration (percentages)
-WIDTH_PERCENT=50  # Width as percentage of screen width
+WIDTH_PERCENT=65  # Width as percentage of screen width
 HEIGHT_PERCENT=50 # Height as percentage of screen height
-X_PERCENT=25      # X position as percentage from left (25% centers a 50% width window)
+X_PERCENT=20      # X position as percentage from left (25% centers a 50% width window)
 Y_PERCENT=5       # Y position as percentage from top
 
 # Animation settings
-ANIMATION_DURATION=1 # milliseconds
+ANIMATION_DURATION=0 # milliseconds
 SLIDE_STEPS=1
-SLIDE_DELAY=1 # milliseconds between steps
+SLIDE_DELAY=0 # milliseconds between steps
 
 # Parse arguments
 if [ "$1" = "-d" ]; then
@@ -291,4 +291,3 @@ else
     fi
   fi
 fi
-
