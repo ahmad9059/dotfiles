@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 GREEN='\033[0;32m'
@@ -49,6 +48,31 @@ rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/"
 [ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
 
 echo -e "${GREEN}Local changes synced to repo.${NC}"
+
+# === Apply custom modifications before commit/push ===
+
+# 1. Modify kb_options in UserSettings.conf
+USERS_CONF="$REPO_DIR/.config/hypr/UserConfigs/UserSettings.conf"
+if [ -f "$USERS_CONF" ]; then
+  sed -i 's/kb_options = ctrl:nocaps/kb_options = /' "$USERS_CONF"
+fi
+
+# 2. Update hyprland.conf label block (LC_TIME and font_family)
+HYPR_CONF="$REPO_DIR/.config/hypr/hyprland.conf"
+if [ -f "$HYPR_CONF" ]; then
+  sed -i 's/LC_TIME=ur_PK.UTF-8/LC_TIME=en_US.UTF-8/' "$HYPR_CONF"
+  sed -i 's/Noto Nastaliq Urdu/SF Pro Display Semibold/' "$HYPR_CONF"
+fi
+
+# 3. Break the Waybar symlinks so they can be recreated later
+WAYBAR_CONFIG="$REPO_DIR/.config/waybar/config"
+WAYBAR_STYLE="$REPO_DIR/.config/waybar/style.css"
+if [ -L "$WAYBAR_CONFIG" ]; then
+  rm "$WAYBAR_CONFIG"
+fi
+if [ -L "$WAYBAR_STYLE" ]; then
+  rm "$WAYBAR_STYLE"
+fi
 
 # Commit and push changes
 echo -e "${GREEN}Committing and pushing changes...${NC}"
