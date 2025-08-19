@@ -49,7 +49,7 @@ BROWSER="chromium"
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth github-cli)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
