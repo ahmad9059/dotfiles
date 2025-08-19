@@ -222,6 +222,17 @@ if command -v yay >/dev/null 2>&1; then
     papirus-folders -C cyan --theme Papirus-Dark
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
+    # Install custom cursor theme
+    CURSOR_ARCHIVE="$HOME/dotfiles/utilities/Future-black-cursors.tar.gz"
+    ICONS_DIR="$HOME/.icons"
+
+    mkdir -p "$ICONS_DIR"
+    if tar -xzf "$CURSOR_ARCHIVE" -C "$ICONS_DIR"; then
+      echo -e "${OK} Future Black cursors installed to $ICONS_DIR.${RESET}"
+    else
+      echo -e "${ERROR} Failed to extract Future Black cursors from $CURSOR_ARCHIVE.${RESET}"
+    fi
+
   else
     echo -e "${ERROR} Failed to install 'papirus-icon-theme'. Check $LOG_FILE for details.${RESET}"
   fi
@@ -289,7 +300,7 @@ echo -e "${ACTION} Updating GTK theme settings...${RESET}" | tee -a "$LOG_FILE"
 
   gsettings set org.gnome.desktop.interface gtk-theme 'Material-DeepOcean-BL'
   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-  gsettings set org.gnome.desktop.interface cursor-theme 'Future-Black-Cursors'
+  gsettings set org.gnome.desktop.interface cursor-theme 'Future-black Cursors'
   gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 11'
   gsettings set org.gnome.desktop.wm.preferences theme 'Material-DeepOcean-BL'
 
@@ -404,8 +415,6 @@ fi
 # ==============================
 echo -e "${ACTION} Creating Chromium web apps and desktop entries...${RESET}"
 
-# Chromium path
-
 mkdir -p "$DESKTOP_DIR" "$ICON_DIR"
 
 # List of apps (Name|URL|IconName)
@@ -444,21 +453,49 @@ download_icon() {
   local name="$2"
   local icon_path="$ICON_DIR/$name.png"
 
-  if [[ ! -f "$icon_path" ]]; then
-    echo -e "${NOTE} Downloading icon for $name...${RESET}"
-    if ! curl -fsSL "$url/favicon.ico" -o "$icon_path" 2>>"$LOG_FILE"; then
-      if curl -fsSL "https://www.google.com/s2/favicons?sz=128&domain=$url" -o "$icon_path" 2>>"$LOG_FILE"; then
-        echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
-      else
-        echo -e "${WARN} Failed to download icon for $name. Using default.${RESET}"
-        cp /usr/share/icons/hicolor/128x128/apps/web-browser.png "$icon_path" 2>>"$LOG_FILE" || true
-      fi
-    else
-      echo -e "${OK} Icon for $name downloaded successfully.${RESET}"
-    fi
-  else
+  if [[ -f "$icon_path" ]]; then
     echo -e "${NOTE} Icon for $name already exists. Skipping.${RESET}"
+    return
   fi
+
+  echo -e "${NOTE} Downloading icon for $name...${RESET}"
+
+  # Try Homarr (light → dark → plain)
+  for variant in "-light" "-dark" ""; do
+    if curl -fsSL "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/${name}${variant}.png" -o "$icon_path" 2>>"$LOG_FILE"; then
+      if file --mime-type "$icon_path" | grep -q "image/png"; then
+        echo -e "${OK} Icon for $name downloaded from Homarr (${variant:-plain}).${RESET}"
+        return
+      else
+        echo -e "${WARN} Homarr returned invalid file for $name (${variant:-plain}). Retrying...${RESET}"
+        rm -f "$icon_path"
+      fi
+    fi
+  done
+
+  # Fallback: Google S2 favicon API
+  if curl -fsSL "https://www.google.com/s2/favicons?sz=128&domain=$url" -o "$icon_path" 2>>"$LOG_FILE"; then
+    if file --mime-type "$icon_path" | grep -q "image/png"; then
+      echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
+      return
+    else
+      echo -e "${WARN} Google S2 returned invalid file for $name. Retrying...${RESET}"
+      rm -f "$icon_path"
+    fi
+  fi
+
+  # Fallback: direct favicon.ico from site
+  if curl -fsSL "$url/favicon.ico" -o "$icon_path" 2>>"$LOG_FILE"; then
+    if file --mime-type "$icon_path" | grep -q "image/"; then
+      echo -e "${OK} Icon for $name downloaded directly from $url/favicon.ico.${RESET}"
+      return
+    else
+      echo -e "${WARN} Invalid favicon from $url/favicon.ico. Skipping.${RESET}"
+      rm -f "$icon_path"
+    fi
+  fi
+
+  echo -e "${WARN} No icon available for $name after all fallbacks.${RESET}"
 }
 
 make_desktop_entry() {
@@ -467,14 +504,14 @@ make_desktop_entry() {
   local icon="$3"
   local desktop_file="$DESKTOP_DIR/$icon.desktop"
 
-  cat >"$desktop_file" <<EOF
-[Desktop Entry]
-Name=$name
-Exec=$BROWSER --app=$url
-Icon=$ICON_DIR/$icon.png
-Type=Application
-Categories=Network;WebApp;
-EOF
+  {
+    echo "[Desktop Entry]"
+    echo "Name=$name"
+    echo "Exec=$BROWSER --new-window --ozone-platform=wayland --app=$url"
+    [[ -f "$ICON_DIR/$icon.png" ]] && echo "Icon=$ICON_DIR/$icon.png"
+    echo "Type=Application"
+    echo "Categories=Network;WebApp;"
+  } >"$desktop_file"
 
   if [[ -f "$desktop_file" ]]; then
     echo -e "${OK} Created desktop entry for $name.${RESET}"
