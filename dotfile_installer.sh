@@ -217,6 +217,11 @@ if command -v yay >/dev/null 2>&1; then
   echo -e "${ACTION} Installing 'papirus-icon-theme' via yay...${RESET}"
   if sudo pacman -S --needed --noconfirm papirus-icon-theme papirus-folders >>"$LOG_FILE" 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
+
+    # Set folder color to cyan for Papirus-Dark
+    papirus-folders -C cyan --theme Papirus-Dark
+    echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
+
   else
     echo -e "${ERROR} Failed to install 'papirus-icon-theme'. Check $LOG_FILE for details.${RESET}"
   fi
