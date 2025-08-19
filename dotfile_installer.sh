@@ -39,13 +39,17 @@ SDDM_CONF="/etc/sddm.conf"
 # Grub Theme Paths
 GRUB_THEME_ARCHIVE="$HOME/dotfiles/utilities/Vimix-1080p.tar.xz"
 GRUB_THEME_DIR="/tmp/vimix-grub"
+# PWA(Desktop Apps)
+DESKTOP_DIR="$HOME/.local/share/applications"
+ICON_DIR="$HOME/.local/share/icons/apps"
+BROWSER="chromium"
 
 # =============================
 # Packages list
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat npm)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
@@ -211,7 +215,7 @@ fi
 # ==============================
 if command -v yay >/dev/null 2>&1; then
   echo -e "${ACTION} Installing 'papirus-icon-theme' via yay...${RESET}"
-  if yay -S --needed --noconfirm papirus-icon-theme >>"$LOG_FILE" 2>&1; then
+  if sudo pacman -S --needed --noconfirm papirus-icon-theme papirus-folders >>"$LOG_FILE" 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
   else
     echo -e "${ERROR} Failed to install 'papirus-icon-theme'. Check $LOG_FILE for details.${RESET}"
@@ -396,11 +400,6 @@ fi
 echo -e "${ACTION} Creating Chromium web apps and desktop entries...${RESET}"
 
 # Chromium path
-BROWSER="chromium"
-
-# Paths
-DESKTOP_DIR="$HOME/.local/share/applications"
-ICON_DIR="$HOME/.local/share/icons/apps"
 
 mkdir -p "$DESKTOP_DIR" "$ICON_DIR"
 
