@@ -101,7 +101,6 @@ fi
 # Required Packages
 # =================
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-
 # Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
