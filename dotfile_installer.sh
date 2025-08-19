@@ -391,6 +391,104 @@ else
 fi
 
 # ==============================
+# Chromium Web Apps Setup
+# ==============================
+echo -e "${ACTION} Creating Chromium web apps and desktop entries...${RESET}"
+
+# Chromium path
+BROWSER="chromium"
+
+# Paths
+DESKTOP_DIR="$HOME/.local/share/applications"
+ICON_DIR="$HOME/.local/share/icons/apps"
+
+mkdir -p "$DESKTOP_DIR" "$ICON_DIR"
+
+# List of apps (Name|URL|IconName)
+apps=(
+  "Netflix|https://www.netflix.com|netflix"
+  "WhatsApp|https://web.whatsapp.com|whatsapp"
+  "ChatGPT|https://chat.openai.com|chatgpt"
+  "YouTube|https://www.youtube.com|youtube"
+  "GitHub|https://github.com|github"
+  "Cineby|https://www.cineby.app|cineby"
+  "Vercel|https://vercel.com|vercel"
+  "tldraw|https://www.tldraw.com|tldraw"
+  "FrontendMasters|https://frontendmasters.com|frontendmasters"
+  "Spotify|https://open.spotify.com|spotify"
+  "Ahmad|https://itsahmad.me|itsahmad"
+  "LinkedIn|https://www.linkedin.com|linkedin"
+  "X|https://x.com|x"
+  "Instagram|https://www.instagram.com|instagram"
+  "Chess|https://www.chess.com|chess"
+  "LeetCode|https://leetcode.com|leetcode"
+  "Claude|https://claude.ai|claude"
+  "Grok|https://grok.com|grok"
+  "Gmail|https://mail.google.com|gmail"
+  "TechURLs|https://techurls.com|techurls"
+  "Reddit|https://www.reddit.com|reddit"
+  "Canva|https://www.canva.com|canva"
+  "Figma|https://www.figma.com|figma"
+  "NotebookLM|https://notebooklm.google.com|notebooklm"
+  "Slack|https://slack.com|slack"
+  "Microsoft365|https://www.microsoft365.com|microsoft365"
+  "Hyprbyte|https://hyprbyte.dev|hyprbyte"
+)
+
+download_icon() {
+  local url="$1"
+  local name="$2"
+  local icon_path="$ICON_DIR/$name.png"
+
+  if [[ ! -f "$icon_path" ]]; then
+    echo -e "${NOTE} Downloading icon for $name...${RESET}"
+    if ! curl -fsSL "$url/favicon.ico" -o "$icon_path" 2>>"$LOG_FILE"; then
+      if curl -fsSL "https://www.google.com/s2/favicons?sz=128&domain=$url" -o "$icon_path" 2>>"$LOG_FILE"; then
+        echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
+      else
+        echo -e "${WARN} Failed to download icon for $name. Using default.${RESET}"
+        cp /usr/share/icons/hicolor/128x128/apps/web-browser.png "$icon_path" 2>>"$LOG_FILE" || true
+      fi
+    else
+      echo -e "${OK} Icon for $name downloaded successfully.${RESET}"
+    fi
+  else
+    echo -e "${NOTE} Icon for $name already exists. Skipping.${RESET}"
+  fi
+}
+
+make_desktop_entry() {
+  local name="$1"
+  local url="$2"
+  local icon="$3"
+  local desktop_file="$DESKTOP_DIR/$icon.desktop"
+
+  cat >"$desktop_file" <<EOF
+[Desktop Entry]
+Name=$name
+Exec=$BROWSER --app=$url
+Icon=$ICON_DIR/$icon.png
+Type=Application
+Categories=Network;WebApp;
+EOF
+
+  if [[ -f "$desktop_file" ]]; then
+    echo -e "${OK} Created desktop entry for $name.${RESET}"
+  else
+    echo -e "${ERROR} Failed to create desktop entry for $name.${RESET}"
+  fi
+}
+
+# Main loop
+for entry in "${apps[@]}"; do
+  IFS="|" read -r name url icon <<<"$entry"
+  download_icon "$url" "$icon"
+  make_desktop_entry "$name" "$url" "$icon"
+done
+
+echo -e "${OK} All Chromium web apps created in $DESKTOP_DIR with icons in $ICON_DIR.${RESET}"
+
+# ==============================
 # Ask to install pacman packages
 # ==============================
 echo -e "\n${ACTION} Do you want to install the following pacman packages?${RESET}"
