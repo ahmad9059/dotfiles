@@ -101,23 +101,41 @@ fi
 # Required Packages
 # =================
 
-echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
+# =================
+# Required Packages
+# =================
 
+echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
 # Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
-
 echo -e "${ACTION} Packages Installing in Progress...${RESET}" | tee -a "$LOG_FILE"
-# Keep retrying until success
-until sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" | tee -a "$LOG_FILE"; do
-  echo -e "${ERROR} Failed to install required packages. Retrying...${RESET}" | tee -a "$LOG_FILE"
-  sleep 2
-done
+# Enable pipefail so pacman failure is detected even with tee
+set -o pipefail
+MAX_RETRIES=5
+COUNT=0
+SUCCESS=0
 
-echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+until [ $COUNT -ge $MAX_RETRIES ]; do
+  if sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+    SUCCESS=1
+    break
+  else
+    COUNT=$((COUNT + 1))
+    echo -e "${ERROR} Failed to install required packages. Retry $COUNT/$MAX_RETRIES in 5s...${RESET}" | tee -a "$LOG_FILE"
+    sleep 5
+  fi
+done
+set +o pipefail
+if [ $SUCCESS -eq 1 ]; then
+  echo -e "${OK} Required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+else
+  echo -e "${ERROR} Failed to install required packages after $MAX_RETRIES attempts.${RESET}" | tee -a "$LOG_FILE"
+  exit 1
+fi
 
 # ===========================
 # Backup old configs
@@ -452,31 +470,31 @@ echo -e "\n${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it
 # ==========================
 # Install Tmux and Tmuxifier
 # ==========================
-
-# Show ACTION only once
 echo -e "${ACTION} Installing Tmux Plugin Manager (TPM) and tmuxifier...${RESET}"
-
 TPM_DIR="$HOME/.tmux/plugins/tpm"
-
 # Tmuxifier installation
 if [ -d "$HOME/.tmuxifier" ]; then
   echo -e "${WARN} Existing ~/.tmuxifier found, removing it for a fresh install...${RESET}"
   rm -rf "$HOME/.tmuxifier"
 fi
 git clone "$TMUXIFIER_REPO" "$HOME/.tmuxifier"
-
 # Show OK only once
 echo -e "${OK} Official tmuxifier cloned to $HOME/.tmuxifier${RESET}"
-
 # Copy layouts
 mkdir -p "$HOME/.tmuxifier/layouts"
 cp -r "$REPO_DIR/.tmuxifier/layouts/." "$HOME/.tmuxifier/layouts/"
-
 # TPM installation
 if [ -d "$TPM_DIR" ]; then
   echo -e "${WARN} TPM already installed at $TPM_DIR. Skipping clone.${RESET}"
 else
   git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+fi
+# Install TPM plugins without opening tmux
+if [ -x "$TPM_DIR/bin/install_plugins" ]; then
+  "$TPM_DIR/bin/install_plugins"
+  echo -e "${OK} Tmux plugins installed via TPM${RESET}"
+else
+  echo -e "${ERROR} TPM install script not found at $TPM_DIR/bin/install_plugins${RESET}"
 fi
 
 # =================================================
