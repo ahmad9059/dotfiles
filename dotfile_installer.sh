@@ -339,6 +339,116 @@ else
   echo -e "${WARN} GRUB not detected. Skipping GRUB theme installation.${RESET}"
 fi
 
+#!/bin/bash
+
+set -e
+
+# ===========================
+# Color-coded status labels
+# ===========================
+ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
+WARN="$(tput setaf 3)[WARN]$(tput sgr0)"
+OK="$(tput setaf 2)[OK]$(tput sgr0)"
+NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
+ACTION="$(tput setaf 4)[ACTION]$(tput sgr0)"
+RESET="$(tput sgr0)"
+
+# ==============================
+# Plymouth Setup
+# ==============================
+THEME_DIR="$HOME/dotfiles/utilities/hyprland-mac-style"
+THEME_NAME="hyprland-mac-style"
+PLYMOUTH_DIR="/usr/share/plymouth/themes"
+MKINITCPIO_CONF="/etc/mkinitcpio.conf"
+GRUB_CONF="/etc/default/grub"
+
+# ===========================
+# Log Details
+# ===========================
+LOG_FILE="$HOME/installer_log/install_plymouth.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+exec > >(tee -a "$LOG_FILE") 2>&1
+
+# ==================================
+# Ask for sudo once at the beginning
+# ==================================
+echo -e "${ACTION} Requesting sudo access...${RESET}"
+sudo -v || {
+  echo "${ERROR} Sudo failed. Exiting.${RESET}"
+  exit 1
+}
+
+# ============================
+# Install Plymouth and Theme Installation
+# ============================
+echo -e "${ACTION} Installing Plymouth...${RESET}"
+if ! pacman -Qi plymouth &>/dev/null; then
+  if sudo pacman -S --needed --noconfirm plymouth; then
+    echo -e "${OK} Plymouth installed successfully.${RESET}"
+  else
+    echo -e "${ERROR} Failed to install Plymouth.${RESET}"
+    exit 1
+  fi
+else
+  echo -e "${NOTE} Plymouth already installed.${RESET}"
+fi
+# Copy Plymouth Theme
+if [ -d "$THEME_DIR" ]; then
+  echo -e "${ACTION} Copying theme '$THEME_NAME' to $PLYMOUTH_DIR...${RESET}"
+  sudo mkdir -p "$PLYMOUTH_DIR"
+  sudo cp -r "$THEME_DIR" "$PLYMOUTH_DIR/" &&
+    echo -e "${OK} Theme '$THEME_NAME' installed.${RESET}" ||
+    {
+      echo -e "${ERROR} Failed to copy theme!${RESET}"
+      exit 1
+    }
+else
+  echo -e "${ERROR} Theme directory $THEME_DIR not found!${RESET}"
+  exit 1
+fi
+# Enable Plymouth in mkinitcpio
+if grep -q "plymouth" "$MKINITCPIO_CONF"; then
+  echo -e "${NOTE} Plymouth hook already present in mkinitcpio.conf.${RESET}"
+else
+  echo -e "${ACTION} Adding plymouth hook to mkinitcpio.conf...${RESET}"
+  sudo sed -i 's/HOOKS=(/HOOKS=(plymouth /' "$MKINITCPIO_CONF"
+  echo -e "${OK} Plymouth hook added to mkinitcpio.conf.${RESET}"
+fi
+# Set Plymouth Theme
+echo -e "${ACTION} Setting Plymouth theme to '$THEME_NAME'...${RESET}"
+if sudo plymouth-set-default-theme -R "$THEME_NAME"; then
+  echo -e "${OK} Plymouth theme set successfully.${RESET}"
+else
+  echo -e "${ERROR} Failed to set Plymouth theme.${RESET}"
+  exit 1
+fi
+# Update GRUB / kernel params
+if [ -f "$GRUB_CONF" ]; then
+  echo -e "${ACTION} Ensuring 'quiet splash' are enabled in GRUB...${RESET}"
+  if ! grep -q "splash" "$GRUB_CONF"; then
+    sudo sed -i 's/GRUB_CMDLINE_LINUX="/GRUB_CMDLINE_LINUX="quiet splash /' "$GRUB_CONF"
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    echo -e "${OK} GRUB updated with quiet splash.${RESET}"
+  elif ! grep -q "quiet" "$GRUB_CONF"; then
+    sudo sed -i 's/splash/quiet splash/' "$GRUB_CONF"
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    echo -e "${OK} GRUB updated to include quiet.${RESET}"
+  else
+    echo -e "${NOTE} 'quiet splash' already configured in GRUB.${RESET}"
+  fi
+else
+  echo -e "${WARN} $GRUB_CONF not found. Skipping GRUB config update.${RESET}"
+fi
+# Rebuild initramfs
+echo -e "${ACTION} Rebuilding initramfs...${RESET}"
+if sudo mkinitcpio -P; then
+  echo -e "${OK} Initramfs rebuilt successfully.${RESET}"
+else
+  echo -e "${ERROR} Failed to rebuild initramfs.${RESET}"
+  exit 1
+fi
+echo -e "\n${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it. !!${RESET}\n"
+
 # ==========================
 # Install Tmux and Tmuxifier
 # ==========================

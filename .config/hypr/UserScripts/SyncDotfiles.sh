@@ -7,6 +7,7 @@ NC='\033[0m'
 # Paths
 REPO_DIR="$HOME/dotfiles"
 NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
+INITIAL_BOOT_FILE="$REPO_DIR/.config/hypr/.initial_startup_done"
 
 # Send notification
 notify() {
@@ -72,6 +73,12 @@ if [ -L "$WAYBAR_CONFIG" ]; then
 fi
 if [ -L "$WAYBAR_STYLE" ]; then
   rm "$WAYBAR_STYLE"
+fi
+
+# Remove Hyprland initial startup marker file (if present)
+if [ -f "$INITIAL_BOOT_FILE" ]; then
+  rm -f "$INITIAL_BOOT_FILE"
+  echo -e "${NOTE} Removed initial startup marker.${NC}"
 fi
 
 # Commit and push changes
