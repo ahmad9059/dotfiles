@@ -74,6 +74,7 @@ YAY_PACKAGES=(
 # ===========================
 # Log Details
 # ===========================
+mkdir -p "$HOME/installer_log"
 LOG_FILE="$HOME/installer_log/install_dotfiles.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
