@@ -72,7 +72,7 @@ bash install.sh
 echo "${OK} Arch-Hyprland script Installed!${RESET}"
 
 # ===========================
-# dotfile Banner
+# HyprFlux Banner
 # ===========================
 clear
 
@@ -84,25 +84,25 @@ echo -e "${CYAN}✻────────────────────�
 echo -e "\n"
 
 # ===========================
-# Clone dotfiles repo
+# Clone HyprFlux repo
 # ===========================
-if [ -d "$HOME/dotfiles" ]; then
-  echo "${NOTE} Folder 'dotfiles' already exists in HOME, using it...${RESET}"
+if [ -d "$HOME/HyprFlux" ]; then
+  echo "${NOTE} Folder 'HyprFlux' already exists in HOME, using it...${RESET}"
 else
-  echo "${NOTE} Cloning dotfiles repo into ~...${RESET}"
-  if git clone --depth=1 https://github.com/ahmad9059/dotfiles.git "$HOME/dotfiles"; then
+  echo "${NOTE} Cloning HyprFlux repo into ~...${RESET}"
+  if git clone --depth=1 https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
     echo "${OK} Repo cloned successfully.${RESET}"
   else
-    echo "${ERROR} Failed to clone dotfiles repo. Exiting.${RESET}"
+    echo "${ERROR} Failed to clone HyprFlux repo. Exiting.${RESET}"
     exit 1
   fi
 fi
 
 # ===========================
-# Run dotfiles installer
+# Run HyprFlux installer
 # ===========================
-echo "${NOTE} Running dotfiles/install.sh with preset answers...${RESET}"
-cd "$HOME/dotfiles"
+echo "${NOTE} Running HyprFlux/install.sh with preset answers...${RESET}"
+cd "$HOME/HyprFlux"
 chmod +x dotsSetup.sh
 bash dotsSetup.sh
 
