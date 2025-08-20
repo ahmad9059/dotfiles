@@ -81,23 +81,13 @@ if [ -f "$INITIAL_BOOT_FILE" ]; then
   echo -e "${NOTE} Removed initial startup marker.${NC}"
 fi
 
-# Commit and push changes to personal branch
-PERSONAL_BRANCH="personal"
-
-echo -e "${GREEN}Committing and pushing changes to branch '$PERSONAL_BRANCH'...${NC}"
+# Commit and push changes
+echo -e "${GREEN}Committing and pushing changes...${NC}"
 cd "$REPO_DIR"
-
-# Make sure the branch exists and switch to it
-if git rev-parse --verify "$PERSONAL_BRANCH" >/dev/null 2>&1; then
-  git checkout "$PERSONAL_BRANCH"
-else
-  git checkout -b "$PERSONAL_BRANCH"
-fi
-
 git add .
 if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
-  git push -u origin "$PERSONAL_BRANCH"
-  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully to $PERSONAL_BRANCH" normal
+  git push
+  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully" normal
 else
-  notify "Dotfiles Sync" "Already synced to newest changes on $PERSONAL_BRANCH" low
+  notify "Dotfiles Sync" "Already synced to Newest Change" low
 fi
