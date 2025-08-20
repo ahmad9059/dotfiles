@@ -103,8 +103,8 @@ fi
 # ===========================
 echo "${NOTE} Running dotfiles/install.sh with preset answers...${RESET}"
 cd "$HOME/dotfiles"
-chmod +x dotfile_installer.sh
-bash dotfile_installer.sh
+chmod +x dotsSetup.sh
+bash dotsSetup.sh
 
 # ===========================
 # Ask for Reboot
