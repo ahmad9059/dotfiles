@@ -44,6 +44,13 @@ DESKTOP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons/apps"
 BROWSER="chromium"
 
+
+# ===========================
+# Log Details
+# ===========================
+mkdir -p "$HOME/installer_log"
+LOG_FILE="$HOME/installer_log/boot_file.log"
+
 # =============================
 # Packages list
 # =============================
