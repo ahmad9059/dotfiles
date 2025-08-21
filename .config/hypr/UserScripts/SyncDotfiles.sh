@@ -27,7 +27,7 @@ trap on_error ERR
 
 # Sync .config items that exist in repo
 notify-send -a "HyprFlux Sync" -i dialog-information "HyprFlux Sync" "Sync has been started..."
-echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
+echo -e "${GREEN} Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
   name=$(basename "$item")
   if [ -d "$HOME/.config/$name" ]; then
