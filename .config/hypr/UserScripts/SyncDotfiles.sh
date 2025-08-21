@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 # Paths
-REPO_DIR="$HOME/dotfiles"
+REPO_DIR="$HOME/HyprFlux"
 NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
 INITIAL_BOOT_FILE="$REPO_DIR/.config/hypr/.initial_startup_done"
 
@@ -20,13 +20,13 @@ notify() {
 # Error handler
 on_error() {
   local exit_code=$?
-  notify "Dotfiles Sync Failed" "Script exited with code $exit_code" critical
+  notify "HyprFlux Sync Failed" "Script exited with code $exit_code" critical
   exit $exit_code
 }
 trap on_error ERR
 
 # Sync .config items that exist in repo
-notify-send -a "Dotfiles Sync" -i dialog-information "Dotfiles Sync" "Sync has been started..."
+notify-send -a "HyprFlux Sync" -i dialog-information "HyprFlux Sync" "Sync has been started..."
 echo -e "${GREEN}📁 Syncing from system to repo (for changes you made locally)...${NC}"
 for item in "$REPO_DIR/.config"/*; do
   name=$(basename "$item")
@@ -97,7 +97,7 @@ fi
 git add .
 if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
   git push -u origin "$PERSONAL_BRANCH"
-  notify "Dotfiles Sync Completed" "Changes committed and pushed successfully to $PERSONAL_BRANCH" normal
+  notify "HyprFlux Sync Completed" "Changes committed and pushed successfully to $PERSONAL_BRANCH" normal
 else
-  notify "Dotfiles Sync" "Already synced to newest changes on $PERSONAL_BRANCH" low
+  notify "HyprFlux Sync" "Already synced to newest changes on $PERSONAL_BRANCH" low
 fi
