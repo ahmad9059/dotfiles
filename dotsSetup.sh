@@ -44,6 +44,7 @@ DESKTOP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons/apps"
 BROWSER="chromium"
 
+
 # ===========================
 # Log Details
 # ===========================
