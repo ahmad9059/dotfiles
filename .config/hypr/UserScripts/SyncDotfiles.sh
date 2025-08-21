@@ -82,7 +82,7 @@ if [ -f "$INITIAL_BOOT_FILE" ]; then
 fi
 
 # Commit and push changes to personal branch
-PERSONAL_BRANCH="personal"
+PERSONAL_BRANCH="main"
 
 echo -e "${GREEN}Committing and pushing changes to branch '$PERSONAL_BRANCH'...${NC}"
 cd "$REPO_DIR"
