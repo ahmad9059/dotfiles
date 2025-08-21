@@ -8,47 +8,47 @@ NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
 on_error() {
   local exit_code=$?
   local last_command=${BASH_COMMAND}
-  notify-send -e -u critical -i "$NOTIF_ICON" "Blog Sync Failed" "Command \`$last_command\` failed with exit code $exit_code."
+  notify-send -u critical -i "$NOTIF_ICON" "Blog Sync Failed" "Command \`$last_command\` failed with exit code $exit_code."
   exit $exit_code
 }
 trap on_error ERR
 
-# Change to the script's directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
-
 # Define paths
 sourcePath="/home/ahmad/Documents/obsidian/posts/"
 destinationPath="/home/ahmad/Documents/blog/content/posts/"
-myrepo="blog"
+repoPath="/home/ahmad/Documents/blog"
+
+notify-send -a "Blog Sync Started" -i dialog-information "Blog Sync Started" "Syncing the blog started..."
 
 # Check for required commands
 for cmd in git rsync python3 hugo; do
-  if ! command -v $cmd &>/dev/null; then
-    notify-send -e -u critical -i "$NOTIF_ICON" "Missing Command" "$cmd is not installed or not in PATH."
+  if ! command -v "$cmd" &>/dev/null; then
+    notify-send -u critical -i "$NOTIF_ICON" "Missing Command" "$cmd is not installed or not in PATH."
     exit 1
   fi
 done
 
 # Ensure paths exist
 if [ ! -d "$sourcePath" ]; then
-  notify-send -e -u critical -i "$NOTIF_ICON" "Source Path Missing" "$sourcePath does not exist."
+  notify-send -u critical -i "$NOTIF_ICON" "Source Path Missing" "$sourcePath does not exist."
   exit 1
 fi
 
 if [ ! -d "$destinationPath" ]; then
-  notify-send -e -u critical -i "$NOTIF_ICON" "Destination Path Missing" "$destinationPath does not exist."
+  notify-send -u critical -i "$NOTIF_ICON" "Destination Path Missing" "$destinationPath does not exist."
   exit 1
 fi
 
 # Rsync sync
 echo "Syncing posts from Obsidian..."
 if ! rsync -av --delete "$sourcePath" "$destinationPath"; then
-  notify-send -e -u critical -i "$NOTIF_ICON" "Rsync Failed" "Failed to sync posts to Hugo."
+  notify-send -u critical -i "$NOTIF_ICON" "Rsync Failed" "Failed to sync posts to Hugo."
   exit 1
 fi
 
-# Git stage, commit and push
+# Git stage, commit and push (inside blog repo)
+cd "$repoPath"
+
 echo "Staging changes..."
 git add .
 
@@ -62,9 +62,9 @@ fi
 
 echo "Pushing to GitHub..."
 if ! git push origin main; then
-  notify-send -e -u critical -i "$NOTIF_ICON" "Git Push Failed" "Failed to push to main branch."
+  notify-send -u critical -i "$NOTIF_ICON" "Git Push Failed" "Failed to push to main branch."
   exit 1
 fi
 
 # ✅ Success notification
-notify-send -e -u low -i "$NOTIF_ICON" "Blog Sync Completed" "Your blog has been synced and pushed to GitHub."
+notify-send -u low -i "$NOTIF_ICON" "Blog Sync Completed" "Your blog has been synced and pushed to GitHub."
