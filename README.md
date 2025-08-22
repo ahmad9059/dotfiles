@@ -85,9 +85,9 @@ sh <(curl -fsSL https://hyprflux.dev/install)
 
 **Optional Components**:
 
-- `audio` - Audio system configuration
-- `fonts` - Additional font packages
-- `development` - Development tools and IDEs
+- `QuickShell` - QuickShell for Desktop-Like Overview
+- `Pokemon` - Add Pokemon color scripts to your terminal
+- `Rog` - Download and Install Pre-configured for ROG Laptops
 
 #### 📝 Interactive Configuration
 
