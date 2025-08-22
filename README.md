@@ -13,19 +13,20 @@
 
 **A comprehensive collection of dotfiles and configurations for creating a beautiful, efficient Hyprland desktop environment on Arch Linux**
 
-[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • [📖 Documentation](https://hyprflux.dev/general/installation) • [🤝 Contributing](#-contributing)
+[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • <a href="https://hyprflux.dev/general/installation" target="_blank" rel="noopener noreferrer">📖 Documentation</a>
+• [🤝 Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🌟 Overview
-
-HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
-
 ## 🌐 Website
 
 For detailed documentation and preferences, visit: [https://hyprflux.dev](https://hyprflux.dev)
+
+## 🌟 Overview
+
+HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
 
 ### ✨ What Makes HyprFlux Special?
 
