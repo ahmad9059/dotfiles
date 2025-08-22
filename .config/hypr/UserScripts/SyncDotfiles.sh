@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e
 
-GREEN='\033[0;32m'
-NC='\033[0m'
-# NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
-
 # Paths
 REPO_DIR="$HOME/HyprFlux"
 NOTIF_ICON="$HOME/.config/swaync/images/ja.png"
@@ -28,7 +24,7 @@ trap on_error ERR
 
 # Sync .config items that exist in repo
 notify-send -a "HyprFlux Sync" -i dialog-information "HyprFlux Sync" "Sync has been started..."
-echo -e "${GREEN} Syncing from system to repo (for changes you made locally)...${NC}"
+echo -e "Syncing from system to repo (for changes you made locally)..."
 for item in "$REPO_DIR/.config"/*; do
   name=$(basename "$item")
   if [ -d "$HOME/.config/$name" ]; then
@@ -49,7 +45,7 @@ rsync -av --delete "$HOME/.tmuxifier/layouts/" "$REPO_DIR/.tmuxifier/layouts/"
 [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
 [ -f "$HOME/.tmux.conf" ] && cp "$HOME/.tmux.conf" "$REPO_DIR/.tmux.conf"
 
-echo -e "${GREEN}Local changes synced to repo.${NC}"
+echo -e "Local changes synced to repo..."
 
 # === Apply custom modifications before commit/push ===
 
@@ -79,13 +75,13 @@ fi
 # Remove Hyprland initial startup marker file (if present)
 if [ -f "$INITIAL_BOOT_FILE" ]; then
   rm -f "$INITIAL_BOOT_FILE"
-  echo -e "${NOTE} Removed initial startup marker.${NC}"
+  echo -e "Removed initial startup marker...}"
 fi
 
 # Commit and push changes to personal branch
 PERSONAL_BRANCH="personal"
 
-echo -e "${GREEN}Committing and pushing changes to branch '$PERSONAL_BRANCH'...${NC}"
+echo -e "Committing and pushing changes to branch '$PERSONAL_BRANCH'..."
 cd "$REPO_DIR"
 
 # Make sure the branch exists and switch to it
