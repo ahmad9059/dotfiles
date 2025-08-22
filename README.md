@@ -31,6 +31,10 @@ HyprFlux is a meticulously crafted collection of configuration files designed to
 - **🎯 Developer Focused**: Optimized for productivity and development workflows
 - **🌈 Customizable**: Easy to modify and extend according to your preferences
 
+### Website
+
+Documentation : https://hyprflux.dev
+
 ## 📋 Requirements
 
 ### System Requirements
