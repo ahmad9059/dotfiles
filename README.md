@@ -13,7 +13,7 @@
 
 **A comprehensive collection of dotfiles and configurations for creating a beautiful, efficient Hyprland desktop environment on Arch Linux**
 
-[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • [📖 Documentation](#-documentation) • [🤝 Contributing](#-contributing)
+[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • [📖 Documentation](https://hyprflux.dev/general/installation) • [🤝 Contributing](#-contributing)
 
 </div>
 
