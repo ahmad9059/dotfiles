@@ -3,6 +3,7 @@ set -e
 
 GREEN='\033[0;32m'
 NC='\033[0m'
+# NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
 
 # Paths
 REPO_DIR="$HOME/HyprFlux"
