@@ -157,35 +157,13 @@ Automated setup of Progressive Web Apps (PWAs) for:
 
 ### Desktop Overview
 
-![Desktop](review/0.webp)
+![1](review/0.webp)
+![10](review/1.webp)
 
-### Application Launcher
-
-![Rofi Launcher](review/1.webp)
-
-### Terminal & Development
-
-![Terminal Setup](review/2.webp)
-
-### File Manager
-
-![Thunar](review/3.webp)
-
-### System Information
-
-![Neofetch](review/4.webp)
-
-### Lock Screen
-
-![Hyprlock](review/5.webp)
-
-### Login Screen
-
-![SDDM Theme](review/6.webp)
-
-### Wallpaper Collection
-
-![Wallpapers](review/7.webp)
+| ![2](review/2.webp) | ![3](review/3.webp) |
+| ------------------- | ------------------- |
+| ![4](review/4.webp) | ![5](review/5.webp) |
+| ![6](review/6.webp) | ![7](review/7.webp) |
 
 </div>
 
