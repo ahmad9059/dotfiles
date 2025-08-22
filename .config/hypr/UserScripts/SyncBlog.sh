@@ -61,7 +61,7 @@ else
 fi
 
 echo "Pushing to GitHub..."
-if ! git push origin main; then
+if ! git push origin main && sleep 3; then
   notify-send -u critical -i "$NOTIF_ICON" "Git Push Failed" "Failed to push to main branch."
   exit 1
 fi

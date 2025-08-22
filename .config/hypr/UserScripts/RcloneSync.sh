@@ -8,7 +8,7 @@ DST="gdrive:Documents"
 notify-send -a "Rclone Sync" -i folder-sync "Document Sync" "Sync started..."
 echo "Rclone Sync Started of Document folder"
 # Run rclone sync and capture error
-if rclone sync "$SRC" "$DST" --progress 2>/tmp/rclone_error.log; then
+if rclone sync "$SRC" "$DST" --progress 2>/tmp/rclone_error.log && sleep 3; then
   # Notify success
   notify-send -a "Rclone Sync" -i dialog-information "Document Sync" "Sync completed successfully ✅"
   echo "Sync completed successfully"

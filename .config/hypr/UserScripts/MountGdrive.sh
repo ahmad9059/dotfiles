@@ -28,7 +28,7 @@ sleep 3
 
 # Verify again
 if is_mounted; then
-  notify-send -a "Rclone Mount" -i dialog-information "Google Drive" "Mounted successfully at $MOUNT_DIR ✅"
+  notify-send -a "Rclone Mount" -i dialog-apply "Google Drive" "Mounted successfully at $MOUNT_DIR ✅"
 else
   notify-send -a "Rclone Mount" -u critical -i dialog-error "Google Drive Mount Failed" "Mount process may have failed ❌"
 fi

@@ -95,9 +95,11 @@ else
 fi
 
 git add .
-if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')"; then
+if git commit -m "Sync local changes $(date '+%Y-%m-%d %H:%M:%S')" && sleep 3; then
   git push -u origin "$PERSONAL_BRANCH"
+  sleep 3
   notify "HyprFlux Sync Completed" "Changes committed and pushed successfully to $PERSONAL_BRANCH" normal
 else
+  sleep 3
   notify "HyprFlux Sync" "Already synced to newest changes on $PERSONAL_BRANCH" low
 fi
