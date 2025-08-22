@@ -18,7 +18,7 @@
   "notification-window-width": 350,
   "timeout": 6,
   "timeout-low": 3,
-  "timeout-critical": 0,
+  "timeout-critical": 3,
   "fit-to-screen": false,
   "control-center-width": 330,
   "control-center-height": 900,
@@ -78,4 +78,3 @@
     }
   }
 }
-
