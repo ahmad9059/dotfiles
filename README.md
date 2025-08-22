@@ -228,21 +228,6 @@ HyprFlux/
 - `~/.zshrc` - Zsh shell configuration
 - `~/.tmux.conf` - Terminal multiplexer settings
 
-### 🎨 Customizing Themes
-
-To change themes:
-
-```bash
-# Change GTK theme
-gsettings set org.gnome.desktop.interface gtk-theme 'YourThemeName'
-
-# Change icon theme
-gsettings set org.gnome.desktop.interface icon-theme 'YourIconTheme'
-
-# Apply changes
-nwg-look -x
-```
-
 ### Getting Help
 
 - 📋 Check the [Issues](https://github.com/ahmad9059/HyprFlux/issues) page
