@@ -243,42 +243,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'YourIconTheme'
 nwg-look -x
 ```
 
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-#### Installation Fails
-
-```bash
-# Check logs
-tail -f ~/installer_log/install_dotfiles.log
-
-# Retry with manual steps
-cd ~/HyprFlux
-chmod +x dotsSetup.sh
-./dotsSetup.sh
-```
-
-#### Display Issues
-
-```bash
-# Restart Hyprland
-hyprctl reload
-
-# Check graphics drivers
-lspci -k | grep -A 2 -E "(VGA|3D)"
-```
-
-#### Audio Problems
-
-```bash
-# Install audio packages
-sudo pacman -S pipewire pipewire-pulse pipewire-alsa
-
-# Restart audio service
-systemctl --user restart pipewire
-```
-
 ### Getting Help
 
 - 📋 Check the [Issues](https://github.com/ahmad9059/HyprFlux/issues) page
