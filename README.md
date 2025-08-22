@@ -23,6 +23,10 @@
 
 HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
 
+## 🌐 Website
+
+For detailed documentation and preferences, visit: [https://hyprflux.dev](https://hyprflux.dev)
+
 ### ✨ What Makes HyprFlux Special?
 
 - **🎨 Beautiful Design**: Carefully curated themes and color schemes
@@ -30,10 +34,6 @@ HyprFlux is a meticulously crafted collection of configuration files designed to
 - **🔧 Fully Automated**: One-command installation with intelligent setup
 - **🎯 Developer Focused**: Optimized for productivity and development workflows
 - **🌈 Customizable**: Easy to modify and extend according to your preferences
-
-## 🌐 Website
-
-For detailed documentation and preferences, visit: [https://hyprflux.dev](https://hyprflux.dev)
 
 ## 📋 Requirements
 
