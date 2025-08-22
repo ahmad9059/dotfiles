@@ -13,19 +13,20 @@
 
 **A comprehensive collection of dotfiles and configurations for creating a beautiful, efficient Hyprland desktop environment on Arch Linux**
 
-[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • [📖 Documentation](https://hyprflux.dev/general/installation) • [🤝 Contributing](#-contributing)
+[🚀 Quick Install](#-quick-installation) • [📸 Screenshots](#-screenshots) • [🔧 Features](#-features) • <a href="https://hyprflux.dev/general/installation" target="_blank" rel="noopener noreferrer">📖 Documentation</a>
+• [🤝 Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🌟 Overview
-
-HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
-
 ## 🌐 Website
 
 For detailed documentation and preferences, visit: [https://hyprflux.dev](https://hyprflux.dev)
+
+## 🌟 Overview
+
+HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
 
 ### ✨ What Makes HyprFlux Special?
 
@@ -84,9 +85,9 @@ sh <(curl -fsSL https://hyprflux.dev/install)
 
 **Optional Components**:
 
-- `audio` - Audio system configuration
-- `fonts` - Additional font packages
-- `development` - Development tools and IDEs
+- `QuickShell` - QuickShell for Desktop-Like Overview
+- `Pokemon` - Add Pokemon color scripts to your terminal
+- `Rog` - Download and Install Pre-configured for ROG Laptops
 
 #### 📝 Interactive Configuration
 
@@ -156,35 +157,13 @@ Automated setup of Progressive Web Apps (PWAs) for:
 
 ### Desktop Overview
 
-![Desktop](review/0.webp)
+![1](review/0.webp)
+![10](review/1.webp)
 
-### Application Launcher
-
-![Rofi Launcher](review/1.webp)
-
-### Terminal & Development
-
-![Terminal Setup](review/2.webp)
-
-### File Manager
-
-![Thunar](review/3.webp)
-
-### System Information
-
-![Neofetch](review/4.webp)
-
-### Lock Screen
-
-![Hyprlock](review/5.webp)
-
-### Login Screen
-
-![SDDM Theme](review/6.webp)
-
-### Wallpaper Collection
-
-![Wallpapers](review/7.webp)
+| ![2](review/2.webp) | ![3](review/3.webp) |
+| ------------------- | ------------------- |
+| ![4](review/4.webp) | ![5](review/5.webp) |
+| ![6](review/6.webp) | ![7](review/7.webp) |
 
 </div>
 
