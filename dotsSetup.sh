@@ -217,7 +217,6 @@ else
   exit 1
 fi
 echo -e "${ACTION} Installing and Setting Up Neovim Lazy, Mason Packages...${RESET}" | tee -a "$LOG_FILE"
-rm -rf "$CONFIG_DIR/.git" >>"$LOG_FILE" 2>&1
 nvim --headless -c 'qa' >>"$LOG_FILE" 2>&1
 nvim --headless -c 'Lazy sync' -c 'qa' >>"$LOG_FILE" 2>&1
 echo -e "${OK} NvChad, plugins, and Mason packages installed successfully!${RESET}" | tee -a "$LOG_FILE"
