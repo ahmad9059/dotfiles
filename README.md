@@ -28,6 +28,22 @@ For detailed documentation and preferences, visit: [https://hyprflux.dev](https:
 
 HyprFlux is a meticulously crafted collection of configuration files designed to transform your Arch Linux installation into a stunning, productive desktop environment. Built around the modern Hyprland compositor, it provides a seamless blend of aesthetics and functionality.
 
+## 📸 Screenshots
+
+<div align="center">
+
+### Desktop Overview
+
+![1](review/0.webp)
+![10](review/1.webp)
+
+| ![2](review/2.webp) | ![3](review/3.webp) |
+| ------------------- | ------------------- |
+| ![4](review/4.webp) | ![5](review/5.webp) |
+| ![6](review/6.webp) | ![7](review/7.webp) |
+
+</div>
+
 ### ✨ What Makes HyprFlux Special?
 
 - **🎨 Beautiful Design**: Carefully curated themes and color schemes
@@ -150,22 +166,6 @@ Automated setup of Progressive Web Apps (PWAs) for:
 - ChatGPT, Claude, Grok
 - WhatsApp, Discord, Slack
 - And many more...
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Desktop Overview
-
-![1](review/0.webp)
-![10](review/1.webp)
-
-| ![2](review/2.webp) | ![3](review/3.webp) |
-| ------------------- | ------------------- |
-| ![4](review/4.webp) | ![5](review/5.webp) |
-| ![6](review/6.webp) | ![7](review/7.webp) |
-
-</div>
 
 ## 🔧 Post-Installation
 
