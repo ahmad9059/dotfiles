@@ -68,7 +68,7 @@ sh <(curl -fsSL https://hyprflux.dev/install)
 2. **Enter sudo password** when prompted
 3. **Follow the interactive setup** - Select your preferred options:
 
-![Installation Options](review/select.png)
+![Installation Options](review/select-img.png)
 
 #### 🔧 Recommended Installation Options
 
