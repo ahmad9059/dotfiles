@@ -22,7 +22,7 @@
 
 ## 🌐 Website
 
-For detailed documentation and preferences, visit: [https://hyprflux.dev](https://hyprflux.dev)
+**For detailed documentation and preferences, visit:** [https://hyprflux.dev](https://hyprflux.dev)
 
 ## 🌟 Overview
 
