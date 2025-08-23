@@ -10,9 +10,15 @@ plugins=(
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-vi-mode
 )
 
+
+
 source $ZSH/oh-my-zsh.sh
+
+# Enable Vim Mode
+bindkey -v
 
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
