@@ -131,40 +131,40 @@ The installer will request sudo password **2-3 times** during the process:
 
 ### 🖥️ Desktop Environment
 
-- **Hyprland**: Modern Wayland compositor with smooth animations
-- **Waybar**: Highly customizable status bar
-- **Rofi**: Application launcher and window switcher
-- **SDDM**: Beautiful login manager with custom theme
+- **[Hyprland](https://hyprland.org/)**: Modern Wayland compositor with smooth animations
+- **[Waybar](https://github.com/Alexays/Waybar)**: Highly customizable status bar
+- **[Rofi](https://github.com/davatorium/rofi)**: Application launcher and window switcher
+- **[SDDM](https://github.com/sddm/sddm)**: Beautiful login manager with custom theme
 
 ### 🎨 Theming & Aesthetics
 
-- **Material Design**: Deep Ocean color scheme
-- **Papirus Icons**: Comprehensive icon theme with cyan accents
-- **Custom Cursors**: Future Black cursor theme
-- **GTK Integration**: Seamless theme integration across applications
+- **[Material Design](https://material.io/design/)**: Deep Ocean color scheme
+- **[Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)**: Comprehensive icon theme with cyan accents
+- **[Future Black Cursors](https://www.gnome-look.org/p/1713404/)**: Custom cursor theme
+- **[GTK](https://www.gtk.org/)** Integration: Seamless theme integration across applications
 
 ### 🛠️ Development Tools
 
-- **Neovim**: Fully configured with plugins and LSP support
-- **Tmux**: Terminal multiplexer with custom layouts
-- **Zsh**: Enhanced shell with Oh My Zsh and custom theme
-- **Git Integration**: Pre-configured Git settings
+- **[Neovim](https://neovim.io/)**: Fully configured with plugins and LSP support
+- **[Tmux](https://github.com/tmux/tmux)**: Terminal multiplexer with custom layouts
+- **[Zsh](https://www.zsh.org/)**: Enhanced shell with Oh My Zsh and custom theme
+- **[Git](https://git-scm.com/)** Integration: Pre-configured Git settings
 
 ### 📱 Applications & Utilities
 
-- **File Manager**: Thunar with custom configurations
-- **Terminal**: Multiple options (Foot, Alacritty, Kitty)
-- **Media**: VLC, OBS Studio for content creation
-- **Productivity**: Obsidian, VS Code, and more
+- **[Thunar](https://docs.xfce.org/xfce/thunar/start)**: File manager with custom configurations
+- **[Foot](https://codeberg.org/dnkl/foot)**, **[Alacritty](https://alacritty.org/)**, **[Kitty](https://sw.kovidgoyal.net/kitty/)**: Terminal options
+- **[VLC](https://www.videolan.org/vlc/)**, **[OBS Studio](https://obsproject.com/)**: Media and content creation tools
+- **[Obsidian](https://obsidian.md/)**, **[VS Code](https://code.visualstudio.com/)**: Productivity applications
 
 ### 🌐 Web Applications
 
 Automated setup of Progressive Web Apps (PWAs) for:
 
-- Netflix, YouTube, Spotify
-- GitHub, Vercel, Figma
-- ChatGPT, Claude, Grok
-- WhatsApp, Discord, Slack
+- [Netflix](https://www.netflix.com/), [YouTube](https://www.youtube.com/), [Spotify](https://open.spotify.com/)
+- [GitHub](https://github.com/), [Vercel](https://vercel.com/), [Figma](https://www.figma.com/)
+- [ChatGPT](https://chat.openai.com/), [Claude](https://claude.ai/), [Grok](https://x.ai/)
+- [WhatsApp](https://www.whatsapp.com/), [Discord](https://discord.com/), [Slack](https://slack.com/)
 - And many more...
 
 ## 🔧 Post-Installation
