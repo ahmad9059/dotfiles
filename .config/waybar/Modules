@@ -353,7 +353,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", " ", " "]
     },
   "on-click": "pamixer --toggle-mute",
   "on-click-right": "pavucontrol -t 3",
@@ -386,7 +386,7 @@
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"format-icons": [
-		"", "", "󰕾", ""
+		"", " ", "󰕾 ", ""
 	],
 },
 

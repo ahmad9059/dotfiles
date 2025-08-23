@@ -10,6 +10,7 @@ plugins=(
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -76,6 +77,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+bindkey -v
+
 
 # exports
 export LC_TIME=ur_PK.UTF-8
@@ -83,5 +86,6 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 export LIBVIRT_DEFAULT_URI='qemu:///system'
 eval "$(zoxide init zsh)"
 eval "$(tmuxifier init -)"
+ZSH_VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 export PATH=$PATH:/home/ahmad/.spicetify
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
