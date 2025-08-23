@@ -153,7 +153,7 @@ The installer will request sudo password **2-3 times** during the process:
 ### 📱 Applications & Utilities
 
 - **[Thunar](https://docs.xfce.org/xfce/thunar/start)**: File manager with custom configurations
-- **[Foot](https://codeberg.org/dnkl/foot)**, **[Alacritty](https://alacritty.org/)**, **[Kitty](https://sw.kovidgoyal.net/kitty/)**: Terminal options
+- **[Kitty](https://sw.kovidgoyal.net/kitty/)**, **[Foot](https://codeberg.org/dnkl/foot)**, **[Alacritty](https://alacritty.org/)**: Terminal options
 - **[VLC](https://www.videolan.org/vlc/)**, **[OBS Studio](https://obsproject.com/)**: Media and content creation tools
 - **[Obsidian](https://obsidian.md/)**, **[VS Code](https://code.visualstudio.com/)**: Productivity applications
 
