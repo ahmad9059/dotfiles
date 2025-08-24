@@ -538,7 +538,7 @@ apps=(
   "NotebookLM|https://notebooklm.google.com|notebooklm"
   "Slack|https://slack.com|slack"
   "Microsoft365|https://www.microsoft365.com|microsoft365"
-  "Hyprbyte|https://hyprbyte.dev|hyprbyte"
+  "HyprFlux|https://hyprFlux.dev|hyprflux"
 )
 
 download_icon() {
