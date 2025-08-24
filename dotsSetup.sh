@@ -78,7 +78,7 @@ YAY_PACKAGES=(
 # Log Details
 # ===========================
 mkdir -p "$HOME/hyprflux_log"
-LOG_FILE="$HOME/installer_log/dotsSetup.log"
+LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # ==================================
@@ -126,7 +126,7 @@ SUCCESS=0
 # Start with all required packages as missing
 MISSING_PKGS=("${REQUIRED_PACKAGES[@]}")
 until [ $COUNT -ge $MAX_RETRIES ]; do
-  if sudo pacman -Sy --noconfirm --needed "${MISSING_PKGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+  if script -qfc "sudo pacman -Sy --noconfirm --needed ${MISSING_PKGS[*]}" /dev/null | tee -a "$LOG_FILE"; then
     # Re-check what’s still missing
     NEW_MISSING=()
     for pkg in "${MISSING_PKGS[@]}"; do
