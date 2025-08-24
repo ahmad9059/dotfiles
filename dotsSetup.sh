@@ -15,14 +15,14 @@ RESET="$(tput sgr0)"
 # =========================
 # REPOs
 # =========================
-REPO_URL="https://github.com/ahmad9059/dotfiles.git"
+REPO_URL="https://github.com/ahmad9059/HyprFlux.git"
 REPO_URL_NVIM="https://github.com/ahmad9059/nvim"
 TMUXIFIER_REPO="https://github.com/jimeh/tmuxifier.git"
 
 # ======================================
 # Paths: Repos, Waybar, nvim, Sddm, Grub
 # ======================================
-REPO_DIR="$HOME/dotfiles"
+REPO_DIR="$HOME/HyprFlux/"
 BACKUP_DIR="$HOME/dotfiles_backup"
 # Waybar Paths
 WAYBAR_STYLE_TARGET="$HOME/.config/waybar/style.css"
@@ -37,7 +37,7 @@ SDDM_THEME_SOURCE="$REPO_DIR/$SDDM_THEME_NAME"
 SDDM_THEME_DEST="/usr/share/sddm/themes/$SDDM_THEME_NAME"
 SDDM_CONF="/etc/sddm.conf"
 # Grub Theme Paths
-GRUB_THEME_ARCHIVE="$HOME/dotfiles/utilities/Vimix-1080p.tar.xz"
+GRUB_THEME_ARCHIVE="$HOME/HyprFlux/utilities/Vimix-1080p.tar.xz"
 GRUB_THEME_DIR="/tmp/vimix-grub"
 # PWA(Desktop Apps)
 DESKTOP_DIR="$HOME/.local/share/applications"
@@ -47,7 +47,7 @@ BROWSER="chromium"
 WALLPAPER_REPO="https://github.com/ahmad9059/wallpapers-bank"
 WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 # Plymouth Setup
-THEME_DIR="$HOME/dotfiles/utilities/hyprland-mac-style"
+THEME_DIR="$HOME/HyprFlux/utilities/hyprland-mac-style"
 THEME_NAME="hyprland-mac-style"
 PLYMOUTH_DIR="/usr/share/plymouth/themes"
 MKINITCPIO_CONF="/etc/mkinitcpio.conf"
@@ -256,7 +256,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
     # Install custom cursor theme
-    CURSOR_ARCHIVE="$HOME/dotfiles/utilities/Future-black-cursors.tar.gz"
+    CURSOR_ARCHIVE="$HOME/HyprFlux/utilities/Future-black-cursors.tar.gz"
     ICONS_DIR="$HOME/.icons"
 
     mkdir -p "$ICONS_DIR"
