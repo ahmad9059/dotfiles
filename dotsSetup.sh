@@ -484,10 +484,10 @@ fi
 # Remove only the first \n inside the print -P line
 # =================================================
 
-echo -e "${ACTION} Removing leading \\n from print -P line in refined theme...${RESET}" | tee -a "$LOG_FILE"
+echo -e "${ACTION} Removing leading from print -P line in refined theme...${RESET}" | tee -a "$LOG_FILE"
 
 if sed -i 's/print -P "\\n\(.*\)"/print -P "\1"/' ~/.oh-my-zsh/themes/refined.zsh-theme; then
-  echo -e "${OK} Successfully removed leading \\n from refined.zsh-theme.${RESET}" | tee -a "$LOG_FILE"
+  echo -e "${OK} Successfully removed leading from refined.zsh-theme.${RESET}" | tee -a "$LOG_FILE"
 else
   echo -e "${ERROR} Failed to update refined.zsh-theme.${RESET}" | tee -a "$LOG_FILE"
   exit 1
