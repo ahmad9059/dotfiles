@@ -9,7 +9,7 @@
 
 # Variables
 scriptsDir=$HOME/.config/hypr/scripts
-wallpaper=$HOME/Pictures/wallpapers/wallpaper-5.jpg
+wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_current
 waybar_style="$HOME/.config/waybar/style/Catppuccin Mocha Custom.css"
 kvantum_theme="catppuccin-mocha-blue"
 color_scheme="prefer-dark"
