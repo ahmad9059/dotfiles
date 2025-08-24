@@ -20,8 +20,8 @@ MAGENTA="$(tput setaf 5)"
 # ===========================
 # Log Details
 # ===========================
-mkdir -p "$HOME/installer_log"
-LOG_FILE="$HOME/installer_log/boot_file.log"
+mkdir -p "$HOME/hyprflux_log"
+LOG_FILE="$HOME/installer_log/install.log"
 
 # ===========================
 # Ask for sudo once, keep it alive

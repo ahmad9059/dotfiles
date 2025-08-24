@@ -63,6 +63,19 @@ selection-background = #fffacd
 selection-foreground = #000000
 
 
+# Alt+number sends ESC + number, so tmux picks up M-1..M-0
+keybind = alt+1=esc:1
+keybind = alt+2=esc:2
+keybind = alt+3=esc:3
+keybind = alt+4=esc:4
+keybind = alt+5=esc:5
+keybind = alt+6=esc:6
+keybind = alt+7=esc:7
+keybind = alt+8=esc:8
+keybind = alt+9=esc:9
+keybind = alt+0=esc:0
+
+
 # # Empty values are used to reset config keys to default.
 # key =
 #
