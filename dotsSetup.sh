@@ -233,7 +233,7 @@ echo -e "${OK} NvChad, plugins, and Mason packages installed successfully!${RESE
 # =========================
 # Themes
 # =========================
-echo -e "${ACTION} Installing themes from ${REPO_DIR}/.themes...${RESET}"
+echo -e "${ACTION} Installing themes from ${REPO_DIR}.themes...${RESET}"
 
 if [ -d "$REPO_DIR/.themes" ]; then
   mkdir -p "$HOME/.themes" &>>"$LOG_FILE"
@@ -377,7 +377,7 @@ fi
 # ============================
 echo -e "${ACTION} Installing Plymouth...${RESET}"
 if ! pacman -Qi plymouth &>/dev/null; then
-  if sudo pacman -S --needed --noconfirm plymouth; then
+  if sudo pacman -S --needed --noconfirm plymouth &>>"$LOG_FILE"; then
     echo -e "${OK} Plymouth installed successfully.${RESET}"
   else
     echo -e "${ERROR} Failed to install Plymouth.${RESET}"
@@ -410,7 +410,7 @@ else
 fi
 # Set Plymouth Theme
 echo -e "${ACTION} Setting Plymouth theme to '$THEME_NAME'...${RESET}"
-if sudo plymouth-set-default-theme -R "$THEME_NAME"; then
+if sudo plymouth-set-default-theme -R "$THEME_NAME" &>>"$LOG_FILE"; then
   echo -e "${OK} Plymouth theme set successfully.${RESET}"
 else
   echo -e "${ERROR} Failed to set Plymouth theme.${RESET}"
@@ -421,11 +421,11 @@ if [ -f "$GRUB_CONF" ]; then
   echo -e "${ACTION} Ensuring 'quiet splash' are enabled in GRUB...${RESET}"
   if ! grep -q "splash" "$GRUB_CONF"; then
     sudo sed -i 's/GRUB_CMDLINE_LINUX="/GRUB_CMDLINE_LINUX="quiet splash /' "$GRUB_CONF"
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    sudo grub-mkconfig -o /boot/grub/grub.cfg &>>"$LOG_FILE"
     echo -e "${OK} GRUB updated with quiet splash.${RESET}"
   elif ! grep -q "quiet" "$GRUB_CONF"; then
     sudo sed -i 's/splash/quiet splash/' "$GRUB_CONF"
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    sudo grub-mkconfig -o /boot/grub/grub.cfg &>>"$LOG_FILE"
     echo -e "${OK} GRUB updated to include quiet.${RESET}"
   else
     echo -e "${NOTE} 'quiet splash' already configured in GRUB.${RESET}"
@@ -435,7 +435,7 @@ else
 fi
 # Rebuild initramfs
 echo -e "${ACTION} Rebuilding initramfs...${RESET}"
-if sudo mkinitcpio -P; then
+if sudo mkinitcpio -P &>>"$LOG_FILE"; then
   echo -e "${OK} Initramfs rebuilt successfully.${RESET}"
 else
   echo -e "${ERROR} Failed to rebuild initramfs.${RESET}"
@@ -506,7 +506,7 @@ done
 # ==============================
 # Chromium Web Apps Setup
 # ==============================
-echo -e "${ACTION} Creating Chromium web apps and desktop entries...${RESET}"
+echo -e "${ACTION} Creating Web Apps and desktop entries...${RESET}"
 
 mkdir -p "$DESKTOP_DIR" "$ICON_DIR"
 
@@ -551,13 +551,13 @@ download_icon() {
     return
   fi
 
-  # echo -e "${NOTE} Downloading icon for $name...${RESET}"
+  echo -e "${NOTE} Downloading icon for $name...${RESET}"
 
   # Try Homarr (light → dark → plain)
   for variant in "-light" "-dark" ""; do
     if curl -fsSL "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/${name}${variant}.png" -o "$icon_path" 2>>"$LOG_FILE"; then
       if file --mime-type "$icon_path" | grep -q "image/png"; then
-        # echo -e "${OK} Icon for $name downloaded from Homarr (${variant:-plain}).${RESET}"
+        echo -e "${OK} Icon for $name downloaded from Homarr (${variant:-plain}).${RESET}"
         return
       else
         echo -e "${WARN} Homarr returned invalid file for $name (${variant:-plain}). Retrying...${RESET}"
@@ -569,7 +569,7 @@ download_icon() {
   # Fallback: Google S2 favicon API
   if curl -fsSL "https://www.google.com/s2/favicons?sz=128&domain=$url" -o "$icon_path" 2>>"$LOG_FILE"; then
     if file --mime-type "$icon_path" | grep -q "image/png"; then
-      # echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
+      echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
       return
     else
       echo -e "${WARN} Google S2 returned invalid file for $name. Retrying...${RESET}"
@@ -580,7 +580,7 @@ download_icon() {
   # Fallback: direct favicon.ico from site
   if curl -fsSL "$url/favicon.ico" -o "$icon_path" 2>>"$LOG_FILE"; then
     if file --mime-type "$icon_path" | grep -q "image/"; then
-      # echo -e "${OK} Icon for $name downloaded directly from $url/favicon.ico.${RESET}"
+      echo -e "${OK} Icon for $name downloaded directly from $url/favicon.ico.${RESET}"
       return
     else
       echo -e "${WARN} Invalid favicon from $url/favicon.ico. Skipping.${RESET}"
@@ -607,7 +607,7 @@ make_desktop_entry() {
   } >"$desktop_file"
 
   if [[ -f "$desktop_file" ]]; then
-    # echo -e "${OK} Created desktop entry for $name.${RESET}"
+    echo -e "${OK} Created desktop entry for $name.${RESET}"
   else
     echo -e "${ERROR} Failed to create desktop entry for $name.${RESET}"
   fi
