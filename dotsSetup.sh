@@ -43,6 +43,15 @@ GRUB_THEME_DIR="/tmp/vimix-grub"
 DESKTOP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons/apps"
 BROWSER="chromium"
+# Wallpapers Paths
+WALLPAPER_REPO="https://github.com/ahmad9059/wallpapers-bank"
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+# Plymouth Setup
+THEME_DIR="$HOME/dotfiles/utilities/hyprland-mac-style"
+THEME_NAME="hyprland-mac-style"
+PLYMOUTH_DIR="/usr/share/plymouth/themes"
+MKINITCPIO_CONF="/etc/mkinitcpio.conf"
+GRUB_CONF="/etc/default/grub"
 
 # =============================
 # Packages list
@@ -363,45 +372,6 @@ else
   echo -e "${WARN} GRUB not detected. Skipping GRUB theme installation.${RESET}"
 fi
 
-#!/bin/bash
-
-set -e
-
-# ===========================
-# Color-coded status labels
-# ===========================
-ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
-WARN="$(tput setaf 3)[WARN]$(tput sgr0)"
-OK="$(tput setaf 2)[OK]$(tput sgr0)"
-NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
-ACTION="$(tput setaf 4)[ACTION]$(tput sgr0)"
-RESET="$(tput sgr0)"
-
-# ==============================
-# Plymouth Setup
-# ==============================
-THEME_DIR="$HOME/dotfiles/utilities/hyprland-mac-style"
-THEME_NAME="hyprland-mac-style"
-PLYMOUTH_DIR="/usr/share/plymouth/themes"
-MKINITCPIO_CONF="/etc/mkinitcpio.conf"
-GRUB_CONF="/etc/default/grub"
-
-# ===========================
-# Log Details
-# ===========================
-LOG_FILE="$HOME/installer_log/install_plymouth.log"
-mkdir -p "$(dirname "$LOG_FILE")"
-exec > >(tee -a "$LOG_FILE") 2>&1
-
-# ==================================
-# Ask for sudo once at the beginning
-# ==================================
-echo -e "${ACTION} Requesting sudo access...${RESET}"
-sudo -v || {
-  echo "${ERROR} Sudo failed. Exiting.${RESET}"
-  exit 1
-}
-
 # ============================
 # Install Plymouth and Theme Installation
 # ============================
@@ -520,29 +490,18 @@ fi
 # Wallpapers Setup
 # =================
 echo -e "${ACTION} Updating wallpapers and Setup...${RESET}"
-WALLPAPER_SRC="$REPO_DIR/wallpapers"
-WALLPAPER_DIR="$HOME/Pictures/wallpapers"
-
-if [ -d "$WALLPAPER_SRC" ]; then
-  mkdir -p "$WALLPAPER_DIR"
-  rm -rf "$WALLPAPER_DIR"/*
-  cp -r "$WALLPAPER_SRC/"* "$WALLPAPER_DIR/"
-  echo -e "${OK} Wallpapers copied to $WALLPAPER_DIR${RESET}"
-else
-  echo -e "${WARN} No wallpapers folder found at $WALLPAPER_SRC – skipping copy.${RESET}"
-fi
-
-if [ -n "$WAYLAND_DISPLAY" ]; then
-  # Start swww-daemon if it’s not already running
-  if ! pgrep -x swww-daemon >/dev/null; then
-    swww-daemon &
-    sleep 1
+# Remove old wallpapers folder if exists
+rm -rf "$WALLPAPER_DIR"
+while true; do
+  echo -e "${ACTION} Cloning wallpapers repository...${RESET}"
+  if git clone --depth=1 "$WALLPAPER_REPO" "$WALLPAPER_DIR"; then
+    echo -e "${OK} Wallpapers cloned successfully to $WALLPAPER_DIR${RESET}"
+    break
+  else
+    echo -e "${WARN} Clone failed, retrying in 5 seconds...${RESET}"
+    sleep 5
   fi
-  swww img "$WALLPAPER_DIR/wallpaper-1.jpg" --transition-type any
-else
-  # WARN already shown above, so this one is suppressed
-  :
-fi
+done
 
 # ==============================
 # Chromium Web Apps Setup
@@ -592,13 +551,13 @@ download_icon() {
     return
   fi
 
-  echo -e "${NOTE} Downloading icon for $name...${RESET}"
+  # echo -e "${NOTE} Downloading icon for $name...${RESET}"
 
   # Try Homarr (light → dark → plain)
   for variant in "-light" "-dark" ""; do
     if curl -fsSL "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/${name}${variant}.png" -o "$icon_path" 2>>"$LOG_FILE"; then
       if file --mime-type "$icon_path" | grep -q "image/png"; then
-        echo -e "${OK} Icon for $name downloaded from Homarr (${variant:-plain}).${RESET}"
+        # echo -e "${OK} Icon for $name downloaded from Homarr (${variant:-plain}).${RESET}"
         return
       else
         echo -e "${WARN} Homarr returned invalid file for $name (${variant:-plain}). Retrying...${RESET}"
@@ -610,7 +569,7 @@ download_icon() {
   # Fallback: Google S2 favicon API
   if curl -fsSL "https://www.google.com/s2/favicons?sz=128&domain=$url" -o "$icon_path" 2>>"$LOG_FILE"; then
     if file --mime-type "$icon_path" | grep -q "image/png"; then
-      echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
+      # echo -e "${OK} Icon for $name downloaded via Google S2.${RESET}"
       return
     else
       echo -e "${WARN} Google S2 returned invalid file for $name. Retrying...${RESET}"
@@ -621,7 +580,7 @@ download_icon() {
   # Fallback: direct favicon.ico from site
   if curl -fsSL "$url/favicon.ico" -o "$icon_path" 2>>"$LOG_FILE"; then
     if file --mime-type "$icon_path" | grep -q "image/"; then
-      echo -e "${OK} Icon for $name downloaded directly from $url/favicon.ico.${RESET}"
+      # echo -e "${OK} Icon for $name downloaded directly from $url/favicon.ico.${RESET}"
       return
     else
       echo -e "${WARN} Invalid favicon from $url/favicon.ico. Skipping.${RESET}"
@@ -648,7 +607,7 @@ make_desktop_entry() {
   } >"$desktop_file"
 
   if [[ -f "$desktop_file" ]]; then
-    echo -e "${OK} Created desktop entry for $name.${RESET}"
+    # echo -e "${OK} Created desktop entry for $name.${RESET}"
   else
     echo -e "${ERROR} Failed to create desktop entry for $name.${RESET}"
   fi
