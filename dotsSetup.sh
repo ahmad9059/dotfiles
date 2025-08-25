@@ -81,14 +81,14 @@ mkdir -p "$HOME/hyprflux_log"
 LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-# ==================================
-# Ask for sudo once at the beginning
-# ==================================
-echo -e "${ACTION} Requesting sudo access...${RESET}"
-sudo -v || {
-  echo "${ERROR} Sudo failed. Exiting."
-  exit 1
-}
+# # ==================================
+# # Ask for sudo once at the beginning
+# # ==================================
+# echo -e "${ACTION} Requesting sudo access...${RESET}"
+# sudo -v || {
+#   echo "${ERROR} Sudo failed. Exiting."
+#   exit 1
+# }
 
 # ====================
 # Clone dotfiles repo
