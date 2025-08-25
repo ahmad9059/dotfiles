@@ -90,14 +90,23 @@ mkdir -p "$HOME/hyprflux_log"
 LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-# # ==================================
-# # Ask for sudo once at the beginning
-# # ==================================
-# echo -e "${ACTION} Requesting sudo access...${RESET}"
-# sudo -v || {
-#   echo "${ERROR} Sudo failed. Exiting."
-#   exit 1
-# }
+# ===========================
+# Ask for sudo once, keep it alive
+# ===========================
+echo "${NOTE} Asking for sudo password...${RESET}"
+sudo -v
+
+keep_sudo_alive() {
+  while true; do
+    sudo -n true
+    sleep 30
+  done
+}
+
+keep_sudo_alive &
+SUDO_KEEP_ALIVE_PID=$!
+
+trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
 # ====================
 # Clone dotfiles repo
