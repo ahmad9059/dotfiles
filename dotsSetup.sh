@@ -204,7 +204,7 @@ if [ -d "$REPO_DIR/.config" ]; then
   } >>"$LOG_FILE" 2>&1
 
   if [ $? -eq 0 ]; then
-    echo -e "${OK} Personal dotfiles copied successfully.${RESET}"
+    echo -e "${OK} HyprFlux dotfiles copied successfully.${RESET}"
   else
     echo -e "${ERROR} Failed to copy one or more dotfiles. Check $LOG_FILE for details.${RESET}"
   fi
