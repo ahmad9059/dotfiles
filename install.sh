@@ -73,6 +73,7 @@ wget -q -O /tmp/replace_reads.sh https://raw.githubusercontent.com/ahmad9059/Scr
 chmod +x /tmp/replace_reads.sh\n\
 bash /tmp/replace_reads.sh
 }' ~/Arch-Hyprland/install.sh
+
 chmod +x install.sh
 bash install.sh
 echo "${OK} Arch-Hyprland script Installed!${RESET}"
