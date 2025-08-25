@@ -252,7 +252,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
 
     # Set folder color to cyan for Papirus-Dark
-    papirus-folders -C cyan --theme Papirus-Dark
+    papirus-folders -C cyan --theme Papirus-Dark &>>"$LOG_FILE"
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
     # Install custom cursor theme
@@ -625,7 +625,7 @@ echo -e "${OK} All Chromium web apps created in $DESKTOP_DIR with icons in $ICON
 # ==========================================
 # Quickshell Configuration Adjustments
 # ==========================================
-echo -e "${ACTION} Setting Up the QuickShell if Installed?${RESET}"
+echo -e "${ACTION} Setting Up the QuickShell if Installed${RESET}"
 # Check if quickshell is installed
 if command -v qs >/dev/null 2>&1; then
   echo -e "${NOTE} QuickShell detected, adjusting configs${RESET}"
