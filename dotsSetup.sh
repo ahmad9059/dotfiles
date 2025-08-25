@@ -270,7 +270,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
 
     # Set folder color to cyan for Papirus-Dark
-    echo -e "${ACTION}Setting Papirus folders set to cyan (Papirus-Dark).${RESET}"
+    echo -e "${ACTION} Setting Papirus folders set to cyan (Papirus-Dark).${RESET}"
     papirus-folders -C cyan --theme Papirus-Dark &>>"$LOG_FILE"
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
@@ -460,7 +460,7 @@ else
   echo -e "${ERROR} Failed to rebuild initramfs.${RESET}"
   exit 1
 fi
-echo -e "\n${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it. !!${RESET}\n"
+echo -e "${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it. !!${RESET}"
 
 # ==========================
 # Install Tmux and Tmuxifier
