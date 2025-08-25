@@ -86,7 +86,6 @@ YAY_PACKAGES=(
 # ===========================
 # Log Details
 # ===========================
-mkdir -p "$HOME/hyprflux_log"
 LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
