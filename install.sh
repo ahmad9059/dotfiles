@@ -39,21 +39,6 @@ echo -e "${GREEN}          🇵🇰 Welcome to HyprFlux! lets begin Installation
 echo -e "\n"
 
 # ===========================
-# Check and enable passwordless sudo
-# ===========================
-echo "${NOTE} 🔐 Checking sudo configuration..."
-if sudo -n true 2>/dev/null; then
-  echo "${OK} Passwordless sudo is already configured"
-else
-  echo "${ACTION} No passwordless sudo detected, enabling temporarily..."
-  # Add current user to wheel group
-  sudo usermod -aG wheel "$USER"
-  # Add passwordless sudo rule for wheel group
-  echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers >/dev/null
-  echo "${OK} Passwordless sudo temporarily enabled for ${USER}"
-fi
-
-# ===========================
 # Ask for sudo once, keep it alive
 # ===========================
 echo "${NOTE} Asking for sudo password...${RESET}"
@@ -134,17 +119,6 @@ echo "${NOTE} Running HyprFlux/install.sh with preset answers...${RESET}"
 cd "$HOME/HyprFlux"
 chmod +x dotsSetup.sh
 bash dotsSetup.sh
-
-# ===========================
-# Remove passwordless sudo
-# ===========================
-if grep -q '%wheel ALL=(ALL) NOPASSWD: ALL' /etc/sudoers; then
-  echo "${ACTION} 🧹 Removing temporary passwordless sudo rule..."
-  sudo sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers
-  echo "${OK} Passwordless sudo rule removed for better security"
-else
-  echo "${NOTE} No temporary sudo rule found, nothing to clean up"
-fi
 
 # ===========================
 # Ask for Reboot
