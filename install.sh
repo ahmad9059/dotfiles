@@ -42,7 +42,6 @@ echo -e "\n"
 # Check and enable passwordless sudo
 # ===========================
 echo "${NOTE} 🔐 Checking sudo configuration..."
-
 if sudo -n true 2>/dev/null; then
   echo "${OK} Passwordless sudo is already configured"
 else
@@ -54,23 +53,23 @@ else
   echo "${OK} Passwordless sudo temporarily enabled for ${USER}"
 fi
 
-# # ===========================
-# # Ask for sudo once, keep it alive
-# # ===========================
-# echo "${NOTE} Asking for sudo password...${RESET}"
-# sudo -v
-#
-# keep_sudo_alive() {
-#   while true; do
-#     sudo -n true
-#     sleep 30
-#   done
-# }
-#
-# keep_sudo_alive &
-# SUDO_KEEP_ALIVE_PID=$!
-#
-# trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
+# ===========================
+# Ask for sudo once, keep it alive
+# ===========================
+echo "${NOTE} Asking for sudo password...${RESET}"
+sudo -v
+
+keep_sudo_alive() {
+  while true; do
+    sudo -n true
+    sleep 30
+  done
+}
+
+keep_sudo_alive &
+SUDO_KEEP_ALIVE_PID=$!
+
+trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
 # ===========================
 # Define script directory
