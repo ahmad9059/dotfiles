@@ -39,6 +39,26 @@ echo -e "${GREEN}     Welcome to HyprFlux! lets begin Installation 🇵🇰 ${RE
 echo -e "\n"
 
 # ===========================
+# Check for passwordless sudo
+# ===========================
+echo "$(date '+%Y/%m/%d %H:%M:%S') 🔐 Checking sudo configuration..."
+
+if sudo -n true 2>/dev/null; then
+  echo "$(date '+%Y/%m/%d %H:%M:%S') ✅ Passwordless sudo is already configured"
+else
+  echo "$(date '+%Y/%m/%d %H:%M:%S') ❌ Passwordless sudo is required for ArchRiot installation"
+  echo
+  echo "$(date '+%Y/%m/%d %H:%M:%S') 🔧 Please configure passwordless sudo by running these commands:"
+  echo
+  echo "   sudo usermod -aG wheel \$USER"
+  echo "   echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers"
+  echo "   sudo grep 'wheel.*NOPASSWD' /etc/sudoers"
+  echo
+  echo "$(date '+%Y/%m/%d %H:%M:%S') ❌ Sudo setup failed: passwordless sudo not configured"
+  exit 1
+fi
+
+# ===========================
 # Ask for sudo once, keep it alive
 # ===========================
 echo "${NOTE} Asking for sudo password...${RESET}"
@@ -119,6 +139,17 @@ echo "${NOTE} Running HyprFlux/install.sh with preset answers...${RESET}"
 cd "$HOME/HyprFlux"
 chmod +x dotsSetup.sh
 bash dotsSetup.sh
+
+# ===========================
+# Remove passwordless sudo
+# ===========================
+if grep -q '%wheel ALL=(ALL) NOPASSWD: ALL' /etc/sudoers; then
+  echo "${ACTION} 🧹 Removing temporary passwordless sudo rule...${RESET}"
+  sudo sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers
+  echo "${OK} Passwordless sudo rule removed for better security${RESET}"
+else
+  echo "${NOTE} No passwordless sudo rule found, nothing to clean up${RESET}"
+fi
 
 # ===========================
 # Ask for Reboot
