@@ -277,7 +277,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
 
     # Set folder color to cyan for Papirus-Dark
-    echo -e "${ACTION}Setting Papirus folders set to cyan (Papirus-Dark).${RESET}"
+    echo -e "${ACTION} Setting Papirus folders set to cyan (Papirus-Dark).${RESET}"
     papirus-folders -C cyan --theme Papirus-Dark &>>"$LOG_FILE"
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
@@ -467,7 +467,7 @@ else
   echo -e "${ERROR} Failed to rebuild initramfs.${RESET}"
   exit 1
 fi
-echo -e "\n${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it. !!${RESET}\n"
+echo -e "${OK} !! Plymouth with theme '$THEME_NAME' is ready! Reboot to see it. !!${RESET}"
 
 # ==========================
 # Install Tmux and Tmuxifier
@@ -666,6 +666,48 @@ if command -v qs >/dev/null 2>&1; then
   sed -i "/^\s*bind\s*=\s*\\\$mainMod,\s*A,\s*exec,\s*pkill rofi\s*||\s*true\s*&&\s*ags\s*-t\s*'overview'/{s/^\s*/#/}" ~/.config/hypr/UserConfigs/UserKeybinds.conf
   echo -e "${OK} QuickShell Setting Completed${RESET}"
 fi
+
+# ===========================
+# Install Bibata Hyprcursor
+# ===========================
+CURSOR_URL="https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz"
+CURSOR_DIR="$HOME/.icons"
+HYPR_ENV_FILE="$HOME/.config/hypr/UserConfigs/ENVariables.conf"
+
+echo "${ACTION} Downloading and installing Bibata Hyprcursor...${RESET}"
+
+mkdir -p "$CURSOR_DIR"
+
+if curl -fsSL "$CURSOR_URL" -o /tmp/hyprcursor.tar.gz; then
+  echo "${OK} Cursor archive downloaded successfully.${RESET}"
+
+  if tar -xzf /tmp/hyprcursor.tar.gz -C "$CURSOR_DIR"; then
+    echo "${OK} Cursor extracted to $CURSOR_DIR.${RESET}"
+
+    # Update Hyprland ENVariables.conf
+    if [ -f "$HYPR_ENV_FILE" ]; then
+      sed -i 's/^env = HYPRCURSOR_THEME.*/env = HYPRCURSOR_THEME,hypr_Bibata-Modern-Classic/' "$HYPR_ENV_FILE"
+      sed -i 's/^env = HYPRCURSOR_SIZE.*/env = HYPRCURSOR_SIZE,24/' "$HYPR_ENV_FILE"
+      echo "${OK} Updated Hyprland ENVariables.conf with new cursor theme.${RESET}"
+    else
+      echo "${WARN} ENVariables.conf not found, creating a new one.${RESET}"
+      mkdir -p "$(dirname "$HYPR_ENV_FILE")"
+      {
+        echo "env = HYPRCURSOR_THEME,hypr_Bibata-Modern-Classic"
+        echo "env = HYPRCURSOR_SIZE,24"
+      } >"$HYPR_ENV_FILE"
+      echo "${OK} Created ENVariables.conf with cursor settings.${RESET}"
+    fi
+
+  else
+    echo "${ERROR} Failed to extract cursor archive.${RESET}"
+  fi
+else
+  echo "${ERROR} Failed to download cursor from $CURSOR_URL.${RESET}"
+fi
+
+# Cleanup
+rm -f /tmp/hyprcursor.tar.gz
 
 # ==============================
 # Ask to install pacman packages
