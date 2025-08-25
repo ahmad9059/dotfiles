@@ -93,7 +93,6 @@ YAY_PACKAGES=(
 # ===========================
 # Log Details
 # ===========================
-mkdir -p "$HOME/hyprflux_log"
 LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
@@ -673,27 +672,38 @@ fi
 CURSOR_URL="https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz"
 CURSOR_DIR="$HOME/.icons"
 HYPR_ENV_FILE="$HOME/.config/hypr/UserConfigs/ENVariables.conf"
+TARGET_DIR="$CURSOR_DIR/Bibata-Modern-Classic"
 
 echo "${ACTION} Downloading and installing Bibata Hyprcursor...${RESET}"
 
 mkdir -p "$CURSOR_DIR"
 
+# Remove any old cursor folder
+if [ -d "$TARGET_DIR" ]; then
+  rm -rf "$TARGET_DIR"
+  rm -rf "$HOME/.icons/Bibata-Modern-Ice"
+  echo "${NOTE} Removed old Bibata-Modern-Classic cursor folder.${RESET}"
+fi
+
+# Download
 if curl -fsSL "$CURSOR_URL" -o /tmp/hyprcursor.tar.gz; then
   echo "${OK} Cursor archive downloaded successfully.${RESET}"
 
-  if tar -xzf /tmp/hyprcursor.tar.gz -C "$CURSOR_DIR"; then
-    echo "${OK} Cursor extracted to $CURSOR_DIR.${RESET}"
+  mkdir -p "$TARGET_DIR"
+
+  if tar -xzf /tmp/hyprcursor.tar.gz -C "$TARGET_DIR"; then
+    echo "${OK} Cursor extracted into $TARGET_DIR.${RESET}"
 
     # Update Hyprland ENVariables.conf
     if [ -f "$HYPR_ENV_FILE" ]; then
-      sed -i 's/^env = HYPRCURSOR_THEME.*/env = HYPRCURSOR_THEME,hypr_Bibata-Modern-Classic/' "$HYPR_ENV_FILE"
+      sed -i 's/^env = HYPRCURSOR_THEME.*/env = HYPRCURSOR_THEME,Bibata-Modern-Classic/' "$HYPR_ENV_FILE"
       sed -i 's/^env = HYPRCURSOR_SIZE.*/env = HYPRCURSOR_SIZE,24/' "$HYPR_ENV_FILE"
       echo "${OK} Updated Hyprland ENVariables.conf with new cursor theme.${RESET}"
     else
       echo "${WARN} ENVariables.conf not found, creating a new one.${RESET}"
       mkdir -p "$(dirname "$HYPR_ENV_FILE")"
       {
-        echo "env = HYPRCURSOR_THEME,hypr_Bibata-Modern-Classic"
+        echo "env = HYPRCURSOR_THEME,Bibata-Modern-Classic"
         echo "env = HYPRCURSOR_SIZE,24"
       } >"$HYPR_ENV_FILE"
       echo "${OK} Created ENVariables.conf with cursor settings.${RESET}"
