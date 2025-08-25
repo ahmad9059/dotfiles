@@ -259,7 +259,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
 
     # Set folder color to cyan for Papirus-Dark
-    papirus-folders -C cyan --theme Papirus-Dark
+    papirus-folders -C cyan --theme Papirus-Dark &>>"$LOG_FILE"
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
     # Install custom cursor theme
@@ -628,6 +628,25 @@ for entry in "${apps[@]}"; do
 done
 
 echo -e "${OK} All Chromium web apps created in $DESKTOP_DIR with icons in $ICON_DIR.${RESET}"
+
+# ==========================================
+# Quickshell Configuration Adjustments
+# ==========================================
+echo -e "${ACTION} Setting Up the QuickShell if Installed${RESET}"
+# Check if quickshell is installed
+if command -v qs >/dev/null 2>&1; then
+  echo -e "${NOTE} QuickShell detected, adjusting configs${RESET}"
+  # Uncomment exec-once line in Startup_Apps.conf
+  sed -i '/^\s*#exec-once = qs/s/^#//' ~/.config/hypr/UserConfigs/Startup_Apps.conf
+  # Uncomment qs refresh lines in scripts
+  sed -i '/#pkill qs && qs &/s/^#//' ~/.config/hypr/scripts/RefreshNoWaybar.sh
+  sed -i '/#pkill qs && qs &/s/^#//' ~/.config/hypr/scripts/Refresh.sh
+  # Uncomment the quickshell keybind line
+  sed -i "/^#bind = \$mainMod, A, global, quickshell:overviewToggle/s/^#//" ~/.config/hypr/UserConfigs/UserKeybinds.conf
+  # Comment out the ags overview keybind if it exists
+  sed -i "/^\s*bind\s*=\s*\\\$mainMod,\s*A,\s*exec,\s*pkill rofi\s*||\s*true\s*&&\s*ags\s*-t\s*'overview'/{s/^\s*/#/}" ~/.config/hypr/UserConfigs/UserKeybinds.conf
+  echo -e "${OK} QuickShell Setting Completed${RESET}"
+fi
 
 # ==============================
 # Ask to install pacman packages
