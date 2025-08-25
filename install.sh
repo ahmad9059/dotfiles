@@ -41,20 +41,20 @@ echo -e "\n"
 # ===========================
 # Check for passwordless sudo
 # ===========================
-echo "$(date '+%Y/%m/%d %H:%M:%S') 🔐 Checking sudo configuration..."
+echo "${NOTE} 🔐 Checking sudo configuration..."
 
 if sudo -n true 2>/dev/null; then
-  echo "$(date '+%Y/%m/%d %H:%M:%S') ✅ Passwordless sudo is already configured"
+  echo "${OK} Passwordless sudo is already configured"
 else
-  echo "$(date '+%Y/%m/%d %H:%M:%S') ❌ Passwordless sudo is required for ArchRiot installation"
+  echo "${ERROR}  Passwordless sudo is required for HyprFlux installation"
   echo
-  echo "$(date '+%Y/%m/%d %H:%M:%S') 🔧 Please configure passwordless sudo by running these commands:"
+  echo "${ACTION} 🔧 Please configure passwordless sudo by running these commands:"
   echo
   echo "   sudo usermod -aG wheel \$USER"
   echo "   echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers"
   echo "   sudo grep 'wheel.*NOPASSWD' /etc/sudoers"
   echo
-  echo "$(date '+%Y/%m/%d %H:%M:%S') ❌ Sudo setup failed: passwordless sudo not configured"
+  echo "${ERROR}Sudo setup failed: passwordless sudo not configured"
   exit 1
 fi
 
