@@ -39,23 +39,19 @@ echo -e "${GREEN}     Welcome to HyprFlux! lets begin Installation 🇵🇰 ${RE
 echo -e "\n"
 
 # ===========================
-# Check for passwordless sudo
+# Check and enable passwordless sudo
 # ===========================
 echo "${NOTE} 🔐 Checking sudo configuration..."
 
 if sudo -n true 2>/dev/null; then
   echo "${OK} Passwordless sudo is already configured"
 else
-  echo "${ERROR}  Passwordless sudo is required for HyprFlux installation"
-  echo
-  echo "${ACTION} 🔧 Please configure passwordless sudo by running these commands:"
-  echo
-  echo -e "${GREEN}   sudo usermod -aG wheel \$USER"
-  echo -e "${GREEN}   echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers"
-  echo -e "${GREEN}   sudo grep 'wheel.*NOPASSWD' /etc/sudoers"
-  echo
-  echo "${ERROR}Sudo setup failed: passwordless sudo not configured"
-  exit 1
+  echo "${ACTION} No passwordless sudo detected, enabling temporarily..."
+  # Add current user to wheel group
+  sudo usermod -aG wheel "$USER"
+  # Add passwordless sudo rule for wheel group
+  echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers >/dev/null
+  echo "${OK} Passwordless sudo temporarily enabled for ${USER}"
 fi
 
 # ===========================
@@ -144,11 +140,11 @@ bash dotsSetup.sh
 # Remove passwordless sudo
 # ===========================
 if grep -q '%wheel ALL=(ALL) NOPASSWD: ALL' /etc/sudoers; then
-  echo "${ACTION} 🧹 Removing temporary passwordless sudo rule...${RESET}"
+  echo "${ACTION} 🧹 Removing temporary passwordless sudo rule..."
   sudo sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers
-  echo "${OK} Passwordless sudo rule removed for better security${RESET}"
+  echo "${OK} Passwordless sudo rule removed for better security"
 else
-  echo "${NOTE} No passwordless sudo rule found, nothing to clean up${RESET}"
+  echo "${NOTE} No temporary sudo rule found, nothing to clean up"
 fi
 
 # ===========================
