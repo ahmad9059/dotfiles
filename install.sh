@@ -50,9 +50,9 @@ else
   echo
   echo "${ACTION} 🔧 Please configure passwordless sudo by running these commands:"
   echo
-  echo "   sudo usermod -aG wheel \$USER"
-  echo "   echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers"
-  echo "   sudo grep 'wheel.*NOPASSWD' /etc/sudoers"
+  echo -e "${GREEN}   sudo usermod -aG wheel \$USER"
+  echo -e "${GREEN}   echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers"
+  echo -e "${GREEN}   sudo grep 'wheel.*NOPASSWD' /etc/sudoers"
   echo
   echo "${ERROR}Sudo setup failed: passwordless sudo not configured"
   exit 1
