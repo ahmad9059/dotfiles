@@ -10,6 +10,15 @@ WARN="$(tput setaf 3)[WARN]$(tput sgr0)"
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 NOTE="$(tput setaf 6)[NOTE]$(tput sgr0)"
 ACTION="$(tput setaf 4)[ACTION]$(tput sgr0)"
+INFO="$(tput setaf 4)[INFO]$(tput sgr0)"
+CAT="$(tput setaf 6)[ACTION]$(tput sgr0)"
+MAGENTA="$(tput setaf 5)"
+ORANGE="$(tput setaf 214)"
+WARNING="$(tput setaf 1)"
+YELLOW="$(tput setaf 3)"
+GREEN="$(tput setaf 2)"
+BLUE="$(tput setaf 4)"
+SKY_BLUE="$(tput setaf 6)"
 RESET="$(tput sgr0)"
 
 # =========================
@@ -88,14 +97,14 @@ mkdir -p "$HOME/hyprflux_log"
 LOG_FILE="$HOME/hyprflux_log/dotsSetup.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-# ==================================
-# Ask for sudo once at the beginning
-# ==================================
-echo -e "${ACTION} Requesting sudo access...${RESET}"
-sudo -v || {
-  echo "${ERROR} Sudo failed. Exiting."
-  exit 1
-}
+# # ==================================
+# # Ask for sudo once at the beginning
+# # ==================================
+# echo -e "${ACTION} Requesting sudo access...${RESET}"
+# sudo -v || {
+#   echo "${ERROR} Sudo failed. Exiting."
+#   exit 1
+# }
 
 # ====================
 # Clone dotfiles repo
@@ -211,7 +220,7 @@ if [ -d "$REPO_DIR/.config" ]; then
   } >>"$LOG_FILE" 2>&1
 
   if [ $? -eq 0 ]; then
-    echo -e "${OK} Personal dotfiles copied successfully.${RESET}"
+    echo -e "${OK} HyprFlux dotfiles copied successfully.${RESET}"
   else
     echo -e "${ERROR} Failed to copy one or more dotfiles. Check $LOG_FILE for details.${RESET}"
   fi
@@ -259,6 +268,7 @@ if command -v yay >/dev/null 2>&1; then
     echo -e "${OK} 'papirus-icon-theme' installed successfully.${RESET}"
 
     # Set folder color to cyan for Papirus-Dark
+    echo -e "${ACTION}Setting Papirus folders set to cyan (Papirus-Dark).${RESET}"
     papirus-folders -C cyan --theme Papirus-Dark &>>"$LOG_FILE"
     echo -e "${OK} Papirus folders set to cyan (Papirus-Dark).${RESET}"
 
