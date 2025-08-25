@@ -22,6 +22,10 @@ MAGENTA="$(tput setaf 5)"
 # ===========================
 LOG_FILE="$HOME/hyprflux_log/install.log"
 
+# ===================
+# Initial Bannar
+# ===================
+
 clear
 echo -e "\n"
 echo -e "${CYAN}     ██╗  ██╗██╗   ██╗██████╗ ██████╗ ███████╗██╗     ██╗   ██╗██╗  ██╗${RESET}"
