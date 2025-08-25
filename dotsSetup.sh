@@ -664,7 +664,7 @@ fi
 # Install Bibata Hyprcursor
 # ===========================
 CURSOR_URL="https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz"
-CURSOR_DIR="$HOME/.local/share/icons"
+CURSOR_DIR="$HOME/.icons"
 HYPR_ENV_FILE="$HOME/.config/hypr/UserConfigs/ENVariables.conf"
 
 echo "${ACTION} Downloading and installing Bibata Hyprcursor...${RESET}"
