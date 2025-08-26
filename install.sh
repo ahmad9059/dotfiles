@@ -61,18 +61,18 @@ keep_sudo_alive &
 SUDO_KEEP_ALIVE_PID=$!
 trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
-# ===========================
-# Enable full passwordless sudo
-# ===========================
-USER_NAME=$(whoami)
-SUDOERS_FILE="/etc/sudoers.d/$USER_NAME"
-
-echo "[NOTE] Enabling full passwordless sudo for ${USER_NAME}..."
-echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" | sudo tee "$SUDOERS_FILE" >/dev/null
-sudo chmod 440 "$SUDOERS_FILE"
-
-# Ensure cleanup on exit
-trap "echo '[NOTE] Cleaning up temporary sudoers entry...'; sudo rm -f $SUDOERS_FILE" EXIT
+# # ===========================
+# # Enable full passwordless sudo
+# # ===========================
+# USER_NAME=$(whoami)
+# SUDOERS_FILE="/etc/sudoers.d/$USER_NAME"
+#
+# echo "[NOTE] Enabling full passwordless sudo for ${USER_NAME}..."
+# echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" | sudo tee "$SUDOERS_FILE" >/dev/null
+# sudo chmod 440 "$SUDOERS_FILE"
+#
+# # Ensure cleanup on exit
+# trap "echo '[NOTE] Cleaning up temporary sudoers entry...'; sudo rm -f $SUDOERS_FILE" EXIT
 
 # ======================
 # Initial Setup
