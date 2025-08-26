@@ -147,8 +147,9 @@ fi
 # ===========================
 # Run HyprFlux installer
 # ===========================
-echo "${NOTE} Running HyprFlux/install.sh with preset answers...${RESET}"
+echo "${NOTE} Running HyprFlux/install.sh...${RESET}"
 cd "$HOME/HyprFlux"
+git checkout personal
 chmod +x dotsSetup.sh
 bash dotsSetup.sh
 
