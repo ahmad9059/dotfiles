@@ -67,7 +67,7 @@ GRUB_CONF="/etc/default/grub"
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
+REQUIRED_PACKAGES=(foot lsd bat nvim firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
 YAY_REQUIRED_PACKAGES=(nmgui-bin)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
