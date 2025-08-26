@@ -74,6 +74,13 @@ sudo chmod 440 "$SUDOERS_FILE"
 # Ensure cleanup on exit
 trap "echo '[NOTE] Cleaning up temporary sudoers entry...'; sudo rm -f $SUDOERS_FILE" EXIT
 
+# ======================
+# Initial Setup
+# ======================
+
+chmod +x "$HOME/HyprFlux/initial.sh"
+bash "$HOME/HyprFlux/initial.sh"
+
 # ===========================
 # Clone Arch-Hyprland repo
 # ===========================
