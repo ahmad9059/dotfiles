@@ -48,7 +48,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-echo "${NOTE} Asking for sudo password...${RESET}"
+echo "${NOTE} Asking for sudo password^^...${RESET}"
 sudo -v
 
 keep_sudo_alive() {
@@ -57,11 +57,22 @@ keep_sudo_alive() {
     sleep 30
   done
 }
-
 keep_sudo_alive &
 SUDO_KEEP_ALIVE_PID=$!
-
 trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
+
+# # ===========================
+# # Enable full passwordless sudo
+# # ===========================
+# USER_NAME=$(whoami)
+# SUDOERS_FILE="/etc/sudoers.d/$USER_NAME"
+#
+# echo "[NOTE] Enabling full passwordless sudo for ${USER_NAME}..."
+# echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" | sudo tee "$SUDOERS_FILE" >/dev/null
+# sudo chmod 440 "$SUDOERS_FILE"
+#
+# # Ensure cleanup on exit
+# trap "echo '[NOTE] Cleaning up temporary sudoers entry...'; sudo rm -f $SUDOERS_FILE" EXIT
 
 # ===========================
 # Clone Arch-Hyprland repo
@@ -117,7 +128,7 @@ if [ -d "$HOME/HyprFlux" ]; then
   echo "${NOTE} Folder 'HyprFlux' already exists in HOME, using it...${RESET}"
 else
   echo "${NOTE} Cloning HyprFlux repo into ~...${RESET}"
-  if git clone --depth=1 https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
+  if git --depth=1 clone https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
     echo "${OK} Repo cloned successfully.${RESET}"
   else
     echo "${ERROR} Failed to clone HyprFlux repo. Exiting.${RESET}"
@@ -128,8 +139,9 @@ fi
 # ===========================
 # Run HyprFlux installer
 # ===========================
-echo "${NOTE} Running HyprFlux/install.sh with preset answers...${RESET}"
+echo "${NOTE} Running HyprFlux dotsSetup.sh...${RESET}"
 cd "$HOME/HyprFlux"
+# git checkout personal
 chmod +x dotsSetup.sh
 bash dotsSetup.sh
 

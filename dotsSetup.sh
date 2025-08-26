@@ -74,8 +74,8 @@ LOG_FILE="$HOME/installer_log/boot_file.log"
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
-YAY_REQUIRED_PACKAGES=(nmgui-bin)
+REQUIRED_PACKAGES=(foot lsd bat nvim firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
+YAY_REQUIRED_PACKAGES=()
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
@@ -99,16 +99,14 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-echo "${NOTE} Asking for sudo password...${RESET}"
+echo "${NOTE} Asking for sudo password^^...${RESET}"
 sudo -v
-
 keep_sudo_alive() {
   while true; do
     sudo -n true
     sleep 30
   done
 }
-
 keep_sudo_alive &
 SUDO_KEEP_ALIVE_PID=$!
 
