@@ -697,7 +697,7 @@ if curl -fsSL "$CURSOR_URL" -o /tmp/hyprcursor.tar.gz; then
     # Update Hyprland ENVariables.conf
     if [ -f "$HYPR_ENV_FILE" ]; then
       sed -i 's/^env = HYPRCURSOR_THEME.*/env = HYPRCURSOR_THEME,Bibata-Modern-Classic/' "$HYPR_ENV_FILE"
-      sed -i 's/^env = HYPRCURSOR_SIZE.*/env = HYPRCURSOR_SIZE,24/' "$HYPR_ENV_FILE"
+      sed -i 's/^env = HYPRCURSOR_SIZE.*/env = HYPRCURSOR_SIZE,20/' "$HYPR_ENV_FILE"
       echo "${OK} Updated Hyprland ENVariables.conf with new cursor theme.${RESET}"
     else
       echo "${WARN} ENVariables.conf not found, creating a new one.${RESET}"

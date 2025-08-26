@@ -30,6 +30,7 @@ declare -A online_music=(
   ["YT - Urdu Lofi Girl "]="https://www.youtube.com/playlist?list=PLBsRARxfsCVdYY-pl3mdKVWl6QnQajjQ9"
   ["YT - Full Stack flow "]="https://youtu.be/0g-Wg_PAjUo"
   ["YT - Midnight Focus "]="https://youtu.be/yPoE79AzeYQ"
+  ["YT - Midnight Bug Fixing "]="https://youtu.be/C7jXWTm3QzM"
 )
 
 # Populate local_music array with files from music directory and subdirectories
