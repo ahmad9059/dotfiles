@@ -48,7 +48,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-echo "${NOTE} Asking for sudo password...${RESET}"
+echo "${NOTE} Asking for sudo password^^...${RESET}"
 sudo -v
 
 keep_sudo_alive() {
