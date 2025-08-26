@@ -67,7 +67,7 @@ GRUB_CONF="/etc/default/grub"
 # =============================
 
 # Mandatory packages
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli nmgui-bin)
+REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
@@ -125,63 +125,50 @@ else
 fi
 
 # =================
-# Required Packages (Try pacman first, fallback to yay)
+# Required Packages
 # =================
-REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
-
 echo -e "${ACTION} Installing required packages...${RESET}" | tee -a "$LOG_FILE"
-
-# Print package list with header in blue
+# Print package list with header in blue and packages in default color
 echo -e "\n\033[1;34mRequired Packages:\033[0m\n" | tee -a "$LOG_FILE"
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
   echo -e "  • $pkg" | tee -a "$LOG_FILE"
 done
 echo | tee -a "$LOG_FILE"
-
+echo -e "${ACTION} Packages Installing in Progress...${RESET}" | tee -a "$LOG_FILE"
+# Enable pipefail so pacman failure is detected even with tee
 set -o pipefail
 MAX_RETRIES=5
-
-install_pkg() {
-  local pkg="$1"
-  local COUNT=0
-  local SUCCESS=0
-
-  until [ $COUNT -ge $MAX_RETRIES ]; do
-    if pacman -Si "$pkg" &>/dev/null; then
-      # Package exists in official repos
-      if script -qfc "sudo pacman -Sy --noconfirm --needed $pkg" /dev/null | tee -a "$LOG_FILE"; then
-        SUCCESS=1
-        break
+COUNT=0
+SUCCESS=0
+# Start with all required packages as missing
+MISSING_PKGS=("${REQUIRED_PACKAGES[@]}")
+until [ $COUNT -ge $MAX_RETRIES ]; do
+  if script -qfc "sudo pacman -Sy --noconfirm --needed ${MISSING_PKGS[*]}" /dev/null | tee -a "$LOG_FILE"; then
+    # Re-check what’s still missing
+    NEW_MISSING=()
+    for pkg in "${MISSING_PKGS[@]}"; do
+      if ! pacman -Qi "$pkg" &>/dev/null; then
+        NEW_MISSING+=("$pkg")
       fi
+    done
+    if [ ${#NEW_MISSING[@]} -eq 0 ]; then
+      SUCCESS=1
+      break
     else
-      # Package not in repos → try yay
-      if yay -Sy --noconfirm --needed "$pkg" | tee -a "$LOG_FILE"; then
-        SUCCESS=1
-        break
-      fi
+      MISSING_PKGS=("${NEW_MISSING[@]}")
     fi
-
-    COUNT=$((COUNT + 1))
-    echo -e "${ERROR} Failed to install $pkg. Retry $COUNT/$MAX_RETRIES in 5s...${RESET}" | tee -a "$LOG_FILE"
-    sleep 5
-  done
-
-  if [ $SUCCESS -eq 1 ]; then
-    echo -e "${OK} $pkg installed successfully.${RESET}" | tee -a "$LOG_FILE"
-  else
-    echo -e "${ERROR} Failed to install $pkg after $MAX_RETRIES attempts.${RESET}" | tee -a "$LOG_FILE"
-    exit 1
   fi
-}
-
-# Loop through required packages
-for pkg in "${REQUIRED_PACKAGES[@]}"; do
-  install_pkg "$pkg"
+  COUNT=$((COUNT + 1))
+  echo -e "${ERROR} Some packages failed to install. Retry $COUNT/$MAX_RETRIES in 5s...${RESET}" | tee -a "$LOG_FILE"
+  sleep 5
 done
-
 set +o pipefail
-
-echo -e "${OK} All required packages processed.${RESET}" | tee -a "$LOG_FILE"
+if [ $SUCCESS -eq 1 ]; then
+  echo -e "${OK} All required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
+else
+  echo -e "${ERROR} Failed to install packages after $MAX_RETRIES attempts: ${MISSING_PKGS[*]}${RESET}" | tee -a "$LOG_FILE"
+  exit 1
+fi
 
 # ===========================
 # Backup old configs
