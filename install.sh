@@ -51,17 +51,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "${NOTE} Asking for sudo password...${RESET}"
 sudo -v
 
-keep_sudo_alive() {
-  while true; do
-    sudo -n true
-    sleep 30
-  done
-}
-
-keep_sudo_alive &
-SUDO_KEEP_ALIVE_PID=$!
-
-trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
+# keep_sudo_alive() {
+#   while true; do
+#     sudo -n true
+#     sleep 30
+#   done
+# }
+#
+# keep_sudo_alive &
+# SUDO_KEEP_ALIVE_PID=$!
+#
+# trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
 # Get the current username
 USER_NAME=$(whoami)
