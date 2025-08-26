@@ -92,20 +92,18 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-# echo "${NOTE} Asking for sudo password...${RESET}"
-# sudo -v
-#
-# keep_sudo_alive() {
-#   while true; do
-#     sudo -n true
-#     sleep 30
-#   done
-# }
-#
-# keep_sudo_alive &
-# SUDO_KEEP_ALIVE_PID=$!
-#
-# trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
+echo "${NOTE} Asking for sudo password^^...${RESET}"
+sudo -v
+keep_sudo_alive() {
+  while true; do
+    sudo -n true
+    sleep 30
+  done
+}
+keep_sudo_alive &
+SUDO_KEEP_ALIVE_PID=$!
+
+trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
 # ====================
 # Clone dotfiles repo

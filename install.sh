@@ -48,40 +48,18 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-# echo "${NOTE} Asking for sudo password...${RESET}"
-# sudo -v
+echo "${NOTE} Asking for sudo password...${RESET}"
+sudo -v
 
-# keep_sudo_alive() {
-#   while true; do
-#     sudo -n true
-#     sleep 30
-#   done
-# }
-#
-# keep_sudo_alive &
-# SUDO_KEEP_ALIVE_PID=$!
-#
-# trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
-
-# ===========================
-# Enable temporary passwordless sudo
-# ===========================
-USER_NAME=$(whoami)
-SUDO_LINE="$USER_NAME ALL=(ALL) NOPASSWD:ALL # TEMP-PASSWDLESS"
-
-if ! sudo grep -qF "$SUDO_LINE" /etc/sudoers; then
-  echo "${NOTE} Adding temporary passwordless sudo for $USER_NAME...${RESET}"
-  echo "$SUDO_LINE" | sudo EDITOR='tee -a' visudo
-fi
-
-# ===========================
-# Cleanup function to remove sudoers entry
-# ===========================
-cleanup_sudoers() {
-  echo "${NOTE} Cleaning up temporary sudoers entry...${RESET}"
-  sudo sed -i '/# TEMP-PASSWDLESS$/d' /etc/sudoers
+keep_sudo_alive() {
+  while true; do
+    sudo -n true
+    sleep 30
+  done
 }
-trap cleanup_sudoers EXIT
+keep_sudo_alive &
+SUDO_KEEP_ALIVE_PID=$!
+trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
 # ===========================
 # Clone Arch-Hyprland repo
