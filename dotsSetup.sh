@@ -141,8 +141,7 @@ SUCCESS=0
 # Start with all required packages as missing
 MISSING_PKGS=("${REQUIRED_PACKAGES[@]}")
 until [ $COUNT -ge $MAX_RETRIES ]; do
-  sudo -v
-  if script -qfc "sudo -n pacman -Sy --noconfirm --needed ${MISSING_PKGS[*]}" /dev/null | tee -a "$LOG_FILE"; then
+  if script -qfc "sudo pacman -Sy --noconfirm --needed ${MISSING_PKGS[*]}" /dev/null | tee -a "$LOG_FILE"; then
     # Re-check what’s still missing
     NEW_MISSING=()
     for pkg in "${MISSING_PKGS[@]}"; do
