@@ -68,6 +68,7 @@ GRUB_CONF="/etc/default/grub"
 
 # Mandatory packages
 REQUIRED_PACKAGES=(foot lsd bat firefox tmux yazi zoxide qt6-5compat chromium npm plymouth rclone github-cli)
+YAY_REQUIRED_PACKAGES=(nmgui-bin)
 # Pacman Packages (Optional)
 PACMAN_PACKAGES=(
   foot alacritty lsd bat tmux neovim tldr
@@ -167,6 +168,60 @@ if [ $SUCCESS -eq 1 ]; then
   echo -e "${OK} All required packages installed successfully.${RESET}" | tee -a "$LOG_FILE"
 else
   echo -e "${ERROR} Failed to install packages after $MAX_RETRIES attempts: ${MISSING_PKGS[*]}${RESET}" | tee -a "$LOG_FILE"
+  exit 1
+fi
+
+# =================
+# Required AUR Packages (yay)
+# =================
+
+echo -e "${ACTION} Installing required AUR packages with yay...${RESET}" | tee -a "$LOG_FILE"
+
+# Print package list with header in blue and packages in default color
+echo -e "\n\033[1;34mAUR Packages:\033[0m\n" | tee -a "$LOG_FILE"
+for pkg in "${YAY_REQUIRED_PACKAGES[@]}"; do
+  echo -e "  • $pkg" | tee -a "$LOG_FILE"
+done
+echo | tee -a "$LOG_FILE"
+
+echo -e "${ACTION} Packages Installing in Progress...${RESET}" | tee -a "$LOG_FILE"
+
+# Enable pipefail so yay failure is detected even with tee
+set -o pipefail
+MAX_RETRIES=5
+COUNT=0
+SUCCESS=0
+
+# Start with all required packages as missing
+MISSING_PKGS=("${YAY_REQUIRED_PACKAGES[@]}")
+
+until [ $COUNT -ge $MAX_RETRIES ]; do
+  if yay -Sy --noconfirm --needed ${MISSING_PKGS[*]} | tee -a "$LOG_FILE"; then
+    # Re-check what’s still missing
+    NEW_MISSING=()
+    for pkg in "${MISSING_PKGS[@]}"; do
+      if ! pacman -Qi "$pkg" &>/dev/null; then
+        NEW_MISSING+=("$pkg")
+      fi
+    done
+    if [ ${#NEW_MISSING[@]} -eq 0 ]; then
+      SUCCESS=1
+      break
+    else
+      MISSING_PKGS=("${NEW_MISSING[@]}")
+    fi
+  fi
+  COUNT=$((COUNT + 1))
+  echo -e "${ERROR} Some AUR packages failed to install. Retry $COUNT/$MAX_RETRIES in 5s...${RESET}" | tee -a "$LOG_FILE"
+  sleep 5
+done
+
+set +o pipefail
+
+if [ $SUCCESS -eq 1 ]; then
+  echo -e "${OK} All AUR packages installed successfully with yay.${RESET}" | tee -a "$LOG_FILE"
+else
+  echo -e "${ERROR} Failed to install AUR packages after $MAX_RETRIES attempts: ${MISSING_PKGS[*]}${RESET}" | tee -a "$LOG_FILE"
   exit 1
 fi
 
