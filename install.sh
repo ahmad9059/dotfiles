@@ -48,8 +48,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ===========================
 # Ask for sudo once, keep it alive
 # ===========================
-echo "${NOTE} Asking for sudo password...${RESET}"
-sudo -v
+# echo "${NOTE} Asking for sudo password...${RESET}"
+# sudo -v
 
 # keep_sudo_alive() {
 #   while true; do
@@ -63,24 +63,25 @@ sudo -v
 #
 # trap 'kill $SUDO_KEEP_ALIVE_PID' EXIT
 
-# Get the current username
+# ===========================
+# Enable temporary passwordless sudo
+# ===========================
 USER_NAME=$(whoami)
+SUDO_LINE="$USER_NAME ALL=(ALL) NOPASSWD:ALL # TEMP-PASSWDLESS"
 
-# Temporary sudoers line
-SUDO_LINE="$USER_NAME ALL=(ALL) NOPASSWD: /usr/bin/chsh # TEMP-CHSH-ALLOW"
+if ! sudo grep -qF "$SUDO_LINE" /etc/sudoers; then
+  echo "${NOTE} Adding temporary passwordless sudo for $USER_NAME...${RESET}"
+  echo "$SUDO_LINE" | sudo EDITOR='tee -a' visudo
+fi
 
-# Function to clean up sudoers on exit
+# ===========================
+# Cleanup function to remove sudoers entry
+# ===========================
 cleanup_sudoers() {
-  echo "Cleaning up temporary sudoers entry..."
-  sudo sed -i '/# TEMP-CHSH-ALLOW/d' /etc/sudoers
+  echo "${NOTE} Cleaning up temporary sudoers entry...${RESET}"
+  sudo sed -i '/# TEMP-PASSWDLESS$/d' /etc/sudoers
 }
 trap cleanup_sudoers EXIT
-
-# Add temporary sudoers entry if not already present
-if ! sudo grep -qF "$SUDO_LINE" /etc/sudoers; then
-  echo "Adding temporary sudoers entry for $USER_NAME..."
-  echo "$SUDO_LINE" | sudo tee -a /etc/sudoers >/dev/null
-fi
 
 # ===========================
 # Clone Arch-Hyprland repo
