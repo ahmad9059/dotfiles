@@ -128,7 +128,7 @@ if [ -d "$HOME/HyprFlux" ]; then
   echo "${NOTE} Folder 'HyprFlux' already exists in HOME, using it...${RESET}"
 else
   echo "${NOTE} Cloning HyprFlux repo into ~...${RESET}"
-  if git --depth=1 clone https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
+  if git clone --depth=1 https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
     echo "${OK} Repo cloned successfully.${RESET}"
   else
     echo "${ERROR} Failed to clone HyprFlux repo. Exiting.${RESET}"
