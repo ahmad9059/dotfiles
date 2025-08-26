@@ -136,7 +136,7 @@ if [ -d "$HOME/HyprFlux" ]; then
   echo "${NOTE} Folder 'HyprFlux' already exists in HOME, using it...${RESET}"
 else
   echo "${NOTE} Cloning HyprFlux repo into ~...${RESET}"
-  if git clone --depth=1 https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
+  if git clone https://github.com/ahmad9059/HyprFlux.git "$HOME/HyprFlux"; then
     echo "${OK} Repo cloned successfully.${RESET}"
   else
     echo "${ERROR} Failed to clone HyprFlux repo. Exiting.${RESET}"
@@ -147,7 +147,7 @@ fi
 # ===========================
 # Run HyprFlux installer
 # ===========================
-echo "${NOTE} Running HyprFlux/install.sh...${RESET}"
+echo "${NOTE} Running HyprFlux dotsSetup.sh...${RESET}"
 cd "$HOME/HyprFlux"
 git checkout personal
 chmod +x dotsSetup.sh
