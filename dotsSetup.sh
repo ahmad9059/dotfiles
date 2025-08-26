@@ -81,7 +81,6 @@ YAY_PACKAGES=(
   visual-studio-code-bin 64gram-desktop-bin vesktop
   foliate whatsapp-for-linux stacer-bin localsend-bin
   kiro-bin
-
 )
 
 # ===========================
