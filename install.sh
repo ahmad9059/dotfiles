@@ -37,7 +37,7 @@ echo -e "${CYAN}     ██╔══██║  ╚██╔╝  ██╔══�
 echo -e "${CYAN}     ██║  ██║   ██║   ██║     ██║  ██║██║     ███████╗╚██████╔╝██╔╝ ██╗${RESET}"
 echo -e "${CYAN}     ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝${RESET}"
 echo -e "${RED}     ✻────────────────────────────ahmad9059────────────────────────────✻${RESET}"
-echo -e "${GREEN}          🇵🇰 Welcome to HyprFlux! lets begin Installation 🇵🇰 ${RESET}"
+echo -e "${GREEN}           Welcome to HyprFlux! lets begin Installation 🇵🇰 ${RESET}"
 echo -e "\n"
 
 # ===========================
