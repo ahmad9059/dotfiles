@@ -609,6 +609,7 @@ apps=(
   "Slack|https://slack.com|slack"
   "Microsoft365|https://www.microsoft365.com|microsoft365"
   "HyprFlux|https://hyprFlux.dev|hyprflux"
+  "Scrimba|https://scrimba.com|scrimba"
 )
 
 download_icon() {
