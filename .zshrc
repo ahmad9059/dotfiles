@@ -56,7 +56,7 @@ alias ga='git add .'
 alias gcm='git commit -m '
 alias gp='git push -u orign main'
 alias gs='git status'
-alias ll-'ls -Alh'
+alias ll='ls -Alh'
 alias ls='lsd --group-dirs first'
 alias cat='bat'
 alias gc='g++ -o o'
@@ -73,6 +73,10 @@ alias lg='lazygit'
 alias nivm='nvim'
 alias pdf='firefox'
 alias cd='z'
+alias s='sudo pacman -Ss '
+alias i='sudo pacman -S '
+alias u='sudo pacman -Syu '
+
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
